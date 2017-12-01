@@ -37,6 +37,7 @@
 		A1FC43881FD189C1004E9AF0 /* GistWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC43871FD189C1004E9AF0 /* GistWorker.swift */; };
 		A1FC438A1FD189F6004E9AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43891FD189F6004E9AF0 /* Main.storyboard */; };
 		A1FC438F1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC438E1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift */; };
+		A1FC43981FD1E0C7004E9AF0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		A1FC43871FD189C1004E9AF0 /* GistWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistWorker.swift; sourceTree = "<group>"; };
 		A1FC43891FD189F6004E9AF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1FC438E1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		C4D86EA90AA3871AE877241C /* Pods-GithubGists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGists.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGists/Pods-GithubGists.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 		A1FC43391FD18660004E9AF0 /* GithubGists */ = {
 			isa = PBXGroup;
 			children = (
+				A1FC43961FD1E0AA004E9AF0 /* Components */,
 				A1FC43861FD189B0004E9AF0 /* Workers */,
 				A1FC43831FD189A0004E9AF0 /* Stores */,
 				A1FC43801FD18985004E9AF0 /* Services */,
@@ -237,6 +240,15 @@
 				A1FC43871FD189C1004E9AF0 /* GistWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		A1FC43961FD1E0AA004E9AF0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */,
+			);
+			name = Components;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C2589A74A6A58963A266B29A /* Frameworks */ = {
@@ -410,6 +422,7 @@
 				A1FC436B1FD18940004E9AF0 /* ListPublicGistConfigurator.swift in Sources */,
 				A1FC43521FD188C9004E9AF0 /* Url.swift in Sources */,
 				A1FC43551FD188E7004E9AF0 /* UIView+ExtraAttributes.swift in Sources */,
+				A1FC43981FD1E0C7004E9AF0 /* AlertBuilder.swift in Sources */,
 				A1FC436D1FD18940004E9AF0 /* ListPublicGistModels.swift in Sources */,
 				A1FC43511FD188C9004E9AF0 /* Constants.swift in Sources */,
 				A1FC437D1FD18974004E9AF0 /* GistDetailInteractor.swift in Sources */,

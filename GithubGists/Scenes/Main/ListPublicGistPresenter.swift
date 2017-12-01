@@ -37,7 +37,10 @@ class ListPublicGistPresenter: ListPublicGistPresenterInput {
     
     func presentPublicGistsError(_ response: ListPublicGist.FetchGists.Response.APIError) {
         if let error = response.apiError {
-            let viewModel = ListPublicGist.FetchGists.ViewModel.Error(errorMessage: error.localizedDescription)
+            let okAction = AlertActionBuilder(dismissWithTitle: "Ok").build()
+            let viewModel = ListPublicGist.FetchGists.ViewModel.Error(errorTitle: "Error",
+                                                                      errorMessage: error.localizedDescription,
+                                                                      actions: [okAction])
             output.displayPublicGistsError(viewModel)
         }
     }

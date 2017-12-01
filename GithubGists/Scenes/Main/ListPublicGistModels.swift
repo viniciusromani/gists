@@ -24,7 +24,9 @@ struct ListPublicGist {
                 let displayedGists: [DisplayedGistCell]
             }
             struct Error {
-                let errorMessage: String
+                let errorTitle: String?
+                let errorMessage: String?
+                let actions: [UIAlertAction]?
             }
         }
     }

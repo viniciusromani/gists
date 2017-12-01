@@ -23,9 +23,11 @@ protocol ListPublicGistViewControllerOutput {
 }
 
 class ListPublicGistViewController: UIViewController {
+    
     var output: ListPublicGistViewControllerOutput!
     var router: ListPublicGistRouter!
     
+    @IBOutlet weak var emptyStateView: UIView!
     @IBOutlet weak var gistsCollectionView: GistsCollectionView!
     
     // MARK: - Object lifecycle
@@ -52,11 +54,20 @@ extension ListPublicGistViewController: ListPublicGistViewControllerInput {
     // NOTE: Display the result from the Presenter
     
     func displayPublicGistsSuccess(_ viewModel: ListPublicGist.FetchGists.ViewModel.Success) {
+//        hideActivityIndicator()
         gistsCollectionView.displayedDataSource = viewModel.displayedGists
     }
     
     func displayPublicGistsError(_ viewModel: ListPublicGist.FetchGists.ViewModel.Error) {
+//        hideActivityIndicator()
         
+        let errorAlert = AlertBuilder().setTitle(viewModel.errorTitle)
+                                       .setMessage(viewModel.errorMessage)
+                                       .setActions(viewModel.actions)
+                                       .build()
+        present(errorAlert, animated: true)
+        
+        emptyStateView.isHidden = false
     }
     
     func displaySelectedCell(_ viewModel: ListPublicGist.DidSelectCell.ViewModel) {
