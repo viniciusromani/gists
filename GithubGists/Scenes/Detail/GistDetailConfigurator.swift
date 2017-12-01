@@ -10,13 +10,13 @@ import UIKit
 
 // MARK: - Connect View, Interactor, and Presenter
 
-extension GistDetailTableViewController: GistDetailPresenterOutput {
+extension GistDetailViewController: GistDetailPresenterOutput {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         router.passDataToNextScene(segue: segue)
     }
 }
 
-extension GistDetailInteractor: GistDetailTableViewControllerOutput {
+extension GistDetailInteractor: GistDetailViewControllerOutput {
 }
 
 extension GistDetailPresenter: GistDetailInteractorOutput {
@@ -31,17 +31,17 @@ class GistDetailConfigurator {
     
     // MARK: - Configuration
     
-    func configure(tableViewController: GistDetailTableViewController) {
+    func configure(viewController: GistDetailViewController) {
         let router = GistDetailRouter()
-        router.tableViewController = tableViewController
+        router.viewController = viewController
         
         let presenter = GistDetailPresenter()
-        presenter.output = tableViewController
+        presenter.output = viewController
         
         let interactor = GistDetailInteractor()
         interactor.output = presenter
         
-        tableViewController.output = interactor
-        tableViewController.router = router
+        viewController.output = interactor
+        viewController.router = router
     }
 }

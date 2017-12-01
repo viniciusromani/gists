@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol GistsCollectionViewProtocol {
+protocol GistsCollectionViewDelegate {
     func configure(gistCollection collectionView: GistsCollectionView)
     func didSelect(collectionView collection: UICollectionView, at indexPath: IndexPath)
 }
@@ -24,7 +24,7 @@ class GistsCollectionView: UICollectionView {
         }
     }
     
-    var customDelegate: GistsCollectionViewProtocol?
+    var customDelegate: GistsCollectionViewDelegate?
 }
 
 extension GistsCollectionView: UICollectionViewDelegate { }

@@ -13,7 +13,7 @@ protocol GistDetailRouterInput {
 }
 
 class GistDetailRouter: GistDetailRouterInput {
-    weak var tableViewController: GistDetailTableViewController!
+    weak var viewController: GistDetailViewController!
     
     // MARK: - Navigation
     

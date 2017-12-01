@@ -8,19 +8,19 @@
 
 import UIKit
 
-protocol GistDetailTableViewControllerInput {
+protocol GistDetailViewControllerInput {
     func displayGistSuccess(_ viewModel: GistDetail.FetchGist.ViewModel.Success)
     func displayGistError(_ viewModel: GistDetail.FetchGist.ViewModel.Error)
 }
 
-protocol GistDetailTableViewControllerOutput {
+protocol GistDetailViewControllerOutput {
     var selectedGistId: String? { get set }
     
     func fetchGist(_ request: GistDetail.FetchGist.Request)
 }
 
-class GistDetailTableViewController: UITableViewController {
-    var output: GistDetailTableViewControllerOutput!
+class GistDetailViewController: UIViewController {
+    var output: GistDetailViewControllerOutput!
     var router: GistDetailRouter!
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -34,7 +34,7 @@ class GistDetailTableViewController: UITableViewController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        GistDetailConfigurator.sharedInstance.configure(tableViewController: self)
+        GistDetailConfigurator.sharedInstance.configure(viewController: self)
     }
 
     // MARK: - View lifecycle
@@ -48,7 +48,7 @@ class GistDetailTableViewController: UITableViewController {
 
 // MARK: - Display logic
 
-extension GistDetailTableViewController: GistDetailTableViewControllerInput {
+extension GistDetailViewController: GistDetailViewControllerInput {
     
     func displayGistSuccess(_ viewModel: GistDetail.FetchGist.ViewModel.Success) {
         let displayedGist = viewModel.displayedGistDetail
@@ -67,7 +67,7 @@ extension GistDetailTableViewController: GistDetailTableViewControllerInput {
 
 // MARK: - Helpers
 
-extension GistDetailTableViewController {
+extension GistDetailViewController {
     private func fetchSelectedGist() {
         let request = GistDetail.FetchGist.Request()
         output.fetchGist(request)

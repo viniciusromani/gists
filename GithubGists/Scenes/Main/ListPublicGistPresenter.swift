@@ -55,12 +55,9 @@ extension ListPublicGistPresenter {
         var displayedCells: [DisplayedGistCell] = []
         for gist in gists {
             let url = gist.owner?.avatarURL
-            let displayedCell = DisplayedGistCell(fileName: gist.file?.name ?? "",
+            let displayedCell = DisplayedGistCell(fileName: gist.file?.name ?? "-",
                                                   ownerImageURL: url != nil ? URL(string: url!): nil,
-                                                  userName: gist.owner?.userName ?? "")
-                                                  //createdAt: "Ontem",
-                                                  //totalComments: String(gist.totalComments ?? 0),
-                                                  //isPublicImage: UIImage())
+                                                  userName: gist.owner?.userName ?? "-")
             displayedCells.append(displayedCell)
         }
         

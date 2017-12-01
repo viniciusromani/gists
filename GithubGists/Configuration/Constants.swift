@@ -17,7 +17,6 @@ struct Constants {
     }
     
     struct CellSize {
-        static let GistCollectionCellHeight = CGFloat(170.0)
-        
+        static let GistCollectionCellHeight = CGFloat(165.0)
     }
 }

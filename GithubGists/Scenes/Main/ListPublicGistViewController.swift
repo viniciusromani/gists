@@ -66,7 +66,7 @@ extension ListPublicGistViewController: ListPublicGistViewControllerInput {
 
 // MARK: - GistsCollectionViewDelegate
 
-extension ListPublicGistViewController: GistsCollectionViewProtocol {
+extension ListPublicGistViewController: GistsCollectionViewDelegate {
     func configure(gistCollection collectionView: GistsCollectionView) {
         collectionView.register(UINib(nibName: GistCollectionViewCell.nibName, bundle: nil),
                                       forCellWithReuseIdentifier: gistsCollectionView.cellIdentifier)

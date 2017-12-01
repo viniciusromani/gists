@@ -19,6 +19,9 @@ class GistCollectionViewCell: UICollectionViewCell {
     
     func configure(with displayedCell: DisplayedGistCell) {
         gistNameLabel.text = displayedCell.fileName
+        ownerImageView.setImageWithURL(displayedCell.ownerImageURL,
+                                       placeholderImage: UIImage(named: "ic_person"),
+                                       progressBlock: nil, completionHandler: nil)
         ownerNameLabel.text = displayedCell.userName
     }
 }

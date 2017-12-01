@@ -34,7 +34,7 @@ class ListPublicGistRouter: ListPublicGistRouterInput {
     }
     
     private func passDataToDetailScene(segue: UIStoryboardSegue) {
-        guard let detailViewController = segue.destination as? GistDetailTableViewController else { return }
+        guard let detailViewController = segue.destination as? GistDetailViewController else { return }
         detailViewController.output.selectedGistId = viewController.output.selectedGistId
     }
 }
