@@ -82,10 +82,16 @@
                     <real key="value" value="2"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                    <color key="value" red="0.87450980389999999" green="0.86274509799999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.15437940140845072" colorSpace="custom" customColorSpace="sRGB"/>
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                     <size key="value" width="0.0" height="0.5"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="color" keyPath="layerBorderColor">
+                    <color key="value" red="0.87450980389999999" green="0.86274509799999999" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layerBorderWidth">
+                    <real key="value" value="2"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
