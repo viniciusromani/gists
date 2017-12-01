@@ -74,7 +74,7 @@
 		A1FC43871FD189C1004E9AF0 /* GistWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistWorker.swift; sourceTree = "<group>"; };
 		A1FC43891FD189F6004E9AF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1FC438E1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
-		A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
+		A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertBuilder.swift; path = ../Components/AlertBuilder.swift; sourceTree = "<group>"; };
 		C4D86EA90AA3871AE877241C /* Pods-GithubGists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGists.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGists/Pods-GithubGists.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,8 +247,7 @@
 			children = (
 				A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */,
 			);
-			name = Components;
-			path = "New Group";
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C2589A74A6A58963A266B29A /* Frameworks */ = {
