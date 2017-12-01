@@ -38,6 +38,7 @@
 		A1FC438A1FD189F6004E9AF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43891FD189F6004E9AF0 /* Main.storyboard */; };
 		A1FC438F1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC438E1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift */; };
 		A1FC43981FD1E0C7004E9AF0 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */; };
+		A1FC439B1FD1EDEE004E9AF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC439A1FD1EDEE004E9AF0 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		A1FC43891FD189F6004E9AF0 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1FC438E1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
 		A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertBuilder.swift; path = ../Components/AlertBuilder.swift; sourceTree = "<group>"; };
+		A1FC439A1FD1EDEE004E9AF0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		C4D86EA90AA3871AE877241C /* Pods-GithubGists.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGists.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGists/Pods-GithubGists.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 		A1FC435D1FD18902004E9AF0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A1FC439A1FD1EDEE004E9AF0 /* BaseViewController.swift */,
 				A1FC435E1FD18915004E9AF0 /* Main */,
 				A1FC435F1FD18919004E9AF0 /* Detail */,
 				A1FC43891FD189F6004E9AF0 /* Main.storyboard */,
@@ -408,6 +411,7 @@
 				A1FC438F1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift in Sources */,
 				A1FC437F1FD18974004E9AF0 /* GistDetailModels.swift in Sources */,
 				A1FC43851FD189AD004E9AF0 /* GistRestStore.swift in Sources */,
+				A1FC439B1FD1EDEE004E9AF0 /* BaseViewController.swift in Sources */,
 				A1FC43881FD189C1004E9AF0 /* GistWorker.swift in Sources */,
 				A1FC437E1FD18974004E9AF0 /* GistDetailPresenter.swift in Sources */,
 				A1FC43821FD1899D004E9AF0 /* WebServiceHelper.swift in Sources */,

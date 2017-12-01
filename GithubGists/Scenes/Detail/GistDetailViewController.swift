@@ -19,7 +19,7 @@ protocol GistDetailViewControllerOutput {
     func fetchGist(_ request: GistDetail.FetchGist.Request)
 }
 
-class GistDetailViewController: UIViewController {
+class GistDetailViewController: BaseViewController {
     var output: GistDetailViewControllerOutput!
     var router: GistDetailRouter!
     

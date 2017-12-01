@@ -22,7 +22,7 @@ protocol ListPublicGistViewControllerOutput {
     func didSelectCell(_ request: ListPublicGist.DidSelectCell.Request)
 }
 
-class ListPublicGistViewController: UIViewController {
+class ListPublicGistViewController: BaseViewController {
     
     var output: ListPublicGistViewControllerOutput!
     var router: ListPublicGistRouter!
@@ -43,6 +43,7 @@ class ListPublicGistViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        showActivityIndicator()
         fetchPublicGists()
         configure(gistCollection: gistsCollectionView)
     }
@@ -51,6 +52,7 @@ class ListPublicGistViewController: UIViewController {
     
     @IBAction func reloadTouchedUpInside(_ sender: UIButton) {
         hideEmptyState()
+        showActivityIndicator()
         fetchPublicGists()
     }
 }
@@ -62,14 +64,14 @@ extension ListPublicGistViewController: ListPublicGistViewControllerInput {
     // NOTE: Display the result from the Presenter
     
     func displayPublicGistsSuccess(_ viewModel: ListPublicGist.FetchGists.ViewModel.Success) {
-//        hideActivityIndicator()
+        hideActivityIndicator()
         hideEmptyState()
         
         gistsCollectionView.displayedDataSource = viewModel.displayedGists
     }
     
     func displayPublicGistsError(_ viewModel: ListPublicGist.FetchGists.ViewModel.Error) {
-//        hideActivityIndicator()
+        hideActivityIndicator()
         
         let errorAlert = AlertBuilder().setTitle(viewModel.errorTitle)
                                        .setMessage(viewModel.errorMessage)
