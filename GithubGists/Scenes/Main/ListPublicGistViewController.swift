@@ -28,6 +28,7 @@ class ListPublicGistViewController: UIViewController {
     var router: ListPublicGistRouter!
     
     @IBOutlet weak var emptyStateView: UIView!
+    @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var gistsCollectionView: GistsCollectionView!
     
     // MARK: - Object lifecycle
@@ -45,6 +46,13 @@ class ListPublicGistViewController: UIViewController {
         fetchPublicGists()
         configure(gistCollection: gistsCollectionView)
     }
+    
+    // MARK: - Event Handling
+    
+    @IBAction func reloadTouchedUpInside(_ sender: UIButton) {
+        hideEmptyState()
+        fetchPublicGists()
+    }
 }
 
 // MARK: - Display logic
@@ -55,6 +63,8 @@ extension ListPublicGistViewController: ListPublicGistViewControllerInput {
     
     func displayPublicGistsSuccess(_ viewModel: ListPublicGist.FetchGists.ViewModel.Success) {
 //        hideActivityIndicator()
+        hideEmptyState()
+        
         gistsCollectionView.displayedDataSource = viewModel.displayedGists
     }
     
@@ -66,8 +76,7 @@ extension ListPublicGistViewController: ListPublicGistViewControllerInput {
                                        .setActions(viewModel.actions)
                                        .build()
         present(errorAlert, animated: true)
-        
-        emptyStateView.isHidden = false
+        showEmptyState()
     }
     
     func displaySelectedCell(_ viewModel: ListPublicGist.DidSelectCell.ViewModel) {
@@ -105,5 +114,15 @@ extension ListPublicGistViewController {
     private func didSelectCell(at indexPath: IndexPath) {
         let request = ListPublicGist.DidSelectCell.Request(indexPath: indexPath)
         output.didSelectCell(request)
+    }
+    
+    private func showEmptyState() {
+        emptyStateView.isHidden = false
+        reloadButton.isHidden = false
+    }
+    
+    private func hideEmptyState() {
+        emptyStateView.isHidden = true
+        reloadButton.isHidden = true
     }
 }

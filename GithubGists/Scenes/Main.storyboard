@@ -27,10 +27,20 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMU-ii-9Yi">
+                                        <rect key="frame" x="170" y="327" width="35" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="35" id="5h5-A5-T69"/>
+                                            <constraint firstAttribute="height" constant="35" id="jDe-M5-ozs"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="JMU-ii-9Yi" firstAttribute="centerX" secondItem="6lK-Jr-79i" secondAttribute="centerX" id="6Xh-3X-F8V"/>
                                     <constraint firstItem="d9y-nr-idv" firstAttribute="centerX" secondItem="6lK-Jr-79i" secondAttribute="centerX" id="UKA-45-mp9"/>
+                                    <constraint firstItem="JMU-ii-9Yi" firstAttribute="top" secondItem="d9y-nr-idv" secondAttribute="bottom" constant="15" id="h9H-ud-IFO"/>
                                     <constraint firstItem="d9y-nr-idv" firstAttribute="centerY" secondItem="6lK-Jr-79i" secondAttribute="centerY" id="lu0-iG-Xlk"/>
                                 </constraints>
                             </view>
@@ -55,17 +65,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDq-3e-Ovm">
+                                <rect key="frame" x="169.5" y="391" width="35" height="35"/>
+                                <state key="normal" image="ic_reload"/>
+                                <connections>
+                                    <action selector="reloadTouchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q67-7O-xpf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6lK-Jr-79i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3xz-1k-sgS"/>
                             <constraint firstItem="6lK-Jr-79i" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4Z8-rM-0LY"/>
+                            <constraint firstItem="DDq-3e-Ovm" firstAttribute="height" secondItem="JMU-ii-9Yi" secondAttribute="height" id="58o-H8-0aH"/>
                             <constraint firstItem="Pva-dW-lQY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-5" id="Cku-UB-mKV"/>
                             <constraint firstItem="Pva-dW-lQY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="FbS-sw-b5c"/>
+                            <constraint firstItem="DDq-3e-Ovm" firstAttribute="centerX" secondItem="JMU-ii-9Yi" secondAttribute="centerX" id="S2W-4s-3Th"/>
                             <constraint firstItem="Pva-dW-lQY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="eKI-h6-DTN"/>
                             <constraint firstItem="6lK-Jr-79i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jlf-wi-PLd"/>
                             <constraint firstItem="6lK-Jr-79i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="kpJ-Cy-Mlg"/>
+                            <constraint firstItem="DDq-3e-Ovm" firstAttribute="width" secondItem="JMU-ii-9Yi" secondAttribute="width" id="otT-ce-Pwi"/>
                             <constraint firstItem="Pva-dW-lQY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-5" id="pkP-HF-wVW"/>
+                            <constraint firstItem="DDq-3e-Ovm" firstAttribute="centerY" secondItem="JMU-ii-9Yi" secondAttribute="centerY" id="vHW-aq-wpU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -73,6 +94,7 @@
                     <connections>
                         <outlet property="emptyStateView" destination="6lK-Jr-79i" id="w4F-dY-l0a"/>
                         <outlet property="gistsCollectionView" destination="Pva-dW-lQY" id="BpT-A4-3C7"/>
+                        <outlet property="reloadButton" destination="DDq-3e-Ovm" id="t3Q-RH-JOM"/>
                         <segue destination="hAp-Tl-WbR" kind="show" identifier="showGistDetailIdentifier" id="PiI-7Z-dIq"/>
                     </connections>
                 </viewController>
@@ -471,4 +493,7 @@
             <point key="canvasLocation" x="-97" y="30"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_reload" width="384" height="384"/>
+    </resources>
 </document>
