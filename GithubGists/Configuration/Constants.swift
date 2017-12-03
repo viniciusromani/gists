@@ -12,8 +12,8 @@ import UIKit
 struct Constants {
     
     struct CellIdentifier {
-        static let GistCollectionView = "gistCollectionViewIdentifier"
-        static let GistTableView = "gistTableViewIdentifier"
+        static let GistCollectionView = "gistCollectionViewCellIdentifier"
+        static let GistTableView = "gistTableViewCellIdentifier"
     }
     
     struct CellSize {

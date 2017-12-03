@@ -64,10 +64,4 @@ extension GistsCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-struct DisplayedGistCell {
-    let fileName: String
-    let ownerImageURL: URL?
-    let userName: String
-}
-
 

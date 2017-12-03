@@ -24,8 +24,9 @@ class GistDetailPresenter: GistDetailPresenterInput {
     // MARK: - Presentation logic
     
     func presentGistSuccess(_ response: GistDetail.FetchGist.Response.Success) {
-        let displayedGistDetail = getDisplayedGistDetail(from: response.gist)
-        let viewModel = GistDetail.FetchGist.ViewModel.Success(displayedGistDetail: displayedGistDetail)
+        let displayedGistDetail = getDisplayedCells(from: response.gist)
+        let viewModel = GistDetail.FetchGist.ViewModel.Success(filename: response.gist.file?.name ?? "-",
+                                                               displayedGistDetail: displayedGistDetail)
         output.displayGistSuccess(viewModel)
     }
     
@@ -40,16 +41,34 @@ class GistDetailPresenter: GistDetailPresenterInput {
 // MARK: - Helpers
 
 extension GistDetailPresenter {
-    func getDisplayedGistDetail(from gist: Gist) -> GistDetail.DisplayedGistDetail {
-        typealias DisplayedGistDetail = GistDetail.DisplayedGistDetail
-        let displayedGistDetail = DisplayedGistDetail(filename: gist.file?.name ?? "",
-                                                      description: gist.description,
-                                                      gistURL: gist.htmlURL ?? "",
-                                                      language: gist.file?.language ?? "",
-                                                      forksCounter: String(gist.forksCounter ?? 0),
-                                                      ownerName: gist.owner?.userName ?? "",
-                                                      ownerGithubURL: gist.owner?.userGithubURL ?? "")
-        return displayedGistDetail
+    
+    private func getDisplayedCells(from gist: Gist) -> [DisplayedSingleInformationCell] {
+        let descriptionTuple = createDescriptionTuple(gist.description)
+        let urlTuple = createURLTuple(gist.htmlURL)
+        let languageTuple = createLanguageTuple(gist.file?.language)
+        let forksTuple = createForksTuple(String(gist.forksCounter ?? 0))
+        let ownerTuple = createOwnerTuple(gist.owner?.userName)
+        let ownerGithubTuple = createOwnerGithubURLTuple(gist.owner?.userGithubURL)
+        return [descriptionTuple, urlTuple, languageTuple, forksTuple, ownerTuple, ownerGithubTuple]
+    }
+    
+    private func createDescriptionTuple(_ desc: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "Description", content: desc ?? "-")
+    }
+    private func createURLTuple(_ url: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "URL", content: url ?? "-")
+    }
+    private func createLanguageTuple(_ language: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "Language", content: language ?? "-")
+    }
+    private func createForksTuple(_ forks: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "Forks", content: forks ?? "-")
+    }
+    private func createOwnerTuple(_ owner: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "Owner", content: owner ?? "-")
+    }
+    private func createOwnerGithubURLTuple(_ githubURL: String?) -> DisplayedSingleInformationCell {
+        return DisplayedSingleInformationCell(description: "Owner Github URL", content: githubURL ?? "-")
     }
 }
 

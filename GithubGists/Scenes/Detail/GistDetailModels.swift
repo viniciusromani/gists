@@ -9,15 +9,6 @@
 import UIKit
 
 struct GistDetail {
-    struct DisplayedGistDetail {
-        let filename: String?
-        let description: String?
-        let gistURL: String?
-        let language: String?
-        let forksCounter: String?
-        let ownerName: String?
-        let ownerGithubURL: String?
-    }
     
     struct FetchGist {
         struct Request { }
@@ -31,7 +22,8 @@ struct GistDetail {
         }
         struct ViewModel {
             struct Success {
-                var displayedGistDetail: DisplayedGistDetail
+                let filename: String
+                let displayedGistDetail: [DisplayedSingleInformationCell]
             }
             struct Error {
                 let errorMessage: String

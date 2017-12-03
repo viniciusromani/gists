@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+struct DisplayedGistCell {
+    let fileName: String
+    let ownerImageURL: URL?
+    let userName: String
+}
+
 class GistCollectionViewCell: UICollectionViewCell {
     
     static var nibName = "GistCollectionViewCell"

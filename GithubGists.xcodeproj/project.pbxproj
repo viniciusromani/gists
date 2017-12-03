@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4773DC9383317699C115E36C /* Pods_GithubGists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CFDB6941313E2E30782EF2 /* Pods_GithubGists.framework */; };
+		A18481BF1FD457E8009308E9 /* GistDetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18481BE1FD457E8009308E9 /* GistDetailTableView.swift */; };
+		A18481C11FD457FA009308E9 /* SingleInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A18481C01FD457FA009308E9 /* SingleInformationTableViewCell.xib */; };
+		A18481C31FD4580A009308E9 /* SingleInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18481C21FD4580A009308E9 /* SingleInformationTableViewCell.swift */; };
 		A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */; };
 		A1FC43421FD18660004E9AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43411FD18660004E9AF0 /* Assets.xcassets */; };
 		A1FC43451FD18660004E9AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43431FD18660004E9AF0 /* LaunchScreen.storyboard */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		17BFE1660E41203F71521219 /* Pods-GithubGists.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGists.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGists/Pods-GithubGists.debug.xcconfig"; sourceTree = "<group>"; };
 		77CFDB6941313E2E30782EF2 /* Pods_GithubGists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubGists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18481BE1FD457E8009308E9 /* GistDetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailTableView.swift; sourceTree = "<group>"; };
+		A18481C01FD457FA009308E9 /* SingleInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleInformationTableViewCell.xib; sourceTree = "<group>"; };
+		A18481C21FD4580A009308E9 /* SingleInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleInformationTableViewCell.swift; sourceTree = "<group>"; };
 		A1FC43371FD18660004E9AF0 /* GithubGists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubGists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FC43411FD18660004E9AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A18481BC1FD457BA009308E9 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A18481BE1FD457E8009308E9 /* GistDetailTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A18481BD1FD457CB009308E9 /* SingleInformationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A18481C01FD457FA009308E9 /* SingleInformationTableViewCell.xib */,
+				A18481C21FD4580A009308E9 /* SingleInformationTableViewCell.swift */,
+			);
+			path = SingleInformationTableViewCell;
+			sourceTree = "<group>";
+		};
 		A1FC432E1FD18660004E9AF0 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +216,7 @@
 		A1FC435F1FD18919004E9AF0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				A18481BC1FD457BA009308E9 /* TableView */,
 				A1FC43761FD18974004E9AF0 /* GistDetailConfigurator.swift */,
 				A1FC43771FD18974004E9AF0 /* GistDetailInteractor.swift */,
 				A1FC43791FD18974004E9AF0 /* GistDetailModels.swift */,
@@ -248,6 +272,7 @@
 		A1FC43961FD1E0AA004E9AF0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A18481BD1FD457CB009308E9 /* SingleInformationTableViewCell */,
 				A1FC43971FD1E0C7004E9AF0 /* AlertBuilder.swift */,
 			);
 			path = Components;
@@ -334,6 +359,7 @@
 			files = (
 				A1FC43451FD18660004E9AF0 /* LaunchScreen.storyboard in Resources */,
 				A1FC43421FD18660004E9AF0 /* Assets.xcassets in Resources */,
+				A18481C11FD457FA009308E9 /* SingleInformationTableViewCell.xib in Resources */,
 				A1FC43721FD18961004E9AF0 /* GistCollectionViewCell.xib in Resources */,
 				A1FC438A1FD189F6004E9AF0 /* Main.storyboard in Resources */,
 			);
@@ -406,11 +432,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A18481C31FD4580A009308E9 /* SingleInformationTableViewCell.swift in Sources */,
 				A1FC435A1FD188F8004E9AF0 /* File.swift in Sources */,
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
 				A1FC438F1FD1C0DD004E9AF0 /* UIImageView+Kingfisher.swift in Sources */,
 				A1FC437F1FD18974004E9AF0 /* GistDetailModels.swift in Sources */,
 				A1FC43851FD189AD004E9AF0 /* GistRestStore.swift in Sources */,
+				A18481BF1FD457E8009308E9 /* GistDetailTableView.swift in Sources */,
 				A1FC439B1FD1EDEE004E9AF0 /* BaseViewController.swift in Sources */,
 				A1FC43881FD189C1004E9AF0 /* GistWorker.swift in Sources */,
 				A1FC437E1FD18974004E9AF0 /* GistDetailPresenter.swift in Sources */,

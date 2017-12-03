@@ -23,12 +23,8 @@ class GistDetailViewController: BaseViewController {
     var output: GistDetailViewControllerOutput!
     var router: GistDetailRouter!
     
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var urlButton: UIButton!
-    @IBOutlet weak var languageLabel: UILabel!
-    @IBOutlet weak var forksLabel: UILabel!
-    @IBOutlet weak var ownerNameLabel: UILabel!
-    @IBOutlet weak var ownerURLButton: UIButton!
+    @IBOutlet weak var filenameLabel: UILabel!
+    @IBOutlet weak var gistDetailTableView: GistDetailTableView!
     
     // MARK: - Object lifecycle
 
@@ -42,7 +38,9 @@ class GistDetailViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        showActivityIndicator()
         fetchSelectedGist()
+        configure(gistTableView: gistDetailTableView)
     }
 }
 
@@ -51,17 +49,28 @@ class GistDetailViewController: BaseViewController {
 extension GistDetailViewController: GistDetailViewControllerInput {
     
     func displayGistSuccess(_ viewModel: GistDetail.FetchGist.ViewModel.Success) {
-        let displayedGist = viewModel.displayedGistDetail
-        descriptionLabel.text = displayedGist.description
-        urlButton.titleLabel?.text = displayedGist.gistURL
-        languageLabel.text = displayedGist.language
-        forksLabel.text = displayedGist.forksCounter
-        ownerNameLabel.text = displayedGist.ownerName
-        ownerURLButton.titleLabel?.text = displayedGist.ownerGithubURL
+        hideActivityIndicator()
+        
+        filenameLabel.text = viewModel.filename
+        gistDetailTableView.displayedDataSource = viewModel.displayedGistDetail
     }
     
     func displayGistError(_ viewModel: GistDetail.FetchGist.ViewModel.Error) {
+        hideActivityIndicator()
+    }
+}
+
+// MARK: - GistDetailTableViewDelegate
+
+extension GistDetailViewController: GistDetailTableViewDelegate {
+    func configure(gistTableView tableView: GistDetailTableView) {
+        tableView.register(UINib(nibName: SingleInformationTableViewCell.nibName, bundle: nil),
+                           forCellReuseIdentifier: gistDetailTableView.cellIdentifier)
         
+        tableView.dataSource = tableView
+        tableView.delegate = tableView
+        
+        tableView.customDelegate = self
     }
 }
 
