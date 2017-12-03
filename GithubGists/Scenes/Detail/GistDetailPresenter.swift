@@ -45,7 +45,7 @@ class GistDetailPresenter: GistDetailPresenterInput {
 
 extension GistDetailPresenter {
     
-    private func getDisplayedCells(from gist: Gist) -> [DisplayedSingleInformationCell] {
+    func getDisplayedCells(from gist: Gist) -> [DisplayedSingleInformationCell] {
         let descriptionTuple = createDescriptionTuple(gist.description)
         let urlTuple = createURLTuple(gist.htmlURL)
         let languageTuple = createLanguageTuple(gist.file?.language)

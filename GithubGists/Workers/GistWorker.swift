@@ -10,7 +10,7 @@ import Foundation
 
 class GistWorker {
     
-    var store: GistStoreProtocol
+    private var store: GistStoreProtocol
     
     init(store: GistStoreProtocol) {
         self.store = store

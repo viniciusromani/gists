@@ -9,7 +9,7 @@
 import UIKit
 
 struct DisplayedSingleInformationCell {
-    let description: String?
+    let description: String
     let content: String?
 }
 

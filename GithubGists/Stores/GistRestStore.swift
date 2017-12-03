@@ -14,8 +14,6 @@ class GistRestStore: GistStoreProtocol {
                           errorHandler: @escaping(_ error: Error?) -> Void) {
         
         let path = Url.GIST.PUBLIC
-//        100 pages de 30 gists
-//        https://api.github.com/gists/public?page=2&per_page=100
         
         WebServiceHelper.requestWithMethod(.get, path: path, completionSuccess: { result in
             

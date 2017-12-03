@@ -19,3 +19,12 @@ target 'GithubGists' do
 	ui_pods
 	net_pods
 end
+
+target 'GithubGistsTests' do
+    # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+    use_frameworks!
+    
+    # Pods for GithubGists
+    ui_pods
+    net_pods
+end
