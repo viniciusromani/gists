@@ -26,7 +26,9 @@ struct GistDetail {
                 let displayedGistDetail: [DisplayedSingleInformationCell]
             }
             struct Error {
-                let errorMessage: String
+                let errorTitle: String?
+                let errorMessage: String?
+                let actions: [UIAlertAction]?
             }
         }
     }

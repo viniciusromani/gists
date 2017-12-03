@@ -32,7 +32,10 @@ class GistDetailPresenter: GistDetailPresenterInput {
     
     func presentGistError(_ response: GistDetail.FetchGist.Response.APIError) {
         if let error = response.apiError {
-            let viewModel = GistDetail.FetchGist.ViewModel.Error(errorMessage: error.localizedDescription)
+            let okAction = AlertActionBuilder(dismissWithTitle: "Ok").build()
+            let viewModel = GistDetail.FetchGist.ViewModel.Error(errorTitle: "Error",
+                                                                 errorMessage: error.localizedDescription,
+                                                                 actions: [okAction])
             output.displayGistError(viewModel)
         }
     }

@@ -25,6 +25,7 @@ class GistDetailViewController: BaseViewController {
     
     @IBOutlet weak var filenameLabel: UILabel!
     @IBOutlet weak var gistDetailTableView: GistDetailTableView!
+    @IBOutlet weak var emptyStateView: UIView!
     
     // MARK: - Object lifecycle
 
@@ -50,6 +51,7 @@ extension GistDetailViewController: GistDetailViewControllerInput {
     
     func displayGistSuccess(_ viewModel: GistDetail.FetchGist.ViewModel.Success) {
         hideActivityIndicator()
+        hideEmptyState()
         
         filenameLabel.text = viewModel.filename
         gistDetailTableView.displayedDataSource = viewModel.displayedGistDetail
@@ -57,6 +59,13 @@ extension GistDetailViewController: GistDetailViewControllerInput {
     
     func displayGistError(_ viewModel: GistDetail.FetchGist.ViewModel.Error) {
         hideActivityIndicator()
+        
+        let errorAlert = AlertBuilder().setTitle(viewModel.errorTitle)
+                                       .setMessage(viewModel.errorMessage)
+                                       .setActions(viewModel.actions)
+                                       .build()
+        present(errorAlert, animated: true)
+        showEmptyState()
     }
 }
 
@@ -80,6 +89,16 @@ extension GistDetailViewController {
     private func fetchSelectedGist() {
         let request = GistDetail.FetchGist.Request()
         output.fetchGist(request)
+    }
+    
+    private func showEmptyState() {
+        emptyStateView.isHidden = false
+        filenameLabel.isHidden = true
+    }
+    
+    private func hideEmptyState() {
+        emptyStateView.isHidden = true
+        filenameLabel.isHidden = false
     }
 }
 

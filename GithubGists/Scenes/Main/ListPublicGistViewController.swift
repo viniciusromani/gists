@@ -40,12 +40,17 @@ class ListPublicGistViewController: BaseViewController {
 
     // MARK: - View lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         showActivityIndicator()
         fetchPublicGists()
         configure(gistCollection: gistsCollectionView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     // MARK: - Event Handling

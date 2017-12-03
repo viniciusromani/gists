@@ -110,6 +110,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Olz-lz-7q9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No information to show." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6q8-dG-aMJ">
+                                        <rect key="frame" x="91.5" y="291" width="191.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="6q8-dG-aMJ" firstAttribute="centerY" secondItem="Olz-lz-7q9" secondAttribute="centerY" id="57r-W0-kmh"/>
+                                    <constraint firstItem="6q8-dG-aMJ" firstAttribute="centerX" secondItem="Olz-lz-7q9" secondAttribute="centerX" id="WwT-E9-fg3"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gist.swift" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akf-mg-8NX">
                                 <rect key="frame" x="30" y="99" width="315" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -118,24 +134,29 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QoR-Ic-zyf" customClass="GistDetailTableView" customModule="GithubGists" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="150.5" width="375" height="516.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QoR-Ic-zyf" firstAttribute="trailing" secondItem="YLm-8S-plv" secondAttribute="trailing" id="4ae-nc-hui"/>
+                            <constraint firstItem="Olz-lz-7q9" firstAttribute="trailing" secondItem="YLm-8S-plv" secondAttribute="trailing" id="9G2-Gp-zOI"/>
+                            <constraint firstItem="Olz-lz-7q9" firstAttribute="leading" secondItem="YLm-8S-plv" secondAttribute="leading" id="Ciq-MJ-HIu"/>
                             <constraint firstItem="akf-mg-8NX" firstAttribute="top" secondItem="YLm-8S-plv" secondAttribute="top" constant="35" id="Eyp-57-u3B"/>
                             <constraint firstItem="akf-mg-8NX" firstAttribute="centerX" secondItem="YLm-8S-plv" secondAttribute="centerX" id="ID4-Df-gb7"/>
                             <constraint firstItem="akf-mg-8NX" firstAttribute="leading" secondItem="YLm-8S-plv" secondAttribute="leading" constant="30" id="IKl-pg-LbP"/>
                             <constraint firstItem="QoR-Ic-zyf" firstAttribute="top" secondItem="akf-mg-8NX" secondAttribute="bottom" constant="30" id="L0L-Ms-rxL"/>
                             <constraint firstItem="QoR-Ic-zyf" firstAttribute="bottom" secondItem="YLm-8S-plv" secondAttribute="bottom" id="Uyl-t4-xmR"/>
                             <constraint firstItem="YLm-8S-plv" firstAttribute="trailing" secondItem="akf-mg-8NX" secondAttribute="trailing" constant="30" id="ZH4-Tt-Q0g"/>
+                            <constraint firstItem="Olz-lz-7q9" firstAttribute="top" secondItem="YLm-8S-plv" secondAttribute="top" id="h2K-hM-P0q"/>
                             <constraint firstItem="QoR-Ic-zyf" firstAttribute="leading" secondItem="YLm-8S-plv" secondAttribute="leading" id="kzg-rh-seV"/>
+                            <constraint firstItem="Olz-lz-7q9" firstAttribute="bottom" secondItem="YLm-8S-plv" secondAttribute="bottom" id="sVa-5i-JyD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLm-8S-plv"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="7xY-9s-IRb"/>
                     <connections>
+                        <outlet property="emptyStateView" destination="Olz-lz-7q9" id="Kw6-u3-RIx"/>
                         <outlet property="filenameLabel" destination="akf-mg-8NX" id="gX4-g1-AsF"/>
                         <outlet property="gistDetailTableView" destination="QoR-Ic-zyf" id="Vs2-bD-M9q"/>
                     </connections>
