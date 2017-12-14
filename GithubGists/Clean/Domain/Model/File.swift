@@ -1,18 +1,18 @@
 //
 //  File.swift
-//  TwitchGames
+//  GithubGists
 //
-//  Created by Vinicius Romani on 30/11/17.
+//  Created by Vinicius Romani on 14/12/17.
 //  Copyright © 2017 Vinicius Romani. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-class File {
-    var name: String?
-    var size: Double?
-    var language: String?
+struct File {
+    let name: String?
+    let size: Double?
+    let language: String?
     
     init(with json: JSON?) {
         let jsonDictionary = json?[json?.dictionaryValue.keys.first ?? ""]

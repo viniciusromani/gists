@@ -1,25 +1,25 @@
 //
 //  Gist.swift
-//  TwitchGames
+//  GithubGists
 //
-//  Created by Vinicius Romani on 30/11/17.
+//  Created by Vinicius Romani on 14/12/17.
 //  Copyright © 2017 Vinicius Romani. All rights reserved.
 //
 
 import Foundation
 import SwiftyJSON
 
-class Gist {
-    var id: String?
-    var description: String?
-    var apiURL: String?
-    var htmlURL: String?
-    var file: File?
-    var owner: User?
-    var creationDate: Date?
-    var totalComments: Int?
-    var isPublic: Bool?
-    var forksCounter: Int?
+struct Gist {
+    let id: String?
+    let description: String?
+    let apiURL: String?
+    let htmlURL: String?
+    let file: File?
+    let owner: User?
+    let creationDate: Date?
+    let totalComments: Int?
+    let isPublic: Bool?
+    let forksCounter: Int?
     
     init(with json: JSON?) {
         id = json?["id"].string
@@ -31,6 +31,9 @@ class Gist {
         creationDate = Date()
         totalComments = json?["comments"].int
         isPublic = json?["public"].bool
+        forksCounter = 0
     }
 }
+
+
 
