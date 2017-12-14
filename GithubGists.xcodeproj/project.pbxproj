@@ -78,16 +78,6 @@
 			path = GithubGistsTests;
 			sourceTree = "<group>";
 		};
-		A1F6D5C91FE2D9DC00D3E6C5 /* Clean */ = {
-			isa = PBXGroup;
-			children = (
-				A1F6D5CC1FE2DA1300D3E6C5 /* Store */,
-				A1F6D5CB1FE2DA0F00D3E6C5 /* Domain */,
-				A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */,
-			);
-			path = Clean;
-			sourceTree = "<group>";
-		};
 		A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +173,9 @@
 		A1FC43391FD18660004E9AF0 /* GithubGists */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6D5C91FE2D9DC00D3E6C5 /* Clean */,
+				A1F6D5CC1FE2DA1300D3E6C5 /* Store */,
+				A1F6D5CB1FE2DA0F00D3E6C5 /* Domain */,
+				A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */,
 				A1FC434C1FD187BA004E9AF0 /* Support Files */,
 			);
 			path = GithubGists;
