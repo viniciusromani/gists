@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4773DC9383317699C115E36C /* Pods_GithubGists.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77CFDB6941313E2E30782EF2 /* Pods_GithubGists.framework */; };
 		615800B34C970DCFCD5910D3 /* Pods_GithubGistsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C300879C4C3DCE9BEA4FC0D7 /* Pods_GithubGistsTests.framework */; };
+		A10CEFD51FE7F33B00D65E57 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CEFD41FE7F33B00D65E57 /* FileTest.swift */; };
+		A10CEFD61FE7F96800D65E57 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* File.swift */; };
+		A10CEFD71FE7F96B00D65E57 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */; };
+		A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10CEFD81FE8108700D65E57 /* Main.storyboard */; };
 		A1F6D5D21FE2E19C00D3E6C5 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */; };
 		A1F6D5D41FE2E1AD00D3E6C5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* File.swift */; };
 		A1F6D5D71FE2E1BB00D3E6C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D61FE2E1BB00D3E6C5 /* User.swift */; };
@@ -34,6 +38,8 @@
 		77CFDB6941313E2E30782EF2 /* Pods_GithubGists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubGists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC9DCF0ED4FC52BD9A59B2B /* Pods-GithubGistsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGistsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGistsTests/Pods-GithubGistsTests.release.xcconfig"; sourceTree = "<group>"; };
 		8C4E24D8217355671A7FA86D /* Pods-GithubGistsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubGistsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubGistsTests/Pods-GithubGistsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A10CEFD41FE7F33B00D65E57 /* FileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
+		A10CEFD81FE8108700D65E57 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18481CD1FD46B4A009308E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 		A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A10CEFD81FE8108700D65E57 /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A1F6D5DA1FE3192300D3E6C5 /* UserTest.swift */,
+				A10CEFD41FE7F33B00D65E57 /* FileTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */,
 				A1FC43451FD18660004E9AF0 /* LaunchScreen.storyboard in Resources */,
 				A1FC43421FD18660004E9AF0 /* Assets.xcassets in Resources */,
 			);
@@ -437,6 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10CEFD71FE7F96B00D65E57 /* Gist.swift in Sources */,
+				A10CEFD51FE7F33B00D65E57 /* FileTest.swift in Sources */,
+				A10CEFD61FE7F96800D65E57 /* File.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserTest.swift in Sources */,
 				A1F6D5DC1FE31B2A00D3E6C5 /* User.swift in Sources */,
 			);

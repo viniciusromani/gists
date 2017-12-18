@@ -22,14 +22,95 @@ class UserTest: XCTestCase {
     }
     
     func testSuccessfulInit() {
-        let successJSON: JSON = ["id": 2,
-                                 "login": "viniciusromani",
-                                 "html_url": "",
-                                 "avatar_url": ""]
+        let successJSON: JSON = ["id": 148100,
+                                 "login": "invalid-email-address",
+                                 "html_url": "https://github.com/invalid-email-address",
+                                 "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
         
         let user = User(with: successJSON)
         XCTAssertNotNil(user)
+        XCTAssertNotNil(user?.id)
     }
     
-    func 
+    func testNilJSONInit() {
+        let errorJSON = JSON.null
+        let user = User(with: errorJSON)
+        XCTAssertNil(user)
+    }
+    
+    func testEmptyJSONInit() {
+        let errorJSON: JSON = []
+        let user = User(with: errorJSON)
+        XCTAssertNil(user)
+    }
+    
+    func testIdZeroJSONInit() {
+        let successJSON: JSON = ["id": 0,
+                                 "login": "invalid-email-address",
+                                 "html_url": "https://github.com/invalid-email-address",
+                                 "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
+        
+        let user = User(with: successJSON)
+        XCTAssertNil(user)
+    }
+    
+    func testWrongKeysInit() {
+        var testUser: User?
+        
+        // Login Key
+        testUser = wrongLoginKey()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.userName == nil)
+        
+        // HTML Key
+        testUser = wrongHTMLKey()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.userGithubURL == nil)
+        
+        // Avatar Key
+        testUser = wrongAvatarKey()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.avatarURL == nil)
+    }
 }
+
+// MARK: - Helpers
+
+extension UserTest {
+    private func wrongLoginKey() -> User? {
+        let errorJSON: JSON = ["id": 148100,
+                               "wrongLogin": "invalid-email-address",
+                               "html_url": "https://github.com/invalid-email-address",
+                               "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
+        
+        let user = User(with: errorJSON)
+        return user
+    }
+    
+    private func wrongHTMLKey() -> User? {
+        let errorJSON: JSON = ["id": 148100,
+                               "login": "invalid-email-address",
+                               "htmlUrl": "https://github.com/invalid-email-address",
+                               "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
+        
+        let user = User(with: errorJSON)
+        return user
+    }
+    
+    private func wrongAvatarKey() -> User? {
+        let errorJSON: JSON = ["id": 148100,
+                               "login": "invalid-email-address",
+                               "html_url": "https://github.com/invalid-email-address",
+                               "avatarURL": "https://avatars0.githubusercontent.com/u/148100?v=4"]
+        
+        let user = User(with: errorJSON)
+        return user
+    }
+}
+
+
+
+
+
+
+
