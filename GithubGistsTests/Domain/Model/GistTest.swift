@@ -11,50 +11,54 @@ import SwiftyJSON
 
 class GistTest: XCTestCase {
     
-    private var userJSON: JSON?
-    private var fileJSON: JSON?
-    var successJSON: JSON = []
+    // MARK: - Variables
+    
+    private var userJSON: JSON = []
+    private var fileJSON: JSON = []
+    var json: JSON = []
+    
+    // MARK: - XCTestCase Cycle
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        guard name.contains("testSuccessfulInit") else { return }
         
         // Getting a valid User Model JSON
         setUserJSON()
         // Getting a valid File Model JSON
         setFileJSON()
         
-        successJSON = ["url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c",
-                       "forks_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/forks",
-                       "commits_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/commits",
-                       "id": "9ae003ae416b7cbda08a1e0b98db331c",
-                       "git_pull_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c.git",
-                       "git_push_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c.git",
-                       "html_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c",
-                       "files": fileJSON!,
-                       "public": true,
-                       "created_at": "2017-12-18T16:20:32Z",
-                       "updated_at": "2017-12-18T16:20:32Z",
-                       "description": "Array basic drills links",
-                       "comments": 0,
-                       "user": NSNull(),
-                       "comments_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/comments",
-                       "owner": userJSON!,
-                       "truncated": false]
+        json = ["url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c",
+                "forks_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/forks",
+                "commits_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/commits",
+                "id": "9ae003ae416b7cbda08a1e0b98db331c",
+                "git_pull_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c.git",
+                "git_push_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c.git",
+                "html_url": "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c",
+                "files": fileJSON,
+                "public": true,
+                "created_at": "2017-12-18T16:20:32Z",
+                "updated_at": "2017-12-18T16:20:32Z",
+                "description": "Array basic drills links",
+                "comments": 0,
+                "user": NSNull(),
+                "comments_url": "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c/comments",
+                "owner": userJSON,
+                "truncated": false]
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
-        guard name.contains("testSuccessfulInit") else { return }
-        userJSON = nil
-        fileJSON = nil
-        successJSON = []
+        userJSON = []
+        fileJSON = []
+        json = []
     }
     
+    // MARK: - Tests
+    
     func testSuccessfulInit() {
-        let gist = Gist(with: successJSON)
+        let gist = Gist(with: json)
         XCTAssertNotNil(gist)
         XCTAssertNotNil(gist?.id)
     }
@@ -71,32 +75,114 @@ class GistTest: XCTestCase {
         XCTAssertNil(gist)
     }
     
-    func testEmptyNameJSONInit() {
-//        let errorJSON: JSON = ["size": 932,
-//                               "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-//                               "language": "Erlang"]
-//        let finalJSON: JSON = ["": errorJSON]
-//        let file = File(with: finalJSON)
-//        XCTAssertNil(file)
+    func testIdZeroJSONInit() {
+        json["id"] = 0
+        let user = Gist(with: json)
+        XCTAssertNil(user)
     }
     
     func testWrongKeysInit() {
-//        var testFile: File?
-//
-//        // Size Key
-//        testFile = wrongSizeKey()
-//        XCTAssertNotNil(testFile)
-//        XCTAssertTrue(testFile?.size == nil)
-//
-//        // Language Key
-//        testFile = wrongLanguageKey()
-//        XCTAssertNotNil(testFile)
-//        XCTAssertTrue(testFile?.language == nil)
-//
-//        // URL Key
-//        testFile = wrongURLKey()
-//        XCTAssertNotNil(testFile)
-//        XCTAssertTrue(testFile?.url == nil)
+        var testGist: Gist?
+        
+        // Description Key
+        testGist = wrongDescriptionKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.description == nil)
+        setUp()
+        
+        // APIURL Key
+        testGist = wrongAPIURLKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.apiURL == nil)
+        setUp()
+        
+        // HTMLURL Key
+        testGist = wrongHTMLURLKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.htmlURL == nil)
+        setUp()
+        
+        // File Key
+        testGist = wrongFileKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.files.count == 0)
+        setUp()
+        
+        // Owner Key
+        testGist = wrongOwnerKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.owner == nil)
+        setUp()
+        
+        // is public Key
+        testGist = wrongIsPublicKey()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.isPublic == nil)
+    }
+    
+    func testWrongValuesInit() {
+        var testGist: Gist?
+        
+        // Description Key
+        testGist = wrongDescriptionValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.description == nil)
+        setUp()
+        
+        // APIURL Key
+        testGist = wrongAPIURLValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.apiURL == nil)
+        setUp()
+        
+        // HTMLURL Key
+        testGist = wrongHTMLURLValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.htmlURL == nil)
+        setUp()
+        
+        // File Key
+        testGist = wrongFileValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.files.count == 0)
+        setUp()
+        
+        // Owner Key
+        testGist = wrongOwnerValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.owner == nil)
+        setUp()
+        
+        // is public Key
+        testGist = wrongIsPublicValue()
+        XCTAssertNotNil(testGist)
+        XCTAssertTrue(testGist?.isPublic == nil)
+    }
+    
+    func testNoFileKeyInJSONInit() {
+        json.dictionaryObject?.removeValue(forKey: "files")
+        let gist = Gist(with: json)
+        XCTAssertNotNil(gist)
+        XCTAssertTrue(gist?.files.count == 0)
+    }
+    
+    func testTwoFilesInDictionaryJSONInit() {
+        let fileJSONKey = fileJSON.dictionaryValue.keys.first!
+        let twoFilesDictionary = [fileJSONKey: fileJSON[fileJSONKey], "test2": fileJSON[fileJSONKey]]
+        
+        json.dictionaryObject?.removeValue(forKey: "files")
+        json["files"].dictionaryObject = twoFilesDictionary
+        
+        let gist = Gist(with: json)
+        XCTAssertNotNil(gist)
+        XCTAssertTrue(gist?.files.count == 2)
+    }
+    
+    func testNoOwnerKeyInJSONInit() {
+        json.dictionaryObject?.removeValue(forKey: "owner")
+        let gist = Gist(with: json)
+        XCTAssertNotNil(gist)
+        XCTAssertNil(gist?.owner)
     }
 }
 
@@ -104,7 +190,7 @@ class GistTest: XCTestCase {
 
 extension GistTest {
     
-    // Getting valid JSONs from other user test cases
+    // MARK: - Valid JSONs from other user test cases
     private func setUserJSON() {
         let userTestCase = UserTest()
         userTestCase.setUp()
@@ -117,6 +203,89 @@ extension GistTest {
         fileTestCase.setUp()
         fileTestCase.testSuccessfulInit()
         fileJSON = fileTestCase.json
+    }
+    
+    // MARK: - Wrong Keys
+    
+    private func wrongDescriptionKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "description")
+        json["desc"] = "Array basic drills links"
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongAPIURLKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "url")
+        json["URL"] = "https://api.github.com/gists/9ae003ae416b7cbda08a1e0b98db331c"
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongHTMLURLKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "html_url")
+        json["html-url"] = "https://gist.github.com/9ae003ae416b7cbda08a1e0b98db331c"
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongFileKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "files")
+        json["file"] = fileJSON
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongOwnerKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "owner")
+        json["owners"] = userJSON
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongIsPublicKey() -> Gist? {
+        json.dictionaryObject?.removeValue(forKey: "public")
+        json["isPublic"] = true
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    // MARK: - Wrong Values
+    
+    private func wrongDescriptionValue() -> Gist? {
+        json["description"] = ["description": "Array basic drills links"]
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongAPIURLValue() -> Gist? {
+        json["url"] = 3
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongHTMLURLValue() -> Gist? {
+        json["html_url"] = false
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongFileValue() -> Gist? {
+        json["files"] = JSON.null
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongOwnerValue() -> Gist? {
+        json["owner"] = JSON.null
+        let gist = Gist(with: json)
+        return gist
+    }
+    
+    private func wrongIsPublicValue() -> Gist? {
+        json["public"] = ["isPublic": true,
+                          "answer": "yes"]
+        let gist = Gist(with: json)
+        return gist
     }
 }
 

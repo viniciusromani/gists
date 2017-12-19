@@ -32,7 +32,7 @@ struct File {
     
     init?(with json: JSON?) {
         guard let parseJSON = json else { return nil }
-        guard let filename = parseJSON.dictionaryValue.keys.first, filename.count > 0 else { return nil }
+        guard let filename = parseJSON["filename"].string, filename.count > 0 else { return nil }
         name = filename
         size = parseJSON[filename]["size"].double
         language = parseJSON[filename]["language"].string

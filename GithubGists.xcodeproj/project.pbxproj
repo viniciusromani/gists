@@ -14,6 +14,7 @@
 		A10CEFD71FE7F96B00D65E57 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */; };
 		A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10CEFD81FE8108700D65E57 /* Main.storyboard */; };
 		A10CEFDB1FE81F5400D65E57 /* GistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CEFDA1FE81F5400D65E57 /* GistTest.swift */; };
+		A1EE54501FE9751C000C87B1 /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */; };
 		A1F6D5D21FE2E19C00D3E6C5 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */; };
 		A1F6D5D41FE2E1AD00D3E6C5 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* File.swift */; };
 		A1F6D5D71FE2E1BB00D3E6C5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D61FE2E1BB00D3E6C5 /* User.swift */; };
@@ -44,6 +45,7 @@
 		A10CEFDA1FE81F5400D65E57 /* GistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistTest.swift; sourceTree = "<group>"; };
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18481CD1FD46B4A009308E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		A1F6D5D11FE2E19C00D3E6C5 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		A1F6D5D31FE2E1AD00D3E6C5 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A1F6D5D61FE2E1BB00D3E6C5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				A1FC43411FD18660004E9AF0 /* Assets.xcassets */,
 				A1FC43431FD18660004E9AF0 /* LaunchScreen.storyboard */,
 				A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */,
+				A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
+				A1EE54501FE9751C000C87B1 /* WebServiceHelper.swift in Sources */,
 				A1F6D5D71FE2E1BB00D3E6C5 /* User.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* File.swift in Sources */,
 				A1F6D5D21FE2E19C00D3E6C5 /* Gist.swift in Sources */,

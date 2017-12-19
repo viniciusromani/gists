@@ -11,13 +11,12 @@ import SwiftyJSON
 
 class UserTest: XCTestCase {
     
+    // MARK: - Variables
+    
     var json: JSON = []
     
-    /*
-     * SuccessJSON will be set when it is either a successfullinit test
-     * or a null name because that is the situation when another test case
-     * calls the successfullinit method.
-     */
+    // MARK: - XCTestCase Cycle
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,6 +31,8 @@ class UserTest: XCTestCase {
         super.tearDown()
         json = []
     }
+    
+    // MARK: - Tests
     
     func testSuccessfulInit() {
         let user = User(with: json)

@@ -44,12 +44,9 @@ struct Gist {
     let description: String?
     let apiURL: String?
     let htmlURL: String?
-    let file: File?
+    var files: [File?]
     let owner: User?
-    let creationDate: Date?
-    let totalComments: Int?
     let isPublic: Bool?
-    let forksCounter: Int?
     
     init?(with json: JSON?) {
         guard let parseJSON = json else { return nil }
@@ -58,12 +55,13 @@ struct Gist {
         description = parseJSON["description"].string
         apiURL = parseJSON["url"].string
         htmlURL = parseJSON["html_url"].string
-        file = File(with: parseJSON["files"])
+        files = []
+        for key in parseJSON["files"].dictionaryValue.keys {
+            let file = File(with: parseJSON["files"][key])
+            files.append(file)
+        }
         owner = User(with: parseJSON["owner"])
-        creationDate = Date()
-        totalComments = parseJSON["comments"].int
         isPublic = parseJSON["public"].bool
-        forksCounter = 0
     }
 }
 

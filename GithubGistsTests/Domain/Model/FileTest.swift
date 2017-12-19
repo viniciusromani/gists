@@ -11,22 +11,25 @@ import SwiftyJSON
 
 class FileTest: XCTestCase {
     
+    // MARK: - Variables
+    
     private var filename = "ring.erl"
     private var bodyJSON: JSON = []
     var json: JSON = []
     
-    /*
-     * SuccessJSON will be set when it is either a successfullinit test
-     * or a null name because that is the situation when another test case
-     * calls the successfullinit method.
-     */
+    // MARK: - XCTestCase Cycle
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        bodyJSON = ["size": 932,
+        bodyJSON = ["filename": filename,
+                    "size": 932,
                     "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
                     "language": "Erlang"]
         json = [filename: bodyJSON]
+        
+        // Mandatory test
+        testHasValidKey()
     }
     
     override func tearDown() {
@@ -36,8 +39,14 @@ class FileTest: XCTestCase {
         json = []
     }
     
+    // MARK: - Tests
+    
+    func testHasValidKey() {
+        XCTAssertNotNil(json.dictionaryValue.keys.first)
+    }
+    
     func testSuccessfulInit() {
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         XCTAssertNotNil(file)
         XCTAssertNotNil(file?.name)
     }
@@ -68,11 +77,13 @@ class FileTest: XCTestCase {
         testFile = wrongSizeKey()
         XCTAssertNotNil(testFile)
         XCTAssertTrue(testFile?.size == nil)
+        setUp()
         
         // Language Key
         testFile = wrongLanguageKey()
         XCTAssertNotNil(testFile)
         XCTAssertTrue(testFile?.language == nil)
+        setUp()
         
         // URL Key
         testFile = wrongURLKey()
@@ -87,11 +98,13 @@ class FileTest: XCTestCase {
         testFile = wrongSizeValue()
         XCTAssertNotNil(testFile)
         XCTAssertTrue(testFile?.size == nil)
+        setUp()
         
         // Language Key
         testFile = wrongLanguageValue()
         XCTAssertNotNil(testFile)
         XCTAssertTrue(testFile?.language == nil)
+        setUp()
         
         // URL Key
         testFile = wrongURLValue()
@@ -110,7 +123,7 @@ extension FileTest {
         bodyJSON.dictionaryObject?.removeValue(forKey: "size")
         bodyJSON["SIZE"] = 932
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
     
@@ -118,7 +131,7 @@ extension FileTest {
         bodyJSON.dictionaryObject?.removeValue(forKey: "language")
         bodyJSON["lan"] = "Erlang"
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
     
@@ -126,7 +139,7 @@ extension FileTest {
         bodyJSON.dictionaryObject?.removeValue(forKey: "raw_url")
         bodyJSON["rawURL"] = "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl"
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
     
@@ -135,21 +148,21 @@ extension FileTest {
     private func wrongSizeValue() -> File? {
         bodyJSON["size"] = "932"
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
     
     private func wrongLanguageValue() -> File? {
         bodyJSON["language"] = true
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
     
     private func wrongURLValue() -> File? {
         bodyJSON["raw_url"] = 562
         json[filename] = bodyJSON
-        let file = File(with: json)
+        let file = File(with: json[json.dictionaryValue.keys.first!])
         return file
     }
 }
