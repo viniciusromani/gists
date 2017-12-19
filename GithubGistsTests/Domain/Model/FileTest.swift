@@ -11,23 +11,33 @@ import SwiftyJSON
 
 class FileTest: XCTestCase {
     
+    private var filename = "ring.erl"
+    private var bodyJSON: JSON = []
+    var json: JSON = []
+    
+    /*
+     * SuccessJSON will be set when it is either a successfullinit test
+     * or a null name because that is the situation when another test case
+     * calls the successfullinit method.
+     */
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        bodyJSON = ["size": 932,
+                    "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
+                    "language": "Erlang"]
+        json = [filename: bodyJSON]
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        bodyJSON = []
+        json = []
     }
     
     func testSuccessfulInit() {
-        let successJSON: JSON = ["size": 932,
-                                 "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-                                 "language": "Erlang"]
-        let finalJSON: JSON = ["ring.erl": successJSON]
-        
-        let file = File(with: finalJSON)
+        let file = File(with: json)
         XCTAssertNotNil(file)
         XCTAssertNotNil(file?.name)
     }
@@ -45,11 +55,9 @@ class FileTest: XCTestCase {
     }
     
     func testEmptyNameJSONInit() {
-        let errorJSON: JSON = ["size": 932,
-                               "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-                               "language": "Erlang"]
-        let finalJSON: JSON = ["": errorJSON]
-        let file = File(with: finalJSON)
+        json.dictionaryObject?.removeValue(forKey: filename)
+        json[""] = bodyJSON
+        let file = File(with: json)
         XCTAssertNil(file)
     }
     
@@ -71,36 +79,77 @@ class FileTest: XCTestCase {
         XCTAssertNotNil(testFile)
         XCTAssertTrue(testFile?.url == nil)
     }
+    
+    func testWrongValuesInit() {
+        var testFile: File?
+        
+        // Size Key
+        testFile = wrongSizeValue()
+        XCTAssertNotNil(testFile)
+        XCTAssertTrue(testFile?.size == nil)
+        
+        // Language Key
+        testFile = wrongLanguageValue()
+        XCTAssertNotNil(testFile)
+        XCTAssertTrue(testFile?.language == nil)
+        
+        // URL Key
+        testFile = wrongURLValue()
+        XCTAssertNotNil(testFile)
+        XCTAssertTrue(testFile?.url == nil)
+    }
 }
 
 // MARK: - Helpers
 
 extension FileTest {
     
+    // MARK: - Wrong Keys
+    
     private func wrongSizeKey() -> File? {
-        let errorJSON: JSON = ["SIZE": 932,
-                               "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-                               "language": "Erlang"]
-        let finalJSON: JSON = ["ring.erl": errorJSON]
-        let file = File(with: finalJSON)
+        bodyJSON.dictionaryObject?.removeValue(forKey: "size")
+        bodyJSON["SIZE"] = 932
+        json[filename] = bodyJSON
+        let file = File(with: json)
         return file
     }
     
     private func wrongLanguageKey() -> File? {
-        let errorJSON: JSON = ["size": 932,
-                               "raw_url": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-                               "lan": "Erlang"]
-        let finalJSON: JSON = ["ring.erl": errorJSON]
-        let file = File(with: finalJSON)
+        bodyJSON.dictionaryObject?.removeValue(forKey: "language")
+        bodyJSON["lan"] = "Erlang"
+        json[filename] = bodyJSON
+        let file = File(with: json)
         return file
     }
     
     private func wrongURLKey() -> File? {
-        let errorJSON: JSON = ["size": 932,
-                               "rawURL": "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl",
-                               "language": "Erlang"]
-        let finalJSON: JSON = ["ring.erl": errorJSON]
-        let file = File(with: finalJSON)
+        bodyJSON.dictionaryObject?.removeValue(forKey: "raw_url")
+        bodyJSON["rawURL"] = "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl"
+        json[filename] = bodyJSON
+        let file = File(with: json)
+        return file
+    }
+    
+    // MARK: - Wrong Values
+    
+    private func wrongSizeValue() -> File? {
+        bodyJSON["size"] = "932"
+        json[filename] = bodyJSON
+        let file = File(with: json)
+        return file
+    }
+    
+    private func wrongLanguageValue() -> File? {
+        bodyJSON["language"] = true
+        json[filename] = bodyJSON
+        let file = File(with: json)
+        return file
+    }
+    
+    private func wrongURLValue() -> File? {
+        bodyJSON["raw_url"] = 562
+        json[filename] = bodyJSON
+        let file = File(with: json)
         return file
     }
 }

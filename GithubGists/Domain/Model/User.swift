@@ -36,15 +36,15 @@ import SwiftyJSON
  */
 
 struct User {
-    let id: Int
+    let id: String
     let userName: String?
     let userGithubURL: String?
     let avatarURL: String?
     
     init?(with json: JSON?) {
         guard let parseJSON = json else { return nil }
-        guard let parseId = parseJSON["id"].int, parseId != 0 else { return nil }
-        id = parseId
+        guard let parseId = parseJSON["id"].double, parseId != 0 else { return nil }
+        id = "\(parseId)"
         userName = parseJSON["login"].string
         userGithubURL = parseJSON["html_url"].string
         avatarURL = parseJSON["avatar_url"].string

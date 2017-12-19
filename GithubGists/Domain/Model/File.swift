@@ -34,8 +34,8 @@ struct File {
         guard let parseJSON = json else { return nil }
         guard let filename = parseJSON.dictionaryValue.keys.first, filename.count > 0 else { return nil }
         name = filename
-        size = parseJSON.dictionaryValue["size"]?.double
-        language = parseJSON.dictionaryValue["language"]?.string
-        url = parseJSON.dictionaryValue["raw_url"]?.string
+        size = parseJSON[filename]["size"].double
+        language = parseJSON[filename]["language"].string
+        url = parseJSON[filename]["raw_url"].string
     }
 }

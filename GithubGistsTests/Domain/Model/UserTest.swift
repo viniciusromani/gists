@@ -11,23 +11,30 @@ import SwiftyJSON
 
 class UserTest: XCTestCase {
     
+    var json: JSON = []
+    
+    /*
+     * SuccessJSON will be set when it is either a successfullinit test
+     * or a null name because that is the situation when another test case
+     * calls the successfullinit method.
+     */
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        json = ["id": 148100,
+                "login": "invalid-email-address",
+                "html_url": "https://github.com/invalid-email-address",
+                "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        json = []
     }
     
     func testSuccessfulInit() {
-        let successJSON: JSON = ["id": 148100,
-                                 "login": "invalid-email-address",
-                                 "html_url": "https://github.com/invalid-email-address",
-                                 "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
-        
-        let user = User(with: successJSON)
+        let user = User(with: json)
         XCTAssertNotNil(user)
         XCTAssertNotNil(user?.id)
     }
@@ -45,12 +52,8 @@ class UserTest: XCTestCase {
     }
     
     func testIdZeroJSONInit() {
-        let successJSON: JSON = ["id": 0,
-                                 "login": "invalid-email-address",
-                                 "html_url": "https://github.com/invalid-email-address",
-                                 "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
-        
-        let user = User(with: successJSON)
+        json["id"] = 0
+        let user = User(with: json)
         XCTAssertNil(user)
     }
     
@@ -61,14 +64,37 @@ class UserTest: XCTestCase {
         testUser = wrongLoginKey()
         XCTAssertNotNil(testUser)
         XCTAssertTrue(testUser?.userName == nil)
+        setUp()
         
         // HTML Key
         testUser = wrongHTMLKey()
         XCTAssertNotNil(testUser)
         XCTAssertTrue(testUser?.userGithubURL == nil)
+        setUp()
         
         // Avatar Key
         testUser = wrongAvatarKey()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.avatarURL == nil)
+    }
+    
+    func testWrongValuesInit() {
+        var testUser: User?
+        
+        // Login Key
+        testUser = wrongLoginValue()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.userName == nil)
+        setUp()
+        
+        // HTML Key
+        testUser = wrongHTMLValue()
+        XCTAssertNotNil(testUser)
+        XCTAssertTrue(testUser?.userGithubURL == nil)
+        setUp()
+        
+        // Avatar Key
+        testUser = wrongAvatarValue()
         XCTAssertNotNil(testUser)
         XCTAssertTrue(testUser?.avatarURL == nil)
     }
@@ -77,40 +103,48 @@ class UserTest: XCTestCase {
 // MARK: - Helpers
 
 extension UserTest {
+    
+    // MARK: - Wrong Keys
+    
     private func wrongLoginKey() -> User? {
-        let errorJSON: JSON = ["id": 148100,
-                               "wrongLogin": "invalid-email-address",
-                               "html_url": "https://github.com/invalid-email-address",
-                               "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
-        
-        let user = User(with: errorJSON)
+        json.dictionaryObject?.removeValue(forKey: "login")
+        json["wrongLogin"] = "invalid-email-address"
+        let user = User(with: json)
         return user
     }
     
     private func wrongHTMLKey() -> User? {
-        let errorJSON: JSON = ["id": 148100,
-                               "login": "invalid-email-address",
-                               "htmlUrl": "https://github.com/invalid-email-address",
-                               "avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4"]
-        
-        let user = User(with: errorJSON)
+        json.dictionaryObject?.removeValue(forKey: "html_url")
+        json["htmlUrl"] = "https://github.com/invalid-email-address"
+        let user = User(with: json)
         return user
     }
     
     private func wrongAvatarKey() -> User? {
-        let errorJSON: JSON = ["id": 148100,
-                               "login": "invalid-email-address",
-                               "html_url": "https://github.com/invalid-email-address",
-                               "avatarURL": "https://avatars0.githubusercontent.com/u/148100?v=4"]
-        
-        let user = User(with: errorJSON)
+        json.dictionaryObject?.removeValue(forKey: "avatar_url")
+        json["avatarURL"] = "https://avatars0.githubusercontent.com/u/148100?v=4"
+        let user = User(with: json)
+        return user
+    }
+    
+    // MARK: - Wrong Values
+    
+    private func wrongLoginValue() -> User? {
+        json["login"] = 0
+        let user = User(with: json)
+        return user
+    }
+    
+    private func wrongHTMLValue() -> User? {
+        json["html_url"] = true
+        let user = User(with: json)
+        return user
+    }
+    
+    private func wrongAvatarValue() -> User? {
+        json["avatar_url"] = [:]
+        let user = User(with: json)
         return user
     }
 }
-
-
-
-
-
-
 
