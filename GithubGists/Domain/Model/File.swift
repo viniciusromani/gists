@@ -10,7 +10,7 @@ import Foundation
 
 struct File {
     let name: String
-    let size: Double?
+    let size: Double
     let language: String?
     let url: String?
 }

@@ -20,7 +20,7 @@ extension MappableEntityProtocol {
     init(mapping entity: T) {
         self.init(mapping: entity)
     }
-    init?(mapping entity: T?) {
+    init?(nilMapping entity: T?) {
         return nil
     }
     

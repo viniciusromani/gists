@@ -15,6 +15,7 @@
 		A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10CEFD81FE8108700D65E57 /* Main.storyboard */; };
 		A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */; };
 		A119BB821FF2A513001A8C10 /* FileEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */; };
+		A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */; };
 		A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */; };
 		A1370FD71FEC1DA600F7CCDC /* withid_withoutatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */; };
 		A1370FD81FEC1DA600F7CCDC /* withwrongid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD51FEC1DA500F7CCDC /* withwrongid_withatt.json */; };
@@ -26,6 +27,7 @@
 		A1370FE41FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */; };
 		A1370FE51FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
+		A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */; };
 		A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
 		A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
@@ -76,6 +78,7 @@
 		A10CEFD41FE7F33B00D65E57 /* FileEntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntityTest.swift; sourceTree = "<group>"; };
 		A10CEFD81FE8108700D65E57 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntityTest.swift; sourceTree = "<group>"; };
+		A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperTest.swift; sourceTree = "<group>"; };
 		A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutatt.json; sourceTree = "<group>"; };
 		A1370FD51FEC1DA500F7CCDC /* withwrongid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withwrongid_withatt.json; sourceTree = "<group>"; };
@@ -86,6 +89,7 @@
 		A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
 		A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mapper.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
+		A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapperTest.swift; sourceTree = "<group>"; };
 		A16A06391FEADB4E0083A55A /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		A16A063B1FEADBF10083A55A /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,11 +140,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A119BB811FF2807D001A8C10 /* Extension */ = {
+		A119BB841FF2B4C6001A8C10 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */,
+				A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */,
 			);
-			path = Extension;
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		A1370FD11FEC1D7D00F7CCDC /* FileEntity */ = {
@@ -211,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				A1EE54521FE994A6000C87B1 /* Entity */,
+				A119BB841FF2B4C6001A8C10 /* Mapper */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -229,9 +236,9 @@
 		A1EE54531FE99909000C87B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A1EE54581FE99A2D000C87B1 /* Gist.swift */,
-				A1EE545B1FE99A36000C87B1 /* File.swift */,
 				A1EE545E1FE99A44000C87B1 /* User.swift */,
+				A1EE545B1FE99A36000C87B1 /* File.swift */,
+				A1EE54581FE99A2D000C87B1 /* Gist.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -265,7 +272,6 @@
 		A1F6D5CC1FE2DA1300D3E6C5 /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				A119BB811FF2807D001A8C10 /* Extension */,
 				A15C8C191FEAC78C00B5C719 /* Error */,
 				A1EE54541FE99917000C87B1 /* Mapper */,
 				A1F6D5D01FE2E10A00D3E6C5 /* Entity */,
@@ -611,7 +617,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */,
 				A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */,
+				A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */,
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
 				A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */,
