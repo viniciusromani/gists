@@ -13,6 +13,7 @@ class UserEntityTest: XCTestCase {
     // MARK: Variables
     
     private var _localJSON: String = ""
+    private var jsonDecoder = JSONDecoder()
     
     // MARK: - XCTestCase Cycle
     
@@ -32,8 +33,8 @@ class UserEntityTest: XCTestCase {
         localJSON = "withid_withoutatt"
         
         // It is a valid JSON because it has id
-        XCTAssertNoThrow(try JSONDecoder().decode(UserEntity.self, from: jsonData))
-        let userEntity = try? JSONDecoder().decode(UserEntity.self, from: jsonData)
+        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNotNil(userEntity)
         XCTAssertNotNil(userEntity?.id)
         XCTAssertTrue(!userEntity!.id.isEmpty)
@@ -48,8 +49,8 @@ class UserEntityTest: XCTestCase {
         localJSON = "withoutid_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try JSONDecoder().decode(UserEntity.self, from: jsonData))
-        let userEntity = try? JSONDecoder().decode(UserEntity.self, from: jsonData)
+        XCTAssertThrowsError(try jsonDecoder.decode(UserEntity.self, from: jsonData))
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNil(userEntity)
         XCTAssertNil(userEntity?.id)
         
@@ -63,8 +64,8 @@ class UserEntityTest: XCTestCase {
         localJSON = "withwrongid_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try JSONDecoder().decode(UserEntity.self, from: jsonData))
-        let userEntity = try? JSONDecoder().decode(UserEntity.self, from: jsonData)
+        XCTAssertThrowsError(try jsonDecoder.decode(UserEntity.self, from: jsonData))
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNil(userEntity)
         XCTAssertNil(userEntity?.id)
         
@@ -90,8 +91,8 @@ extension UserEntityTest: TestableEntity {
     
     func testSuccessFulInit() {
         localJSON = "user_entity"
-        XCTAssertNoThrow(try JSONDecoder().decode(UserEntity.self, from: jsonData))
-        let userEntity = try? JSONDecoder().decode(UserEntity.self, from: jsonData)
+        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNotNil(userEntity)
         XCTAssertNotNil(userEntity?.id)
         XCTAssertTrue(!userEntity!.id.isEmpty)

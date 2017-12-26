@@ -14,6 +14,7 @@ class FileEntityTest: XCTestCase {
     // MARK: - Variables
     
     private var _localJSON: String = ""
+    private var jsonDecoder = JSONDecoder()
     
     // MARK: - XCTestCase Cycle
     
@@ -33,8 +34,8 @@ class FileEntityTest: XCTestCase {
         localJSON = "withfilename_withoutatt"
         
         // It is a valid JSON because it has id
-        XCTAssertNoThrow(try JSONDecoder().decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? JSONDecoder().decode(FileEntity.self, from: jsonData)
+        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
         XCTAssertNotNil(fileEntity)
         XCTAssertNotNil(fileEntity?.name)
         XCTAssertTrue(!fileEntity!.name.isEmpty)
@@ -49,8 +50,8 @@ class FileEntityTest: XCTestCase {
         localJSON = "withoutfilename_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try JSONDecoder().decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? JSONDecoder().decode(FileEntity.self, from: jsonData)
+        XCTAssertThrowsError(try jsonDecoder.decode(FileEntity.self, from: jsonData))
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
         XCTAssertNil(fileEntity)
         XCTAssertNil(fileEntity?.name)
         
@@ -64,8 +65,8 @@ class FileEntityTest: XCTestCase {
         localJSON = "withwrongfilename_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try JSONDecoder().decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? JSONDecoder().decode(FileEntity.self, from: jsonData)
+        XCTAssertThrowsError(try jsonDecoder.decode(FileEntity.self, from: jsonData))
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
         XCTAssertNil(fileEntity)
         XCTAssertNil(fileEntity?.name)
         
@@ -91,8 +92,8 @@ extension FileEntityTest: TestableEntity {
     
     func testSuccessFulInit() {
         localJSON = "file_entity"
-        XCTAssertNoThrow(try JSONDecoder().decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? JSONDecoder().decode(FileEntity.self, from: jsonData)
+        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
         XCTAssertNotNil(fileEntity)
         XCTAssertNotNil(fileEntity?.name)
         XCTAssertTrue(!fileEntity!.name.isEmpty)

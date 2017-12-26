@@ -9,6 +9,8 @@
 import Foundation
 
 extension Gist: MappableEntityProtocol {
+    typealias T = GistEntity
+    
     init(mapping entity: GistEntity) {
         id = entity.id
         description = entity.description

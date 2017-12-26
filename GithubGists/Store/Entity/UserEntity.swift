@@ -43,7 +43,7 @@ struct UserEntity {
 }
 
 extension UserEntity: Decodable {
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case userName = "login"
         case userGithubURL = "html_url"
@@ -60,9 +60,9 @@ extension UserEntity: Decodable {
         id = "\(parsedId)"
         
         // Other parameters
-        userName = try values.decodeIfPresent(String.self, forKey: .userName)
-        userGithubURL = try values.decodeIfPresent(String.self, forKey: .userGithubURL)
-        avatarURL = try values.decodeIfPresent(String.self, forKey: .avatarURL)
+        userName = try? values.decode(String.self, forKey: .userName)
+        userGithubURL = try? values.decode(String.self, forKey: .userGithubURL)
+        avatarURL = try? values.decode(String.self, forKey: .avatarURL)
     }
 }
 

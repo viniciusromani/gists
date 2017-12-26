@@ -16,9 +16,9 @@
     }
   },
   "public": false,
-  "created_at": "2020-12-21T13:25:57Z",
+  "created_at": "",
   "updated_at": "2017-12-21T13:26:50Z",
-  "description": "",
+  "description": "Description test",
   "comments": 0,
   "user": null,
   "comments_url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d/comments",

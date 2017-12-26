@@ -51,7 +51,7 @@ struct GistEntity {
 }
 
 extension GistEntity: Decodable {
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case description = "description"
         case apiURL = "url"
@@ -72,13 +72,15 @@ extension GistEntity: Decodable {
         id = parsedId
         
         // Other parameters
-        description = try values.decodeIfPresent(String.self, forKey: .description)
-        apiURL = try values.decodeIfPresent(String.self, forKey: .apiURL)
-        htmlURL = try values.decodeIfPresent(String.self, forKey: .htmlURL)
+        description = try? values.decode(String.self, forKey: .description)
+        apiURL = try? values.decode(String.self, forKey: .apiURL)
+        htmlURL = try? values.decode(String.self, forKey: .htmlURL)
         files = []
-        owner = try values.decodeIfPresent(UserEntity.self, forKey: .owner)
-        isPublic = try values.decodeIfPresent(Bool.self, forKey: .isPublic)
-        createdAt = try values.decodeIfPresent(Date.self, forKey: .createdAt)
+//        let x = values.nestedContainer(keyedBy: FileEntity.CodingKeys, forKey: GistEntity.CodingKeys.files)
+        
+        owner = try? values.decode(UserEntity.self, forKey: .owner)
+        isPublic = try? values.decode(Bool.self, forKey: .isPublic)
+        createdAt = try? values.decode(Date.self, forKey: .createdAt)
     }
 }
 

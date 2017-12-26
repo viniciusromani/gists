@@ -32,7 +32,7 @@ struct FileEntity {
 }
 
 extension FileEntity: Decodable {
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name = "filename"
         case size = "size"
         case language = "language"
@@ -50,8 +50,8 @@ extension FileEntity: Decodable {
         
         // Other parameters
         size = try values.decodeIfPresent(Double.self, forKey: .size) ?? 0.0
-        language = try values.decodeIfPresent(String.self, forKey: .language)
-        url = try values.decodeIfPresent(String.self, forKey: .url)
+        language = try? values.decode(String.self, forKey: .language)
+        url = try? values.decode(String.self, forKey: .url)
     }
 }
 
