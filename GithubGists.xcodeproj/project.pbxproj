@@ -28,6 +28,7 @@
 		A1370FE51FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
 		A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */; };
+		A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */; };
 		A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
 		A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
@@ -90,6 +91,7 @@
 		A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mapper.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
 		A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapperTest.swift; sourceTree = "<group>"; };
+		A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistMapperTest.swift; sourceTree = "<group>"; };
 		A16A06391FEADB4E0083A55A /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		A16A063B1FEADBF10083A55A /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 			children = (
 				A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */,
 				A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */,
+				A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */,
 				A1F6D5DC1FE31B2A00D3E6C5 /* UserEntity.swift in Sources */,
 				A1E113771FED712500F47740 /* GistEntity+Mapper.swift in Sources */,
+				A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */,
 				A1EE545D1FE99A36000C87B1 /* File.swift in Sources */,
 				A1EE54601FE99A44000C87B1 /* User.swift in Sources */,
 				A1370FE51FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */,

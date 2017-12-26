@@ -16,4 +16,5 @@ struct Gist {
     var files: [File]
     let owner: User?
     let isPublic: Bool?
+    let createdAt: Date?
 }

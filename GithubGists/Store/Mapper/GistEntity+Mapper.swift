@@ -16,8 +16,10 @@ extension Gist: MappableEntityProtocol {
         description = entity.description
         apiURL = entity.apiURL
         htmlURL = entity.htmlURL
-        files  = File.array(mapping: entity.files)
+//        files  = File.array(mapping: entity.files)
+        files = []
         owner = User(mapping: entity.owner)
         isPublic = entity.isPublic
+        createdAt = entity.createdAt
     }
 }
