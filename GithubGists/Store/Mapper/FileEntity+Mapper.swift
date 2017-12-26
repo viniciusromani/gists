@@ -9,6 +9,8 @@
 import Foundation
 
 extension File: MappableEntityProtocol {
+    typealias T = FileEntity
+    
     init(mapping entity: FileEntity) {
         name = entity.name
         size = entity.size

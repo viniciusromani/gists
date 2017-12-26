@@ -13,7 +13,7 @@ struct Gist {
     let description: String?
     let apiURL: String?
     let htmlURL: String?
-    var files: [File?]
+    var files: [File]
     let owner: User?
     let isPublic: Bool?
 }

@@ -35,6 +35,11 @@
 		A1E113771FED712500F47740 /* GistEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* GistEntity+Mapper.swift */; };
 		A1E1137C1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */; };
 		A1E1137D1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */; };
+		A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */; };
+		A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */; };
+		A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */; };
+		A1E113861FED7FF300F47740 /* withid_withfile_withinvaliddate.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */; };
+		A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */; };
 		A1EE54501FE9751C000C87B1 /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */; };
 		A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
 		A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
@@ -88,6 +93,11 @@
 		A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEntity+Mapper.swift"; sourceTree = "<group>"; };
 		A1E113751FED712500F47740 /* GistEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistEntity+Mapper.swift"; sourceTree = "<group>"; };
 		A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableEntityProtocol.swift; sourceTree = "<group>"; };
+		A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
+		A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withoutowner.json; sourceTree = "<group>"; };
+		A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutfile_withowner.json; sourceTree = "<group>"; };
+		A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withinvaliddate.json; sourceTree = "<group>"; };
+		A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfiles_withowner.json; sourceTree = "<group>"; };
 		A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		A1EE54581FE99A2D000C87B1 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		A1EE545B1FE99A36000C87B1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
@@ -125,6 +135,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A119BB811FF2807D001A8C10 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A1370FD11FEC1D7D00F7CCDC /* FileEntity */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +157,11 @@
 			isa = PBXGroup;
 			children = (
 				A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */,
+				A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */,
+				A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */,
+				A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */,
+				A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */,
+				A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */,
 			);
 			path = GistEntity;
 			sourceTree = "<group>";
@@ -242,6 +264,7 @@
 		A1F6D5CC1FE2DA1300D3E6C5 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				A119BB811FF2807D001A8C10 /* Extension */,
 				A15C8C191FEAC78C00B5C719 /* Error */,
 				A1EE54541FE99917000C87B1 /* Mapper */,
 				A1F6D5D01FE2E10A00D3E6C5 /* Entity */,
@@ -441,10 +464,15 @@
 				A1D063851FEA9F7500B9835F /* user_entity.json in Resources */,
 				A1370FDE1FEC244600F7CCDC /* withfilename_withoutatt.json in Resources */,
 				A1370FDD1FEC244600F7CCDC /* file_entity.json in Resources */,
+				A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */,
 				A1370FE01FEC244600F7CCDC /* withoutfilename_withatt.json in Resources */,
 				A1370FE21FEC3BBC00F7CCDC /* gist_entity.json in Resources */,
 				A1370FD81FEC1DA600F7CCDC /* withwrongid_withatt.json in Resources */,
+				A1E113861FED7FF300F47740 /* withid_withfile_withinvaliddate.json in Resources */,
+				A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */,
 				A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */,
+				A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */,
+				A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

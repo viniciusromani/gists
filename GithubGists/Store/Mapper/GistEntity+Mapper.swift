@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension Gist {
+extension Gist: MappableEntityProtocol {
     init(mapping entity: GistEntity) {
         id = entity.id
         description = entity.description
         apiURL = entity.apiURL
         htmlURL = entity.htmlURL
-        files = File.array(mapping: entity.files)
+        files  = File.array(mapping: entity.files)
         owner = User(mapping: entity.owner)
         isPublic = entity.isPublic
     }

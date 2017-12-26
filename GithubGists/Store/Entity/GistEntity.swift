@@ -59,7 +59,7 @@ extension GistEntity: Decodable {
         case files = "files"
         case owner = "owner"
         case isPublic = "public"
-        case createdAt = "createdAt"
+        case createdAt = "created_at"
     }
     
     init(from decoder: Decoder) throws {

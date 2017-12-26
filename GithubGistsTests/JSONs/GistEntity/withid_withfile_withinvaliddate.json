@@ -1,0 +1,28 @@
+{
+  "url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
+  "forks_url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d/forks",
+  "commits_url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d/commits",
+  "id": "3aacd6b893f35c2decdd8bbae9a37a3d",
+  "git_pull_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d.git",
+  "git_push_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d.git",
+  "html_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+  "files": {
+    "sample-html.md": {
+      "filename": "sample-html.md",
+      "type": "text/plain",
+      "language": "Markdown",
+      "raw_url": "https://gist.githubusercontent.com/dondempsey/3aacd6b893f35c2decdd8bbae9a37a3d/raw/72aaa657cce3c411a6631fb72631a6300768428c/sample-html.md",
+      "size": 2712
+    }
+  },
+  "public": false,
+  "created_at": "2020-12-21T13:25:57Z",
+  "updated_at": "2017-12-21T13:26:50Z",
+  "description": "",
+  "comments": 0,
+  "user": null,
+  "comments_url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d/comments",
+  "owner": {
+  },
+  "truncated": false
+}

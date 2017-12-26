@@ -45,9 +45,13 @@ extension GistEntityTest: TestableEntity {
     // MARK: - Protocol method
     
     func testSuccessFulInit() {
-        localJSON = "file_entity"
-        XCTAssertNoThrow(try JSONDecoder().decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? JSONDecoder().decode(GistEntity.self, from: jsonData)
+        localJSON = "gist_entity"
+        
+        let jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .iso8601
+        
+        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
+        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
         XCTAssertNotNil(gistEntity)
         XCTAssertNotNil(gistEntity?.id)
         XCTAssertTrue(gistEntity!.id.count > 0)
