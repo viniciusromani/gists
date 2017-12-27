@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Gist: MappableEntityProtocol {
+extension Gist: MappableModelProtocol {
     
     typealias T = GistEntity
     

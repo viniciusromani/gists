@@ -6,8 +6,8 @@ def ui_pods
 end
 
 def net_pods
-	pod 'Alamofire'
-	pod 'SwiftyJSON'
+	pod 'Moya'
+    pod 'Moya/RxSwift'
 	pod 'Kingfisher', '~> 4.0'
 end
 

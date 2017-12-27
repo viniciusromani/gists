@@ -14,7 +14,7 @@
 		A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */; };
 		A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10CEFD81FE8108700D65E57 /* Main.storyboard */; };
 		A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */; };
-		A119BB821FF2A513001A8C10 /* FileEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */; };
+		A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mapper.swift */; };
 		A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */; };
 		A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */; };
 		A1370FD71FEC1DA600F7CCDC /* withid_withoutatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */; };
@@ -24,8 +24,8 @@
 		A1370FDF1FEC244600F7CCDC /* withwrongfilename_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FDB1FEC244500F7CCDC /* withwrongfilename_withatt.json */; };
 		A1370FE01FEC244600F7CCDC /* withoutfilename_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FDC1FEC244500F7CCDC /* withoutfilename_withatt.json */; };
 		A1370FE21FEC3BBC00F7CCDC /* gist_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */; };
-		A1370FE41FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */; };
-		A1370FE51FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */; };
+		A1370FE41FEC3E7600F7CCDC /* User+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */; };
+		A1370FE51FEC3E7600F7CCDC /* User+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
 		A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */; };
 		A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */; };
@@ -34,17 +34,16 @@
 		A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
 		A1D063851FEA9F7500B9835F /* user_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D063841FEA9F7500B9835F /* user_entity.json */; };
-		A1E1136F1FED708B00F47740 /* FileEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */; };
-		A1E113761FED712500F47740 /* GistEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* GistEntity+Mapper.swift */; };
-		A1E113771FED712500F47740 /* GistEntity+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* GistEntity+Mapper.swift */; };
-		A1E1137C1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */; };
-		A1E1137D1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */; };
+		A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mapper.swift */; };
+		A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mapper.swift */; };
+		A1E113771FED712500F47740 /* Gist+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mapper.swift */; };
+		A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */; };
+		A1E1137D1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */; };
 		A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */; };
 		A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */; };
 		A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */; };
 		A1E113861FED7FF300F47740 /* withid_withfile_withinvaliddate.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */; };
 		A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */; };
-		A1EE54501FE9751C000C87B1 /* WebServiceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */; };
 		A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
 		A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
 		A1EE545C1FE99A36000C87B1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545B1FE99A36000C87B1 /* File.swift */; };
@@ -56,6 +55,16 @@
 		A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D61FE2E1BB00D3E6C5 /* UserEntity.swift */; };
 		A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5DA1FE3192300D3E6C5 /* UserEntityTest.swift */; };
 		A1F6D5DC1FE31B2A00D3E6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D61FE2E1BB00D3E6C5 /* UserEntity.swift */; };
+		A1F931521FF405E100FCDDAB /* GithubGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931511FF405E100FCDDAB /* GithubGist.swift */; };
+		A1F931531FF405E100FCDDAB /* GithubGist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931511FF405E100FCDDAB /* GithubGist.swift */; };
+		A1F931571FF4077700FCDDAB /* GistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931561FF4077700FCDDAB /* GistDataSource.swift */; };
+		A1F931581FF4077700FCDDAB /* GistDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931561FF4077700FCDDAB /* GistDataSource.swift */; };
+		A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9315C1FF4082500FCDDAB /* GistRestDataSource.swift */; };
+		A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9315C1FF4082500FCDDAB /* GistRestDataSource.swift */; };
+		A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931601FF40B3A00FCDDAB /* ObservableType+Error.swift */; };
+		A1F931621FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931601FF40B3A00FCDDAB /* ObservableType+Error.swift */; };
+		A1F9316B1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */; };
+		A1F9316C1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */; };
 		A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */; };
 		A1FC43421FD18660004E9AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43411FD18660004E9AF0 /* Assets.xcassets */; };
 		A1FC43451FD18660004E9AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43431FD18660004E9AF0 /* LaunchScreen.storyboard */; };
@@ -88,7 +97,7 @@
 		A1370FDB1FEC244500F7CCDC /* withwrongfilename_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withwrongfilename_withatt.json; sourceTree = "<group>"; };
 		A1370FDC1FEC244500F7CCDC /* withoutfilename_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutfilename_withatt.json; sourceTree = "<group>"; };
 		A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
-		A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mapper.swift"; sourceTree = "<group>"; };
+		A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Mapper.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
 		A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapperTest.swift; sourceTree = "<group>"; };
 		A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistMapperTest.swift; sourceTree = "<group>"; };
@@ -97,15 +106,14 @@
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18481CD1FD46B4A009308E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1D063841FEA9F7500B9835F /* user_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_entity.json; sourceTree = "<group>"; };
-		A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEntity+Mapper.swift"; sourceTree = "<group>"; };
-		A1E113751FED712500F47740 /* GistEntity+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistEntity+Mapper.swift"; sourceTree = "<group>"; };
-		A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableEntityProtocol.swift; sourceTree = "<group>"; };
+		A1E1136E1FED708B00F47740 /* File+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Mapper.swift"; sourceTree = "<group>"; };
+		A1E113751FED712500F47740 /* Gist+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gist+Mapper.swift"; sourceTree = "<group>"; };
+		A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableModelProtocol.swift; sourceTree = "<group>"; };
 		A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withoutowner.json; sourceTree = "<group>"; };
 		A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutfile_withowner.json; sourceTree = "<group>"; };
 		A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withinvaliddate.json; sourceTree = "<group>"; };
 		A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfiles_withowner.json; sourceTree = "<group>"; };
-		A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceHelper.swift; sourceTree = "<group>"; };
 		A1EE54581FE99A2D000C87B1 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		A1EE545B1FE99A36000C87B1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A1EE545E1FE99A44000C87B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -113,6 +121,11 @@
 		A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntity.swift; sourceTree = "<group>"; };
 		A1F6D5D61FE2E1BB00D3E6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		A1F6D5DA1FE3192300D3E6C5 /* UserEntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntityTest.swift; sourceTree = "<group>"; };
+		A1F931511FF405E100FCDDAB /* GithubGist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubGist.swift; sourceTree = "<group>"; };
+		A1F931561FF4077700FCDDAB /* GistDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDataSource.swift; sourceTree = "<group>"; };
+		A1F9315C1FF4082500FCDDAB /* GistRestDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRestDataSource.swift; sourceTree = "<group>"; };
+		A1F931601FF40B3A00FCDDAB /* ObservableType+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Error.swift"; sourceTree = "<group>"; };
+		A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMappableEntity.swift; sourceTree = "<group>"; };
 		A1FC43371FD18660004E9AF0 /* GithubGists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubGists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FC43411FD18660004E9AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +192,7 @@
 		A15C8C191FEAC78C00B5C719 /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				A1F9315F1FF40B0D00FCDDAB /* Catcher */,
 				A16A06391FEADB4E0083A55A /* HTTPError.swift */,
 				A16A063B1FEADBF10083A55A /* JSONError.swift */,
 			);
@@ -249,9 +263,7 @@
 		A1EE54541FE99917000C87B1 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				A1370FE31FEC3E7600F7CCDC /* UserEntity+Mapper.swift */,
-				A1E1136E1FED708B00F47740 /* FileEntity+Mapper.swift */,
-				A1E113751FED712500F47740 /* GistEntity+Mapper.swift */,
+				A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -267,6 +279,8 @@
 		A1F6D5CB1FE2DA0F00D3E6C5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				A1F931631FF40FDC00FCDDAB /* Mapper */,
+				A1F931471FF3D94300FCDDAB /* UseCase */,
 				A1EE54531FE99909000C87B1 /* Model */,
 			);
 			path = Domain;
@@ -279,30 +293,15 @@
 				A1EE54541FE99917000C87B1 /* Mapper */,
 				A1F6D5D01FE2E10A00D3E6C5 /* Entity */,
 				A1F6D5CF1FE2DE7400D3E6C5 /* Endpoint */,
-				A1F6D5CE1FE2DE4900D3E6C5 /* Network */,
-				A1F6D5CD1FE2DE4200D3E6C5 /* Protocol */,
+				A1F931541FF4073A00FCDDAB /* DataSource */,
 			);
 			path = Store;
-			sourceTree = "<group>";
-		};
-		A1F6D5CD1FE2DE4200D3E6C5 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				A1E1137B1FED7B1700F47740 /* MappableEntityProtocol.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		A1F6D5CE1FE2DE4900D3E6C5 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		A1F6D5CF1FE2DE7400D3E6C5 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
+				A1F931511FF405E100FCDDAB /* GithubGist.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -315,6 +314,57 @@
 				A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		A1F931471FF3D94300FCDDAB /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		A1F9314B1FF3DB3500FCDDAB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A1F931541FF4073A00FCDDAB /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A1F931551FF4074A00FCDDAB /* Protocol */,
+				A1F9315C1FF4082500FCDDAB /* GistRestDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A1F931551FF4074A00FCDDAB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A1F931561FF4077700FCDDAB /* GistDataSource.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A1F9315F1FF40B0D00FCDDAB /* Catcher */ = {
+			isa = PBXGroup;
+			children = (
+				A1F931601FF40B3A00FCDDAB /* ObservableType+Error.swift */,
+			);
+			path = Catcher;
+			sourceTree = "<group>";
+		};
+		A1F931631FF40FDC00FCDDAB /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				A1F9314B1FF3DB3500FCDDAB /* Protocol */,
+				A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */,
+				A1E1136E1FED708B00F47740 /* File+Mapper.swift */,
+				A1E113751FED712500F47740 /* Gist+Mapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		A1FC432E1FD18660004E9AF0 = {
@@ -355,7 +405,6 @@
 				A1FC43411FD18660004E9AF0 /* Assets.xcassets */,
 				A1FC43431FD18660004E9AF0 /* LaunchScreen.storyboard */,
 				A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */,
-				A1EE544F1FE9751C000C87B1 /* WebServiceHelper.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -574,15 +623,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubGistsTests/Pods-GithubGistsTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -598,15 +651,19 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GithubGists/Pods-GithubGists-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -621,24 +678,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */,
+				A1F931531FF405E100FCDDAB /* GithubGist.swift in Sources */,
 				A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */,
 				A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */,
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
+				A1F9316C1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
 				A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */,
+				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */,
 				A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */,
-				A1E1137D1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */,
+				A1E1137D1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */,
 				A1F6D5DC1FE31B2A00D3E6C5 /* UserEntity.swift in Sources */,
-				A1E113771FED712500F47740 /* GistEntity+Mapper.swift in Sources */,
+				A1F931621FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
+				A1E113771FED712500F47740 /* Gist+Mapper.swift in Sources */,
 				A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */,
 				A1EE545D1FE99A36000C87B1 /* File.swift in Sources */,
 				A1EE54601FE99A44000C87B1 /* User.swift in Sources */,
-				A1370FE51FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */,
-				A119BB821FF2A513001A8C10 /* FileEntity+Mapper.swift in Sources */,
+				A1370FE51FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
+				A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */,
+				A1F931581FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,19 +709,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
-				A1EE54501FE9751C000C87B1 /* WebServiceHelper.swift in Sources */,
 				A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */,
+				A1F931571FF4077700FCDDAB /* GistDataSource.swift in Sources */,
+				A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
-				A1E113761FED712500F47740 /* GistEntity+Mapper.swift in Sources */,
+				A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
-				A1E1137C1FED7B1700F47740 /* MappableEntityProtocol.swift in Sources */,
+				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A1EE545C1FE99A36000C87B1 /* File.swift in Sources */,
 				A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */,
 				A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */,
+				A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
+				A1F9316B1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
 				A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */,
-				A1E1136F1FED708B00F47740 /* FileEntity+Mapper.swift in Sources */,
-				A1370FE41FEC3E7600F7CCDC /* UserEntity+Mapper.swift in Sources */,
+				A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */,
+				A1370FE41FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
+				A1F931521FF405E100FCDDAB /* GithubGist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

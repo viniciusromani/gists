@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MappableEntityProtocol {
+protocol MappableModelProtocol {
     associatedtype T
     
     init(mapping entity: T)
@@ -18,12 +18,11 @@ protocol MappableEntityProtocol {
     static func array(mapping entities: [T]?) -> [Self]?
 }
 
-extension MappableEntityProtocol {
+extension MappableModelProtocol {
     
     init(mapping entity: T) {
         self.init(mapping: entity)
     }
-    
     init?(mapping entity: T?) {
         return nil
     }

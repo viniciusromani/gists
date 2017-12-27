@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension User: MappableEntityProtocol {
+extension User: MappableModelProtocol {
     
     typealias T = UserEntity
 

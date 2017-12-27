@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 /*
  * Model Business rule:
@@ -85,6 +84,3 @@ extension GistEntity: Decodable {
         createdAt = try? values.decode(Date.self, forKey: .createdAt)
     }
 }
-
-
-

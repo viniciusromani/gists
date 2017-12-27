@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension File: MappableEntityProtocol {
+extension File: MappableModelProtocol {
     
     typealias T = FileEntity
     
