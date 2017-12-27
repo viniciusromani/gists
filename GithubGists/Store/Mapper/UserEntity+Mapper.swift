@@ -9,8 +9,9 @@
 import Foundation
 
 extension User: MappableEntityProtocol {
-    typealias T = UserEntity
     
+    typealias T = UserEntity
+
     init?(mapping entity: UserEntity?) {
         guard let unwrapped = entity else { return nil }
         id = unwrapped.id
@@ -19,3 +20,4 @@ extension User: MappableEntityProtocol {
         avatarURL = unwrapped.avatarURL
     }
 }
+

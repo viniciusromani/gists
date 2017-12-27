@@ -11,8 +11,8 @@ import Foundation
 struct Gist {
     let id: String
     let description: String?
-    let apiURL: String?
-    let htmlURL: String?
+    let apiURL: URL?
+    let htmlURL: URL?
     var files: [File]
     let owner: User?
     let isPublic: Bool?

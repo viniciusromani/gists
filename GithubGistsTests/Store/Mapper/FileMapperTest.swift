@@ -32,7 +32,7 @@ class FileMapperTest: XCTestCase {
         let fileEntity = FileEntity(name: "ring.erlang",
                                     size: 932.0,
                                     language: "Erlang",
-                                    url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
+                                    url: URL(string: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl"))
         let file = File(mapping: fileEntity)
         
         XCTAssert(file.name == fileEntity.name)
@@ -51,7 +51,7 @@ class FileMapperTest: XCTestCase {
         let fileEntity = FileEntity(name: "ring.erlang",
                                     size: 932.0,
                                     language: nil,
-                                    url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
+                                    url: URL(string: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl"))
         let file = File(mapping: fileEntity)
         
         XCTAssert(file.name == fileEntity.name)

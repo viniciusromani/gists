@@ -11,6 +11,9 @@ import Foundation
 protocol MappableEntityProtocol {
     associatedtype T
     
+    init(mapping entity: T)
+    init?(mapping entity: T?)
+    
     static func array(mapping entities: [T]) -> [Self]
     static func array(mapping entities: [T]?) -> [Self]?
 }
@@ -20,15 +23,17 @@ extension MappableEntityProtocol {
     init(mapping entity: T) {
         self.init(mapping: entity)
     }
-    init?(nilMapping entity: T?) {
+    
+    init?(mapping entity: T?) {
         return nil
     }
     
     static func array(mapping entities: [T]) -> [Self] {
-        return entities.map { return Self(mapping: $0) }
+        return entities.map { return self.init(mapping: $0) }
     }
     static func array(mapping entities: [T]?) -> [Self]? {
         guard let unwrapped = entities else { return nil }
-        return unwrapped.map { return Self(mapping: $0) }
+        return unwrapped.map { return self.init(mapping: $0) }
     }
 }
+

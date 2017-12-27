@@ -31,8 +31,8 @@ class UserMapperTest: XCTestCase {
     func testValidValuesMapper() {
         let userEntity: UserEntity? = UserEntity(id: "34760928",
                                                  userName: "VictoriaDem",
-                                                 userGithubURL: "https://github.com/VictoriaDem",
-                                                 avatarURL: "https://avatars0.githubusercontent.com/u/34760928?v=4")
+                                                 userGithubURL: URL(string: "https://github.com/VictoriaDem"),
+                                                 avatarURL: URL(string: "https://avatars0.githubusercontent.com/u/34760928?v=4"))
         let user = User(mapping: userEntity)
         
         XCTAssertNotNil(user?.id)

@@ -23,13 +23,13 @@ class GistMapperTest: XCTestCase {
         
         userEntity = UserEntity(id: "34760928",
                                 userName: "VictoriaDem",
-                                userGithubURL: "https://github.com/VictoriaDem",
-                                avatarURL: "https://avatars0.githubusercontent.com/u/34760928?v=4")
+                                userGithubURL: URL(string: "https://github.com/VictoriaDem"),
+                                avatarURL: URL(string: "https://avatars0.githubusercontent.com/u/34760928?v=4"))
         
         fileEntity = FileEntity(name: "ring.erlang",
                                 size: 932.0,
                                 language: "Erlang",
-                                url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
+                                url: URL(string: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl"))
     }
     
     override func tearDown() {
@@ -46,8 +46,8 @@ class GistMapperTest: XCTestCase {
     func testValidValuesMapper() {
         let gistEntity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                                     description: "Description",
-                                    apiURL: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
-                                    htmlURL: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+                                    apiURL: URL(string: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d"),
+                                    htmlURL: URL(string: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d"),
                                     files: [fileEntity],
                                     owner: userEntity,
                                     isPublic: true,
@@ -61,7 +61,7 @@ class GistMapperTest: XCTestCase {
         XCTAssert(gist.apiURL == gistEntity.apiURL)
         XCTAssertNotNil(gist.htmlURL)
         XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-//        XCAssert(gist.files.count == gistEntity.files.count)
+        XCTAssert(gist.files.count == gistEntity.files.count)
         XCTAssertNotNil(gist.owner)
         XCTAssert(gist.owner?.id == gistEntity.owner?.id)
         XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
@@ -74,8 +74,8 @@ class GistMapperTest: XCTestCase {
     func testNoFileAndAOwnerMapper() {
         let gistEntity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                                     description: nil,
-                                    apiURL: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
-                                    htmlURL: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+                                    apiURL: URL(string: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d"),
+                                    htmlURL: URL(string: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d"),
                                     files: [],
                                     owner: userEntity,
                                     isPublic: false,
@@ -89,7 +89,7 @@ class GistMapperTest: XCTestCase {
         XCTAssert(gist.apiURL == gistEntity.apiURL)
         XCTAssertNotNil(gist.htmlURL)
         XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-//        XCAssert(gist.files.count == gistEntity.files.count)
+        XCTAssert(gist.files.count == gistEntity.files.count)
         XCTAssertNotNil(gist.owner)
         XCTAssert(gist.owner?.id == gistEntity.owner?.id)
         XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
@@ -103,7 +103,7 @@ class GistMapperTest: XCTestCase {
         let gistEntity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                                     description: "Description",
                                     apiURL: nil,
-                                    htmlURL: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+                                    htmlURL: URL(string: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d"),
                                     files: [fileEntity],
                                     owner: nil,
                                     isPublic: true,
@@ -117,7 +117,7 @@ class GistMapperTest: XCTestCase {
         XCTAssert(gist.apiURL == gistEntity.apiURL)
         XCTAssertNotNil(gist.htmlURL)
         XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-//        XCAssert(gist.files.count == gistEntity.files.count)
+        XCTAssert(gist.files.count == gistEntity.files.count)
         XCTAssertNil(gist.owner)
         XCTAssertNotNil(gist.isPublic)
         XCTAssert(gist.isPublic == gistEntity.isPublic)
@@ -128,7 +128,7 @@ class GistMapperTest: XCTestCase {
     func testTwoFilesAndAOnwerMapper() {
         let gistEntity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                                     description: "Description",
-                                    apiURL: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
+                                    apiURL: URL(string: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d"),
                                     htmlURL: nil,
                                     files: [fileEntity, fileEntity],
                                     owner: userEntity,
@@ -143,7 +143,7 @@ class GistMapperTest: XCTestCase {
         XCTAssert(gist.apiURL == gistEntity.apiURL)
         XCTAssertNil(gist.htmlURL)
         XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-//        XCAssert(gist.files.count == gistEntity.files.count)
+        XCTAssert(gist.files.count == gistEntity.files.count)
         XCTAssertNotNil(gist.owner)
         XCTAssert(gist.owner?.id == gistEntity.owner?.id)
         XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
@@ -155,8 +155,8 @@ class GistMapperTest: XCTestCase {
     func testNoDateMapper() {
         let gistEntity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                                     description: "Description",
-                                    apiURL: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
-                                    htmlURL: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+                                    apiURL: URL(string: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d"),
+                                    htmlURL: URL(string: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d"),
                                     files: [fileEntity, fileEntity],
                                     owner: userEntity,
                                     isPublic: true,
@@ -170,7 +170,7 @@ class GistMapperTest: XCTestCase {
         XCTAssert(gist.apiURL == gistEntity.apiURL)
         XCTAssertNotNil(gist.htmlURL)
         XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-//        XCAssert(gist.files.count == gistEntity.files.count)
+        XCTAssert(gist.files.count == gistEntity.files.count)
         XCTAssertNotNil(gist.owner)
         XCTAssert(gist.owner?.id == gistEntity.owner?.id)
         XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)

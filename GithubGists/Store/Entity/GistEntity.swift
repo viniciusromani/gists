@@ -42,8 +42,8 @@ import SwiftyJSON
 struct GistEntity {
     let id: String
     let description: String?
-    let apiURL: String?
-    let htmlURL: String?
+    let apiURL: URL?
+    let htmlURL: URL?
     var files: [FileEntity]
     let owner: UserEntity?
     let isPublic: Bool?
@@ -73,11 +73,13 @@ extension GistEntity: Decodable {
         
         // Other parameters
         description = try? values.decode(String.self, forKey: .description)
-        apiURL = try? values.decode(String.self, forKey: .apiURL)
-        htmlURL = try? values.decode(String.self, forKey: .htmlURL)
+        apiURL = try? values.decode(URL.self, forKey: .apiURL)
+        htmlURL = try? values.decode(URL.self, forKey: .htmlURL)
         files = []
-//        let x = values.nestedContainer(keyedBy: FileEntity.CodingKeys, forKey: GistEntity.CodingKeys.files)
-        
+        let filesDictionary = try values.decode([String: FileEntity].self, forKey: .files)
+        for (_, fileEntity) in filesDictionary.enumerated() {
+            files.append(fileEntity.value)
+        }
         owner = try? values.decode(UserEntity.self, forKey: .owner)
         isPublic = try? values.decode(Bool.self, forKey: .isPublic)
         createdAt = try? values.decode(Date.self, forKey: .createdAt)

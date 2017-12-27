@@ -43,7 +43,7 @@ class GistEntityTest: XCTestCase {
         XCTAssertNil(gistEntity?.description)
         XCTAssertNil(gistEntity?.apiURL)
         XCTAssertNil(gistEntity?.htmlURL)
-//        XCTAssertNil(gistEntity?.files)
+        XCTAssertNil(gistEntity?.files)
         XCTAssertNil(gistEntity?.owner)
         XCTAssertNil(gistEntity?.isPublic)
         XCTAssertNil(gistEntity?.createdAt)
@@ -70,8 +70,8 @@ class GistEntityTest: XCTestCase {
         XCTAssertNil(gistEntity?.apiURL)
         XCTAssertNil(gistEntity?.htmlURL)
         
-//        XCTAssertNotNil(gistEntity?.files)
-//        XCTAssertTrue(gistEntity!.files.count == 1)
+        XCTAssertNotNil(gistEntity?.files)
+        XCTAssertTrue(gistEntity!.files.count == 0)
         
         XCTAssertNotNil(gistEntity?.owner)
     }
@@ -91,8 +91,8 @@ class GistEntityTest: XCTestCase {
         XCTAssertNotNil(gistEntity?.id)
         
         // Testing parameters
-//        XCTAssertNotNil(gistEntity?.files)
-//        XCTAssertTrue(gistEntity!.files.count == 1)
+        XCTAssertNotNil(gistEntity?.files)
+        XCTAssertTrue(gistEntity!.files.count == 1)
         
         XCTAssertNil(gistEntity?.owner)
         
@@ -116,8 +116,8 @@ class GistEntityTest: XCTestCase {
         XCTAssertNotNil(gistEntity?.id)
         
         // Testing parameters
-//        XCTAssertNotNil(gistEntity?.files)
-//        XCTAssertTrue(gistEntity!.files.count == 2)
+        XCTAssertNotNil(gistEntity?.files)
+        XCTAssertTrue(gistEntity!.files.count == 2)
         
         XCTAssertNotNil(gistEntity?.owner)
         

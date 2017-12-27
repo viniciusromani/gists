@@ -28,7 +28,7 @@ struct FileEntity {
     let name: String
     let size: Double
     let language: String?
-    let url: String?
+    let url: URL?
 }
 
 extension FileEntity: Decodable {
@@ -51,7 +51,7 @@ extension FileEntity: Decodable {
         // Other parameters
         size = try values.decodeIfPresent(Double.self, forKey: .size) ?? 0.0
         language = try? values.decode(String.self, forKey: .language)
-        url = try? values.decode(String.self, forKey: .url)
+        url = try? values.decode(URL.self, forKey: .url)
     }
 }
 

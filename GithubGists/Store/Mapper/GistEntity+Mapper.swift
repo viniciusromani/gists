@@ -9,6 +9,7 @@
 import Foundation
 
 extension Gist: MappableEntityProtocol {
+    
     typealias T = GistEntity
     
     init(mapping entity: GistEntity) {
@@ -16,10 +17,10 @@ extension Gist: MappableEntityProtocol {
         description = entity.description
         apiURL = entity.apiURL
         htmlURL = entity.htmlURL
-//        files  = File.array(mapping: entity.files)
-        files = []
+        files = File.array(mapping: entity.files)
         owner = User(mapping: entity.owner)
         isPublic = entity.isPublic
         createdAt = entity.createdAt
     }
 }
+

@@ -12,5 +12,5 @@ struct File {
     let name: String
     let size: Double
     let language: String?
-    let url: String?
+    let url: URL?
 }

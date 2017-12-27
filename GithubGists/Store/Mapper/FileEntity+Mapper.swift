@@ -9,6 +9,7 @@
 import Foundation
 
 extension File: MappableEntityProtocol {
+    
     typealias T = FileEntity
     
     init(mapping entity: FileEntity) {

@@ -11,6 +11,6 @@ import Foundation
 struct User {
     let id: String
     let userName: String?
-    let userGithubURL: String?
-    let avatarURL: String?
+    let userGithubURL: URL?
+    let avatarURL: URL?
 }

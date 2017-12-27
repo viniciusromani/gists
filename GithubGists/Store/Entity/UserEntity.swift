@@ -38,8 +38,8 @@ import SwiftyJSON
 struct UserEntity {
     let id: String
     let userName: String?
-    let userGithubURL: String?
-    let avatarURL: String?
+    let userGithubURL: URL?
+    let avatarURL: URL?
 }
 
 extension UserEntity: Decodable {
@@ -61,8 +61,8 @@ extension UserEntity: Decodable {
         
         // Other parameters
         userName = try? values.decode(String.self, forKey: .userName)
-        userGithubURL = try? values.decode(String.self, forKey: .userGithubURL)
-        avatarURL = try? values.decode(String.self, forKey: .avatarURL)
+        userGithubURL = try? values.decode(URL.self, forKey: .userGithubURL)
+        avatarURL = try? values.decode(URL.self, forKey: .avatarURL)
     }
 }
 
