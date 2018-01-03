@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import RxSwift
+import Moya
+
 
 /*
  * Model Business rule:
@@ -84,3 +87,4 @@ extension GistEntity: Decodable {
         createdAt = try? values.decode(Date.self, forKey: .createdAt)
     }
 }
+

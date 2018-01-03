@@ -8,6 +8,12 @@
 
 import Foundation
 
+/*
+ * Domain Business rule:
+ * It will be considered invalid if it does not have any files related.
+ * PS. The rule will be applied when mapping an entity to a model.
+ */
+
 struct Gist {
     let id: String
     let description: String?

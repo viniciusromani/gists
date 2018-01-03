@@ -8,11 +8,15 @@
 
 import Foundation
 
+/*
+ * Domain business rule (described on Model folder)
+ * is being applied while mapping an entity to a model.
+ */
+
 extension File: MappableModelProtocol {
     
-    typealias T = FileEntity
-    
-    init(mapping entity: FileEntity) {
+    init(mapping entity: FileEntity) throws {
+        guard entity.size > 0 else { throw JSONError.cannotMapToEntity }
         name = entity.name
         size = entity.size
         language = entity.language

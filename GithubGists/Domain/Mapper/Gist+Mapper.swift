@@ -7,20 +7,28 @@
 //
 
 import Foundation
+import RxSwift
+
+/*
+ * Domain business rule (described on Model folder)
+ * is being applied while mapping an entity to a model.
+ */
 
 extension Gist: MappableModelProtocol {
     
-    typealias T = GistEntity
-    
-    init(mapping entity: GistEntity) {
+    init(mapping entity: GistEntity) throws {
+        guard entity.files.count > 0 else {
+            throw JSONError.cannotMapToEntity
+        }
+        
         id = entity.id
         description = entity.description
         apiURL = entity.apiURL
         htmlURL = entity.htmlURL
-        files = File.array(mapping: entity.files)
-        owner = User(mapping: entity.owner)
+        files = try File.array(mapping: entity.files)
+        owner = nil
+        
         isPublic = entity.isPublic
         createdAt = entity.createdAt
     }
 }
-

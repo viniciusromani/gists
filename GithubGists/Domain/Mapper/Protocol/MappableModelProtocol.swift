@@ -9,30 +9,24 @@
 import Foundation
 
 protocol MappableModelProtocol {
-    associatedtype T
+    init<T: Decodable>(mapping entity: T) throws
     
-    init(mapping entity: T)
-    init?(mapping entity: T?)
-    
-    static func array(mapping entities: [T]) -> [Self]
-    static func array(mapping entities: [T]?) -> [Self]?
+    static func array<T: Decodable>(mapping entities: [T]) throws -> [Self]
+    static func array<T: Decodable>(mapping entities: [T]?) throws -> [Self]?
 }
 
 extension MappableModelProtocol {
     
-    init(mapping entity: T) {
-        self.init(mapping: entity)
-    }
-    init?(mapping entity: T?) {
-        return nil
+    init<T: Decodable>(mapping entity: T) throws {
+        try self.init(mapping: entity)
     }
     
-    static func array(mapping entities: [T]) -> [Self] {
-        return entities.map { return self.init(mapping: $0) }
+    static func array<T: Decodable>(mapping entities: [T]) throws -> [Self] {
+        return try entities.map { return try self.init(mapping: $0) }
     }
-    static func array(mapping entities: [T]?) -> [Self]? {
-        guard let unwrapped = entities else { return nil }
-        return unwrapped.map { return self.init(mapping: $0) }
+    static func array<T: Decodable>(mapping entities: [T]?) throws -> [Self]? {
+        guard let unwrapped = entities else { throw JSONError.cannotMapToEntity }
+        return try unwrapped.map { return try self.init(mapping: $0) }
     }
 }
 
