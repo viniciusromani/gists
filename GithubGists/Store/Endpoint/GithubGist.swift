@@ -17,12 +17,12 @@ enum GithubGist {
 extension GithubGist: TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://api.github.com/")!
+        return URL(string: "https://api.github.com/gists/")!
     }
     
     var path: String {
         switch self {
-        case .publicGists: return ""
+        case .publicGists: return "public"
         case .specificGist(let gistId): return gistId
         }
     }

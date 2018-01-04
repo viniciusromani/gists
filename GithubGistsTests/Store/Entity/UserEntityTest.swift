@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Moya
+import RxSwift
 
 class UserEntityTest: XCTestCase {
     

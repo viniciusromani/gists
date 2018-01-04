@@ -67,5 +67,4 @@ class UserMapperTest: XCTestCase {
         XCTAssertNil(user?.avatarURL)
         XCTAssert(user?.avatarURL == userEntity?.avatarURL)
     }
-    
 }

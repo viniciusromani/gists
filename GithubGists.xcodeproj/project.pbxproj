@@ -50,6 +50,18 @@
 		A1EE545D1FE99A36000C87B1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545B1FE99A36000C87B1 /* File.swift */; };
 		A1EE545F1FE99A44000C87B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545E1FE99A44000C87B1 /* User.swift */; };
 		A1EE54601FE99A44000C87B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545E1FE99A44000C87B1 /* User.swift */; };
+		A1EEA02D1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */; };
+		A1EEA02E1FFE51B00084F6EF /* GenericMappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */; };
+		A1EEA0301FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */; };
+		A1EEA0311FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */; };
+		A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0321FFE535D0084F6EF /* RetrieveGistWithIdError.swift */; };
+		A1EEA0341FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0321FFE535D0084F6EF /* RetrieveGistWithIdError.swift */; };
+		A1EEA03A1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */; };
+		A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */; };
+		A1EEA0401FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */; };
+		A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */; };
+		A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
+		A1EEA0441FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
 		A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */; };
 		A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */; };
 		A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */; };
@@ -122,6 +134,12 @@
 		A1EE54581FE99A2D000C87B1 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		A1EE545B1FE99A36000C87B1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A1EE545E1FE99A44000C87B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePublicGistsUseCase.swift; sourceTree = "<group>"; };
+		A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrievePublicGistsError.swift; sourceTree = "<group>"; };
+		A1EEA0321FFE535D0084F6EF /* RetrieveGistWithIdError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGistWithIdError.swift; sourceTree = "<group>"; };
+		A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+PublicGistsErrorCatcher.swift"; sourceTree = "<group>"; };
+		A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+GistWithIdErrorCatcher.swift"; sourceTree = "<group>"; };
+		A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGistWithIdUseCase.swift; sourceTree = "<group>"; };
 		A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMappableModel.swift; sourceTree = "<group>"; };
 		A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntity.swift; sourceTree = "<group>"; };
 		A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntity.swift; sourceTree = "<group>"; };
@@ -276,9 +294,21 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		A1EEA0351FFE53880084F6EF /* Catcher */ = {
+			isa = PBXGroup;
+			children = (
+				A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */,
+				A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */,
+			);
+			path = Catcher;
+			sourceTree = "<group>";
+		};
 		A1F02B3C1FFD4BEF00DC474E /* Error */ = {
 			isa = PBXGroup;
 			children = (
+				A1EEA0351FFE53880084F6EF /* Catcher */,
+				A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */,
+				A1EEA0321FFE535D0084F6EF /* RetrieveGistWithIdError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -336,6 +366,8 @@
 		A1F931471FF3D94300FCDDAB /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */,
+				A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -718,10 +750,15 @@
 				A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */,
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
+				A1EEA0311FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */,
+				A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
 				A1F9316C1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
+				A1EEA0441FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
 				A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */,
 				A1F931711FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
+				A1EEA02E1FFE51B00084F6EF /* GenericMappableModel.swift in Sources */,
+				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */,
@@ -737,6 +774,7 @@
 				A1EE54601FE99A44000C87B1 /* User.swift in Sources */,
 				A1370FE51FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
 				A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */,
+				A1EEA0341FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931581FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -745,15 +783,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EEA02D1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift in Sources */,
+				A1EEA0301FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */,
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
 				A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */,
 				A1F931571FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 				A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
+				A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931731FF4328B00FCDDAB /* GistRespository.swift in Sources */,
+				A1EEA0401FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
 				A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
+				A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
 				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A1EE545C1FE99A36000C87B1 /* File.swift in Sources */,
 				A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */,
@@ -764,6 +807,7 @@
 				A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */,
 				A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */,
 				A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */,
+				A1EEA03A1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A1370FE41FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
 				A1F931521FF405E100FCDDAB /* GithubGist.swift in Sources */,
 			);
