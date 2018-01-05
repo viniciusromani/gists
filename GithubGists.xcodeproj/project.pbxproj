@@ -62,6 +62,8 @@
 		A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */; };
 		A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
 		A1EEA0441FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
+		A1EEA0461FFE59780084F6EF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0451FFE59780084F6EF /* TestViewController.swift */; };
+		A1EEA0471FFE59780084F6EF /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0451FFE59780084F6EF /* TestViewController.swift */; };
 		A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */; };
 		A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */; };
 		A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */; };
@@ -140,6 +142,7 @@
 		A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+PublicGistsErrorCatcher.swift"; sourceTree = "<group>"; };
 		A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+GistWithIdErrorCatcher.swift"; sourceTree = "<group>"; };
 		A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGistWithIdUseCase.swift; sourceTree = "<group>"; };
+		A1EEA0451FFE59780084F6EF /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMappableModel.swift; sourceTree = "<group>"; };
 		A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntity.swift; sourceTree = "<group>"; };
 		A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntity.swift; sourceTree = "<group>"; };
@@ -317,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				A10CEFD81FE8108700D65E57 /* Main.storyboard */,
+				A1EEA0451FFE59780084F6EF /* TestViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -757,6 +761,7 @@
 				A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */,
 				A1F931711FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
+				A1EEA0471FFE59780084F6EF /* TestViewController.swift in Sources */,
 				A1EEA02E1FFE51B00084F6EF /* GenericMappableModel.swift in Sources */,
 				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
@@ -797,6 +802,7 @@
 				A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
 				A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
+				A1EEA0461FFE59780084F6EF /* TestViewController.swift in Sources */,
 				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A1EE545C1FE99A36000C87B1 /* File.swift in Sources */,
 				A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */,

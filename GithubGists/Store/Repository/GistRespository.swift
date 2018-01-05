@@ -13,10 +13,10 @@ struct GistRespository: GistRespositoryController {
     let restApi: GistDataSource
     
     func retrievePublicGist() -> Observable<Gist> {
-        return restApi.retrievePublicGists().mapModel()
+        return restApi.retrievePublicGists().mapGists()
     }
     
     func retrieveGist(withId id: String) -> Observable<Gist> {
-        return restApi.retrieveGist(withId: id).mapModel()
+        return restApi.retrieveGist(withId: id).mapGists()
     }
 }

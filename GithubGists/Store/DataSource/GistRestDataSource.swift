@@ -11,7 +11,7 @@ import Moya
 import RxSwift
 
 struct GistRestDataSource: GistDataSource {
-    let provider = MoyaProvider<GithubGist>()
+    let provider = MoyaProvider<GithubGist>(plugins: [NetworkLoggerPlugin()])
     
     func retrievePublicGists() -> Observable<GistEntity> {
         return provider.rx.request(.publicGists)
@@ -19,7 +19,8 @@ struct GistRestDataSource: GistDataSource {
             .debug()
             .filterSuccessfulStatusCodes()
             .catchHTTPError()
-            .mapEntity()
+            .mapGistEntity()
+//            .mapEntity(GistEntity.self)
     }
     
     func retrieveGist(withId id: String) -> Observable<GistEntity> {
@@ -28,7 +29,8 @@ struct GistRestDataSource: GistDataSource {
             .debug()
             .filterSuccessfulStatusCodes()
             .catchHTTPError()
-            .mapEntity()
+            .mapGistEntity()
+//            .mapEntity(GistEntity.self)
     }
 }
 

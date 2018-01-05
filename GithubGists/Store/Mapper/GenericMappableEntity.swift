@@ -12,7 +12,7 @@ import RxSwift
 
 extension ObservableType where E == Response {
     
-    func mapEntity<T: Decodable>() -> Observable<T> {
+    public func mapEntity<T: Decodable>(_ type: T.Type) -> Observable<T> {
         let mappedEntity = flatMap { response -> Observable<T> in
             guard let entity = try? JSONDecoder().decode(T.self, from: response.data) else {
                 return Observable.error(JSONError.cannotMapToEntity)
@@ -22,3 +22,29 @@ extension ObservableType where E == Response {
         return mappedEntity
     }
 }
+
+extension ObservableType where E == Response {
+    func mapGistEntity() -> Observable<GistEntity> {
+        return flatMap { response -> Observable<GistEntity> in
+            guard let entity = try? JSONDecoder().decode(GistEntity.self, from: response.data) else {
+                return Observable.error(JSONError.cannotMapToEntity)
+            }
+            return Observable.just(entity)
+        }
+    }
+}
+extension ObservableType where E == GistEntity {
+    func mapGists() -> Observable<Gist> {
+        let mappedModel = flatMap { entity -> Observable<Gist> in
+            do {
+                let model = try Gist(mapping: entity)
+                return Observable.just(model)
+            } catch let error {
+                return Observable.error(error)
+            }
+        }
+        return mappedModel
+    }
+}
+
+
