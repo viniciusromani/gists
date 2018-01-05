@@ -15,10 +15,12 @@ import RxSwift
  */
 
 extension File: MappableModelProtocol {
-    init<T>(mapping entity: T) throws where T : Decodable {
+    
+    init<T>(mapping entity: T) throws {
         guard let fileEntity = entity as? FileEntity, fileEntity.size > 0 else {
             throw JSONError.cannotMapToEntity
         }
+        
         name = fileEntity.name
         size = fileEntity.size
         language = fileEntity.language
