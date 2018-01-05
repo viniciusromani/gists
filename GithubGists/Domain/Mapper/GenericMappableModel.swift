@@ -12,7 +12,7 @@ import RxSwift
 
 extension ObservableType where E: Decodable {
     
-    func mapModel<T: MappableModelProtocol>(_ type: E.Type) -> Observable<T> {
+    func mapModel<T: MappableModelProtocol>() -> Observable<T> {
         let mappedModel = flatMap { entity -> Observable<T> in
             do {
                 let model = try T.init(mapping: entity)

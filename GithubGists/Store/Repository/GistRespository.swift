@@ -17,6 +17,6 @@ struct GistRespository: GistRespositoryController {
     }
     
     func retrieveGist(withId id: String) -> Observable<Gist> {
-        return restApi.retrieveGist(withId: id).mapModel(GistEntity.self)
+        return restApi.retrieveGist(withId: id).mapModel()
     }
 }
