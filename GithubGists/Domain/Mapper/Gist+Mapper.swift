@@ -15,20 +15,18 @@ import RxSwift
  */
 
 extension Gist: MappableModelProtocol {
-    
-    init(mapping entity: GistEntity) throws {
-        guard entity.files.count > 0 else {
+    init<T>(mapping entity: T) throws where T: Decodable {
+        guard let gistEntity = entity as? GistEntity, gistEntity.files.count > 0 else {
             throw JSONError.cannotMapToEntity
         }
         
-        id = entity.id
-        description = entity.description
-        apiURL = entity.apiURL
-        htmlURL = entity.htmlURL
-        files = try File.array(mapping: entity.files)
-        owner = nil
-        
-        isPublic = entity.isPublic
-        createdAt = entity.createdAt
+        id = gistEntity.id
+        description = gistEntity.description
+        apiURL = gistEntity.apiURL
+        htmlURL = gistEntity.htmlURL
+        files = []
+        owner = try User(mapping: gistEntity.owner)
+        isPublic = gistEntity.isPublic
+        createdAt = gistEntity.createdAt
     }
 }

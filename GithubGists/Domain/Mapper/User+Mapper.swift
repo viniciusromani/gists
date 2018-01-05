@@ -7,13 +7,17 @@
 //
 
 import Foundation
+import RxSwift
 
 extension User: MappableModelProtocol {
-    
-    init(mapping entity: UserEntity) throws {
-        id = entity.id
-        userName = entity.userName
-        userGithubURL = entity.userGithubURL
-        avatarURL = entity.avatarURL
+    init<T>(mapping entity: T) throws where T : Decodable {
+        guard let userEntity = entity as? UserEntity else {
+            throw JSONError.cannotMapToEntity
+        }
+        
+        id = userEntity.id
+        userName = userEntity.userName
+        userGithubURL = userEntity.userGithubURL
+        avatarURL = userEntity.avatarURL
     }
 }

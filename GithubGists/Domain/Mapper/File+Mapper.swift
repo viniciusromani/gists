@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 /*
  * Domain business rule (described on Model folder)
@@ -14,12 +15,13 @@ import Foundation
  */
 
 extension File: MappableModelProtocol {
-    
-    init(mapping entity: FileEntity) throws {
-        guard entity.size > 0 else { throw JSONError.cannotMapToEntity }
-        name = entity.name
-        size = entity.size
-        language = entity.language
-        url = entity.url
+    init<T>(mapping entity: T) throws where T : Decodable {
+        guard let fileEntity = entity as? FileEntity, fileEntity.size > 0 else {
+            throw JSONError.cannotMapToEntity
+        }
+        name = fileEntity.name
+        size = fileEntity.size
+        language = fileEntity.language
+        url = fileEntity.url
     }
 }

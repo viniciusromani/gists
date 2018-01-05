@@ -23,16 +23,6 @@ extension ObservableType where E == Response {
     }
 }
 
-extension ObservableType where E == Response {
-    func mapGistEntity() -> Observable<GistEntity> {
-        return flatMap { response -> Observable<GistEntity> in
-            guard let entity = try? JSONDecoder().decode(GistEntity.self, from: response.data) else {
-                return Observable.error(JSONError.cannotMapToEntity)
-            }
-            return Observable.just(entity)
-        }
-    }
-}
 extension ObservableType where E == GistEntity {
     func mapGists() -> Observable<Gist> {
         let mappedModel = flatMap { entity -> Observable<Gist> in
