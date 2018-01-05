@@ -13,13 +13,13 @@ import RxSwift
 struct GistRestDataSource: GistDataSource {
     let provider = MoyaProvider<GithubGist>()
     
-    func retrievePublicGists() -> Observable<GistEntity> {
+    func retrievePublicGists() -> Observable<[GistEntity]> {
         return provider.rx.request(.publicGists)
             .asObservable()
             .debug()
             .filterSuccessfulStatusCodes()
             .catchHTTPError()
-            .mapEntity(GistEntity.self)
+            .mapEntities(GistEntity.self)
     }
     
     func retrieveGist(withId id: String) -> Observable<GistEntity> {

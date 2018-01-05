@@ -10,6 +10,21 @@ import Foundation
 import Moya
 import RxSwift
 
+/*
+ * This is a generic mapper for incoming entities from rxswift
+ * methods. If you would like to have your own mapper (recommended
+ * for some specifics treatments your application may have) you
+ * should use a different method name and signature. E.g:
+ * extension ObservableType where E == Response {
+ *     func mapCustomEntity() -> Observable<CustomEntity> {
+ *         /* use flatMap to map to your custom entity using a custom logic */
+ *     }
+ * }
+ */
+
+/*
+ * Mapper for a single incoming entity
+ */
 extension ObservableType where E == Response {
     
     public func mapEntity<T: Decodable>(_ type: T.Type) -> Observable<T> {
@@ -23,17 +38,19 @@ extension ObservableType where E == Response {
     }
 }
 
-extension ObservableType where E == GistEntity {
-    func mapGists() -> Observable<Gist> {
-        let mappedModel = flatMap { entity -> Observable<Gist> in
-            do {
-                let model = try Gist(mapping: entity)
-                return Observable.just(model)
-            } catch let error {
-                return Observable.error(error)
+/*
+ * Mapper for an array of entities
+ */
+extension ObservableType where E == Response {
+    
+    public func mapEntities<T: Decodable>(_ type: T.Type) -> Observable<[T]> {
+        let mappedEntities = flatMap { response -> Observable<[T]> in
+            guard let entities = try? JSONDecoder().decode([T].self, from: response.data) else {
+                return Observable.error(JSONError.cannotMapToEntity)
             }
+            return Observable.just(entities)
         }
-        return mappedModel
+        return mappedEntities
     }
 }
 

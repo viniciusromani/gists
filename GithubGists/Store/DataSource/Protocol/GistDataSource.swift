@@ -10,6 +10,6 @@ import Foundation
 import RxSwift
 
 protocol GistDataSource {
-    func retrievePublicGists() -> Observable<GistEntity>
+    func retrievePublicGists() -> Observable<[GistEntity]>
     func retrieveGist(withId id: String) -> Observable<GistEntity>
 }
