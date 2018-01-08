@@ -10,9 +10,9 @@ import Foundation
 import RxSwift
 
 extension User: MappableModelProtocol {
-    init<T>(mapping entity: T) throws {
+    init?<T>(mapping entity: T?) throws {
         guard let userEntity = entity as? UserEntity else {
-            throw JSONError.cannotMapToEntity
+            return nil
         }
         
         id = userEntity.id

@@ -17,7 +17,7 @@ import RxSwift
 extension Gist: MappableModelProtocol {
     init<T>(mapping entity: T) throws {
         guard let gistEntity = entity as? GistEntity, gistEntity.files.count > 0 else {
-            throw JSONError.cannotMapToEntity
+            throw JSONError.cannotMapToModel
         }
         
         id = gistEntity.id
@@ -30,3 +30,19 @@ extension Gist: MappableModelProtocol {
         createdAt = gistEntity.createdAt
     }
 }
+
+extension ObservableType where E == Array<GistEntity> {
+    func mapGists() -> Observable<[Gist]> {
+        return flatMap { entities -> Observable<[Gist]> in
+            do {
+                let models = try Gist.array(mapping: entities)
+                return Observable.just(models)
+            } catch let error {
+                return Observable.error(error)
+            }
+        }
+    }
+}
+
+
+

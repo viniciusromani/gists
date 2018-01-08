@@ -12,7 +12,7 @@ import RxSwift
 struct RetrievePublicGistsUseCase {
     let controller: GistRespositoryController
     
-    func retrievePublicGists() -> Observable<Gist> {
-        return controller.retrievePublicGist().catchPublicGistsError()
+    func retrievePublicGists() -> Observable<[Gist]> {
+        return controller.retrievePublicGists().catchPublicGistsError()
     }
 }

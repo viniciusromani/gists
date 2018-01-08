@@ -24,7 +24,8 @@ class TestViewController: UIViewController {
         repository = GistRespository(restApi: dataSource)
         useCase = RetrievePublicGistsUseCase(controller: repository)
         
-        useCase.retrievePublicGists().subscribe(onNext: { gist in
+        useCase.retrievePublicGists().subscribe(onNext: { gists in
+            
             
             print("success")
         }, onError: { error in

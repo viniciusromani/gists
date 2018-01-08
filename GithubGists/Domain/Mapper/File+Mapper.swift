@@ -18,7 +18,7 @@ extension File: MappableModelProtocol {
     
     init<T>(mapping entity: T) throws {
         guard let fileEntity = entity as? FileEntity, fileEntity.size > 0 else {
-            throw JSONError.cannotMapToEntity
+            throw JSONError.cannotMapToModel
         }
         
         name = fileEntity.name

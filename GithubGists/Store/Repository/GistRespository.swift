@@ -12,7 +12,7 @@ import RxSwift
 struct GistRespository: GistRespositoryController {
     let restApi: GistDataSource
     
-    func retrievePublicGist() -> Observable<Gist> {
+    func retrievePublicGists() -> Observable<[Gist]> {
         return restApi.retrievePublicGists().mapGists()
     }
     

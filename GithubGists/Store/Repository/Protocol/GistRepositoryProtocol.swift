@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol GistRespositoryController {
-    func retrievePublicGist() -> Observable<Gist>
+    func retrievePublicGists() -> Observable<[Gist]>
     func retrieveGist(withId id: String) -> Observable<Gist>
 }
 

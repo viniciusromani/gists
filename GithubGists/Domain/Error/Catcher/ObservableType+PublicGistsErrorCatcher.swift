@@ -18,9 +18,9 @@ extension RetrievePublicGistsError {
     }
 }
 
-extension ObservableType where E == Gist {
-    func catchPublicGistsError() -> Observable<Gist> {
-        let error = catchError { error -> Observable<Gist> in
+extension ObservableType where E == Array<Gist> {
+    func catchPublicGistsError() -> Observable<[Gist]> {
+        let error = catchError { error -> Observable<[Gist]> in
             guard let unableToRetrieveError = try? RetrievePublicGistsError(mappingRetrieve: error) else {
                 return Observable.error(error)
             }

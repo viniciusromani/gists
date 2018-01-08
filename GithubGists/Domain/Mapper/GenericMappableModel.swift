@@ -16,14 +16,16 @@ import RxSwift
  * for some specifics treatments your application may have) you
  * should use a different method name and signature. E.g:
  * extension ObservableType where E == CustomEntity {
- *     func mapUserPreferences() -> Observable<Custom> {
+ *     func mapCustom() -> Observable<Custom> {
  *         /* use flatMap to map to your custom entity using a custom logic */
  *     }
  * }
+ * PS. You should implement your own mapper for arrays. There is an example
+ * at the mapGists() method (located at Gist+Mapper.swift file)
  */
 
 /*
- * Mapper for a single incoming model
+ * Mapper for an incoming model
  */
 extension ObservableType where E: Decodable {
     
@@ -39,19 +41,3 @@ extension ObservableType where E: Decodable {
         return mappedModel
     }
 }
-
-/*
- * Mapper for an array of models
- */
-extension ObservableType where E == Array<Decodable> {
-    
-    func mapModels<T: MappableModelProtocol>() -> Observable<[T]> {
-        let mappedModels = flatMap { entities -> Observable<[T]> in
-            do {
-                
-            }
-        }
-        return mappedModels
-    }
-}
-
