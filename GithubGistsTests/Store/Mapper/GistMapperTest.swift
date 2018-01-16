@@ -52,23 +52,28 @@ class GistMapperTest: XCTestCase {
                                     owner: userEntity,
                                     isPublic: true,
                                     createdAt: Date())
-        let gist = Gist(mapping: gistEntity)
-        
-        XCTAssert(gist.id == gistEntity.id)
-        XCTAssertNotNil(gist.description)
-        XCTAssert(gist.description == gistEntity.description)
-        XCTAssertNotNil(gist.apiURL)
-        XCTAssert(gist.apiURL == gistEntity.apiURL)
-        XCTAssertNotNil(gist.htmlURL)
-        XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-        XCTAssert(gist.files.count == gistEntity.files.count)
-        XCTAssertNotNil(gist.owner)
-        XCTAssert(gist.owner?.id == gistEntity.owner?.id)
-        XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
-        XCTAssertNotNil(gist.isPublic)
-        XCTAssert(gist.isPublic == gistEntity.isPublic)
-        XCTAssertNotNil(gist.createdAt)
-        XCTAssert(gist.createdAt == gistEntity.createdAt)
+        var gist: Gist
+        do {
+            gist = try Gist(mapping: gistEntity)
+            
+            XCTAssert(gist.id == gistEntity.id)
+            XCTAssertNotNil(gist.description)
+            XCTAssert(gist.description == gistEntity.description)
+            XCTAssertNotNil(gist.apiURL)
+            XCTAssert(gist.apiURL == gistEntity.apiURL)
+            XCTAssertNotNil(gist.htmlURL)
+            XCTAssert(gist.htmlURL == gistEntity.htmlURL)
+            XCTAssert(gist.files.count == gistEntity.files.count)
+            XCTAssertNotNil(gist.owner)
+            XCTAssert(gist.owner?.id == gistEntity.owner?.id)
+            XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
+            XCTAssertNotNil(gist.isPublic)
+            XCTAssert(gist.isPublic == gistEntity.isPublic)
+            XCTAssertNotNil(gist.createdAt)
+            XCTAssert(gist.createdAt == gistEntity.createdAt)
+        } catch {
+            XCTFail()
+        }
     }
     
     func testNoFileAndAOwnerMapper() {
@@ -80,23 +85,8 @@ class GistMapperTest: XCTestCase {
                                     owner: userEntity,
                                     isPublic: false,
                                     createdAt: Date())
-        let gist = Gist(mapping: gistEntity)
         
-        XCTAssert(gist.id == gistEntity.id)
-        XCTAssertNil(gist.description)
-        XCTAssert(gist.description == gistEntity.description)
-        XCTAssertNotNil(gist.apiURL)
-        XCTAssert(gist.apiURL == gistEntity.apiURL)
-        XCTAssertNotNil(gist.htmlURL)
-        XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-        XCTAssert(gist.files.count == gistEntity.files.count)
-        XCTAssertNotNil(gist.owner)
-        XCTAssert(gist.owner?.id == gistEntity.owner?.id)
-        XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
-        XCTAssertNotNil(gist.isPublic)
-        XCTAssert(gist.isPublic == gistEntity.isPublic)
-        XCTAssertNotNil(gist.createdAt)
-        XCTAssert(gist.createdAt == gistEntity.createdAt)
+        XCTAssertThrowsError(try Gist(mapping: gistEntity))
     }
     
     func testOneFileAndNoOwnerMapper() {
@@ -108,21 +98,26 @@ class GistMapperTest: XCTestCase {
                                     owner: nil,
                                     isPublic: true,
                                     createdAt: Date())
-        let gist = Gist(mapping: gistEntity)
-        
-        XCTAssert(gist.id == gistEntity.id)
-        XCTAssertNotNil(gist.description)
-        XCTAssert(gist.description == gistEntity.description)
-        XCTAssertNil(gist.apiURL)
-        XCTAssert(gist.apiURL == gistEntity.apiURL)
-        XCTAssertNotNil(gist.htmlURL)
-        XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-        XCTAssert(gist.files.count == gistEntity.files.count)
-        XCTAssertNil(gist.owner)
-        XCTAssertNotNil(gist.isPublic)
-        XCTAssert(gist.isPublic == gistEntity.isPublic)
-        XCTAssertNotNil(gist.createdAt)
-        XCTAssert(gist.createdAt == gistEntity.createdAt)
+        var gist: Gist
+        do {
+            gist = try Gist(mapping: gistEntity)
+            
+            XCTAssert(gist.id == gistEntity.id)
+            XCTAssertNotNil(gist.description)
+            XCTAssert(gist.description == gistEntity.description)
+            XCTAssertNil(gist.apiURL)
+            XCTAssert(gist.apiURL == gistEntity.apiURL)
+            XCTAssertNotNil(gist.htmlURL)
+            XCTAssert(gist.htmlURL == gistEntity.htmlURL)
+            XCTAssert(gist.files.count == gistEntity.files.count)
+            XCTAssertNil(gist.owner)
+            XCTAssertNotNil(gist.isPublic)
+            XCTAssert(gist.isPublic == gistEntity.isPublic)
+            XCTAssertNotNil(gist.createdAt)
+            XCTAssert(gist.createdAt == gistEntity.createdAt)
+        } catch {
+            XCTFail()
+        }
     }
     
     func testTwoFilesAndAOnwerMapper() {
@@ -134,22 +129,27 @@ class GistMapperTest: XCTestCase {
                                     owner: userEntity,
                                     isPublic: nil,
                                     createdAt: Date())
-        let gist = Gist(mapping: gistEntity)
-        
-        XCTAssert(gist.id == gistEntity.id)
-        XCTAssertNotNil(gist.description)
-        XCTAssert(gist.description == gistEntity.description)
-        XCTAssertNotNil(gist.apiURL)
-        XCTAssert(gist.apiURL == gistEntity.apiURL)
-        XCTAssertNil(gist.htmlURL)
-        XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-        XCTAssert(gist.files.count == gistEntity.files.count)
-        XCTAssertNotNil(gist.owner)
-        XCTAssert(gist.owner?.id == gistEntity.owner?.id)
-        XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
-        XCTAssertNil(gist.isPublic)
-        XCTAssertNotNil(gist.createdAt)
-        XCTAssert(gist.createdAt == gistEntity.createdAt)
+        var gist: Gist
+        do {
+            gist = try Gist(mapping: gistEntity)
+            
+            XCTAssert(gist.id == gistEntity.id)
+            XCTAssertNotNil(gist.description)
+            XCTAssert(gist.description == gistEntity.description)
+            XCTAssertNotNil(gist.apiURL)
+            XCTAssert(gist.apiURL == gistEntity.apiURL)
+            XCTAssertNil(gist.htmlURL)
+            XCTAssert(gist.htmlURL == gistEntity.htmlURL)
+            XCTAssert(gist.files.count == gistEntity.files.count)
+            XCTAssertNotNil(gist.owner)
+            XCTAssert(gist.owner?.id == gistEntity.owner?.id)
+            XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
+            XCTAssertNil(gist.isPublic)
+            XCTAssertNotNil(gist.createdAt)
+            XCTAssert(gist.createdAt == gistEntity.createdAt)
+        } catch {
+            XCTFail()
+        }
     }
     
     func testNoDateMapper() {
@@ -161,21 +161,26 @@ class GistMapperTest: XCTestCase {
                                     owner: userEntity,
                                     isPublic: true,
                                     createdAt: nil)
-        let gist = Gist(mapping: gistEntity)
-        
-        XCTAssert(gist.id == gistEntity.id)
-        XCTAssertNotNil(gist.description)
-        XCTAssert(gist.description == gistEntity.description)
-        XCTAssertNotNil(gist.apiURL)
-        XCTAssert(gist.apiURL == gistEntity.apiURL)
-        XCTAssertNotNil(gist.htmlURL)
-        XCTAssert(gist.htmlURL == gistEntity.htmlURL)
-        XCTAssert(gist.files.count == gistEntity.files.count)
-        XCTAssertNotNil(gist.owner)
-        XCTAssert(gist.owner?.id == gistEntity.owner?.id)
-        XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
-        XCTAssertNotNil(gist.isPublic)
-        XCTAssert(gist.isPublic == gistEntity.isPublic)
-        XCTAssertNil(gist.createdAt)
+        var gist: Gist
+        do {
+            gist = try Gist(mapping: gistEntity)
+            
+            XCTAssert(gist.id == gistEntity.id)
+            XCTAssertNotNil(gist.description)
+            XCTAssert(gist.description == gistEntity.description)
+            XCTAssertNotNil(gist.apiURL)
+            XCTAssert(gist.apiURL == gistEntity.apiURL)
+            XCTAssertNotNil(gist.htmlURL)
+            XCTAssert(gist.htmlURL == gistEntity.htmlURL)
+            XCTAssert(gist.files.count == gistEntity.files.count)
+            XCTAssertNotNil(gist.owner)
+            XCTAssert(gist.owner?.id == gistEntity.owner?.id)
+            XCTAssert(gist.owner?.userName == gistEntity.owner?.userName)
+            XCTAssertNotNil(gist.isPublic)
+            XCTAssert(gist.isPublic == gistEntity.isPublic)
+            XCTAssertNil(gist.createdAt)
+        } catch {
+            XCTFail()
+        }
     }
 }

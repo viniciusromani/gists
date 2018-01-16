@@ -1,0 +1,60 @@
+{
+	"url": "https://api.github.com/gists/ccafc0f1a01bb38f28be76b91e621b0d",
+	"forks_url": "https://api.github.com/gists/ccafc0f1a01bb38f28be76b91e621b0d/forks",
+	"commits_url": "https://api.github.com/gists/ccafc0f1a01bb38f28be76b91e621b0d/commits",
+	"id": "ccafc0f1a01bb38f28be76b91e621b0d",
+	"git_pull_url": "https://gist.github.com/ccafc0f1a01bb38f28be76b91e621b0d.git",
+	"git_push_url": "https://gist.github.com/ccafc0f1a01bb38f28be76b91e621b0d.git",
+	"html_url": "https://gist.github.com/ccafc0f1a01bb38f28be76b91e621b0d",
+	"files": {
+		"server.txt": {
+			"filename": "server.txt",
+			"type": "text/plain",
+			"language": "Text",
+			"raw_url": "https://gist.githubusercontent.com/anonymous/ccafc0f1a01bb38f28be76b91e621b0d/raw/02e98ca43c8ae024f1609028f7bac75708e07501/server.txt",
+			"size": 5351,
+			"truncated": false,
+			"content": "*~psyche~*#2643, nickname=None, id=203474637621821441\nAbdallah#3017, nickname=None, id=393085636002840576\nAi#7746, nickname=None, id=320458922580377602\nAlchemyking#5782, nickname=None, id=215972819492798464\nAlunaVi#2631, nickname=None, id=233024890725335040\nArachnos#8806, nickname=None, id=174352940528566273\nAura the Lucamew#6728, nickname=None, id=319927963892187136\nAurelion Sol#1283, nickname=None, id=203176668217475072\nAyeItsKatie#9327, nickname=None, id=325454257249845249\nBonfire#5936, nickname=[b;] Bonfire, id=183749087038930944\nCalibri#4210, nickname=None, id=203271712689750017\nCannotBeUnseen#7308, nickname=None, id=211960239631630338\nChung#5591, nickname=None, id=199457069059801088\nCrankkHD#6353, nickname=i am a dank toaster, id=376431247376908288\nCyber#8254, nickname=None, id=242039844262510593\nDISBOARD#2760, nickname=None, id=302050872383242240\nDLM#4306, nickname=None, id=212681528730189824\nDariesNeger#1655, nickname=None, id=285921515864588290\nDarknessAwaits#7284, nickname=None, id=143391634007130113\nDaydre#9298, nickname=None, id=207962883903062016\nDiscord Services#5966, nickname=None, id=371447175990870016\nDiscordRPG#0366, nickname=[#!] DiscordRPG, id=170915625722576896\nDiscordServ.com#5750, nickname=None, id=310897699194929155\nDyno#3861, nickname=[?] Dyno, id=155149108183695360\nESRONZ#2608, nickname=None, id=296885326071463938\nFredBoat♪♪#7284, nickname=[;;] FredBoat, id=184405311681986560\nFruity Vegetables#6111, nickname=ChroBiTerio, id=303459806323146752\nGAwesomeBot#0199, nickname=[&] GAwesomeBot, id=272794933176565761\nHallelujah#7080, nickname=AbsentMinded, id=272013976123080705\nIM#2078, nickname=None, id=256211806291230721\nItzcoatl#1724, nickname=Noli~, id=155871408121970689\nJareththeking#2232, nickname=None, id=284835480066064394\nJeanne d'Arc#3378, nickname=[j:] Jeanne d'Arc, id=237578660708745216\nKale (TVTropes Arena)#2914, nickname=None, id=334720015485894657\nKawaiiBot#0769, nickname=[+] KawaiiBot, id=195244363339530240\nKorak#6685, nickname=None, id=320601660659335168\nKrampus#6425, nickname=Krampus The Therapist, id=218785033555542016\nLaicuss333#7695, nickname=UGANDAN KNUCKLES, id=346337644369805312\nMaxwell#2730, nickname=Post-Apocalypse Harlem Shake, id=287136899410296832\nMee6#4876, nickname=[!] Mee6, id=159985870458322944\nMicoolTNT#9494, nickname=None, id=203248205624901634\nMintt#5439, nickname=None, id=323393285496373250\nMinx#5581, nickname=Mikasa, id=140926586588233729\nNadeko#6685, nickname=[.] Nadeko, id=116275390695079945\nNotSoBot#0997, nickname=[nt!] NotSoBot, id=170903342199865344\nPeter#1918, nickname=None, id=207153288112504832\nPhoenix#8705, nickname=Phoe-chan, id=203496929135427585\nPulse#7532, nickname=None, id=208709958475317250\nRPBot#4161, nickname=[,] RPBot, id=204777316621090816\nRbade#8440, nickname=None, id=272377374891442176\nRobotTophat#8076, nickname=None, id=261134151292289026\nRohan Moore#3704, nickname=Winter Wolf, id=202238149584224256\nSacredSpirit123#1599, nickname=None, id=209772418636447744\nServerHub#9109, nickname=None, id=277420177283481601\nShovel Girl#5481, nickname=None, id=237683293703766016\nSigma#8530, nickname=[>>] Sigma, id=216437513709944832\nSmiLe DoG#5908, nickname=None, id=382183053835108353\nStarboat#0084, nickname=None, id=325892959130222592\nStormer#9964, nickname=None, id=203177815716134913\nSuper Waifu Maker (Phazya)#8567, nickname=None, id=158291258660356097\nTangled_Skies#4896, nickname=None, id=124361862652493824\nTatsumaki#8792, nickname=[t!] Tatsumaki, id=172002275412279296\nTestedcomic#7156, nickname=None, id=364189676321636353\nThe Centerpiece#2030, nickname=None, id=309592300843958275\nThe Ends#9856, nickname=grimmer, id=211237041671897088\nThe Virtual Shadow#5823, nickname=Shadow, id=121548963068248064\nTheGreySpector 'Specs'#3763, nickname=Johnny Lorekeeper, id=250377272001822731\nTransformMarvel#4822, nickname=None, id=199729627168505856\nTransformMarvel#7399, nickname=None, id=336985224996978708\nUltimo#6498, nickname=None, id=197099394623864832\nUnbelievaBoat#1046, nickname=[u!] UnbelievaBoat, id=292953664492929025\nVoltanyx#0719, nickname=None, id=341470791315226625\nYui (ユイ)#2222, nickname=[y!] Yui, id=280497242714931202\nbig boiz trouble in town#6326, nickname=None, id=203495552460128256\nblargbot#0128, nickname=[;] blargbot, id=134133271750639616\nc67f#0275, nickname=None, id=339603852544180234\nironcommando#8584, nickname=None, id=187400519126482945\nkurzov5922#1505, nickname=TropeYoshi (Kurzov), id=227199955662536704\nmadguy gaming#6050, nickname=None, id=389142992436461578\nmxe#0425, nickname=None, id=203186314273619969\nnora#3712, nickname=None, id=306072568001986570\npokemongoplayer#1247, nickname=None, id=208097281499463680\nradthemad4#8073, nickname=None, id=152503585903476736\nsquiddlesBingewatcher#8515, nickname=squidBoi, id=297597599119310849\ntwinkify#1386, nickname=None, id=263960590073069569\nzbse#9510, nickname=98% Eldrich. 2% Water., id=203189852517171200\n| Faith |#1521, nickname=None, id=317816099821584386\n▇█°¯°·._.〠《ᗰᗴᗰᗴ ҜƗŇ𝕘》〠._.·°¯°█▇#1750, nickname=None, id=356048074767990784\nＤＵＣＫ ＴＨＥ ＬＥＧＥＮＤ#2396, nickname=None, id=381699146475896832\n👽Vrah👽#6173, nickname=None, id=368523159382523904\n💔 ShibaInu_Gamer🗡#9644, nickname=None, id=365417720151539712\n😻 NekoQueen 😻#2960, nickname=None, id=209046559080448000"
+		}
+	},
+	"public": true,
+	"created_at": "2018-01-09T17:53:26Z",
+	"updated_at": "2018-01-09T17:53:28Z",
+	"description": "All Users in: The Avatar Arena (ETAAYA)",
+	"comments": 0,
+	"user": null,
+	"comments_url": "https://api.github.com/gists/ccafc0f1a01bb38f28be76b91e621b0d/comments",
+	"forks": [
+
+	],
+	"history": [{
+		"user": {
+			"login": "invalid-email-address",
+			"id": 148100,
+			"avatar_url": "https://avatars0.githubusercontent.com/u/148100?v=4",
+			"gravatar_id": "",
+			"url": "https://api.github.com/users/invalid-email-address",
+			"html_url": "https://github.com/invalid-email-address",
+			"followers_url": "https://api.github.com/users/invalid-email-address/followers",
+			"following_url": "https://api.github.com/users/invalid-email-address/following{/other_user}",
+			"gists_url": "https://api.github.com/users/invalid-email-address/gists{/gist_id}",
+			"starred_url": "https://api.github.com/users/invalid-email-address/starred{/owner}{/repo}",
+			"subscriptions_url": "https://api.github.com/users/invalid-email-address/subscriptions",
+			"organizations_url": "https://api.github.com/users/invalid-email-address/orgs",
+			"repos_url": "https://api.github.com/users/invalid-email-address/repos",
+			"events_url": "https://api.github.com/users/invalid-email-address/events{/privacy}",
+			"received_events_url": "https://api.github.com/users/invalid-email-address/received_events",
+			"type": "User",
+			"site_admin": false
+		},
+		"version": "acff569cb323e05b53e0791ed9c891503513e54d",
+		"committed_at": "2018-01-09T17:53:26Z",
+		"change_status": {
+			"total": 92,
+			"additions": 92,
+			"deletions": 0
+		},
+		"url": "https://api.github.com/gists/ccafc0f1a01bb38f28be76b91e621b0d/acff569cb323e05b53e0791ed9c891503513e54d"
+	}],
+	"truncated": false
+}

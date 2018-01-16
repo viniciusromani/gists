@@ -35,7 +35,22 @@ extension GithubGist: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .publicGists:
+            guard let path = Bundle().url(forResource: "public", withExtension: "json") else { return Data() }
+            do {
+                return try Data(contentsOf: path)
+            } catch {
+                return Data()
+            }
+        case .specificGist:
+            guard let path = Bundle().url(forResource: "specific", withExtension: "json") else { return Data() }
+            do {
+                return try Data(contentsOf: path)
+            } catch {
+                return Data()
+            }
+        }
     }
     
     var task: Task {

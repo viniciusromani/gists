@@ -33,17 +33,22 @@ class UserMapperTest: XCTestCase {
                                                  userName: "VictoriaDem",
                                                  userGithubURL: URL(string: "https://github.com/VictoriaDem"),
                                                  avatarURL: URL(string: "https://avatars0.githubusercontent.com/u/34760928?v=4"))
-        let user = User(mapping: userEntity)
-        
-        XCTAssertNotNil(user?.id)
-        XCTAssert(user?.id == userEntity?.id)
-        
-        XCTAssertNotNil(user?.userName)
-        XCTAssert(user?.userName == userEntity?.userName)
-        XCTAssertNotNil(user?.userGithubURL)
-        XCTAssert(user?.userGithubURL == userEntity?.userGithubURL)
-        XCTAssertNotNil(user?.avatarURL)
-        XCTAssert(user?.avatarURL == userEntity?.avatarURL)
+        var user: User?
+        do {
+            user = try User(mapping: userEntity)
+            
+            XCTAssertNotNil(user?.id)
+            XCTAssert(user?.id == userEntity?.id)
+            
+            XCTAssertNotNil(user?.userName)
+            XCTAssert(user?.userName == userEntity?.userName)
+            XCTAssertNotNil(user?.userGithubURL)
+            XCTAssert(user?.userGithubURL == userEntity?.userGithubURL)
+            XCTAssertNotNil(user?.avatarURL)
+            XCTAssert(user?.avatarURL == userEntity?.avatarURL)
+        } catch {
+            XCTFail()
+        }
     }
     
     /*
@@ -55,16 +60,21 @@ class UserMapperTest: XCTestCase {
                                                   userName: "VictoriaDem",
                                                   userGithubURL: nil,
                                                   avatarURL: nil)
-        let user = User(mapping: userEntity)
-        
-        XCTAssertNotNil(user?.id)
-        XCTAssert(user?.id == userEntity?.id)
-        
-        XCTAssertNotNil(user?.userName)
-        XCTAssert(user?.userName == userEntity?.userName)
-        XCTAssertNil(user?.userGithubURL)
-        XCTAssert(user?.userGithubURL == userEntity?.userGithubURL)
-        XCTAssertNil(user?.avatarURL)
-        XCTAssert(user?.avatarURL == userEntity?.avatarURL)
+        var user: User?
+        do {
+            user = try User(mapping: userEntity)
+            
+            XCTAssertNotNil(user?.id)
+            XCTAssert(user?.id == userEntity?.id)
+            
+            XCTAssertNotNil(user?.userName)
+            XCTAssert(user?.userName == userEntity?.userName)
+            XCTAssertNil(user?.userGithubURL)
+            XCTAssert(user?.userGithubURL == userEntity?.userGithubURL)
+            XCTAssertNil(user?.avatarURL)
+            XCTAssert(user?.avatarURL == userEntity?.avatarURL)
+        } catch {
+            XCTFail()
+        }
     }
 }

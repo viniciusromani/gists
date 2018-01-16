@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import SwiftyJSON
 
 class GistEntityTest: XCTestCase {
     

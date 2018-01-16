@@ -25,6 +25,5 @@ target 'GithubGistsTests' do
     use_frameworks!
     
     # Pods for GithubGists
-    ui_pods
     net_pods
 end
