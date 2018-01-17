@@ -8,6 +8,7 @@ end
 def helper_pods
     pod 'Swinject', '~> 2.1.0'
     pod 'SwinjectStoryboard', '1.1.2'
+    pod 'R.swift'
 end
 
 def net_pods

@@ -13,3 +13,7 @@ struct GistViewModel {
     let userImageURL: URL?
     let userName: String?
 }
+
+struct PublicGistsViewModel {
+    let gists: [GistViewModel]
+}

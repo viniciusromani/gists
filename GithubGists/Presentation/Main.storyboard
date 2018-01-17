@@ -49,6 +49,9 @@
                         <viewLayoutGuide key="safeArea" id="jlK-8k-Q4Z"/>
                     </view>
                     <navigationItem key="navigationItem" id="811-wm-iEh"/>
+                    <connections>
+                        <outlet property="publicGistsCollectionView" destination="Ugk-31-v4G" id="rxU-2X-xpM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wX-mF-0RJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

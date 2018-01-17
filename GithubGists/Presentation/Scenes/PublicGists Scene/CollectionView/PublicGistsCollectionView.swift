@@ -11,6 +11,8 @@ import UIKit
 
 class PublicGistsCollectionView: UICollectionView {
     
+    let cellIdentifier = R.reuseIdentifier.gistCollectionViewCellIdentifier
+    
     var displayedGists: [GistViewModel] = [] {
         didSet {
             reloadData()
@@ -32,7 +34,7 @@ extension PublicGistsCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let gistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        guard let gistCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
             as? GistCollectionViewCell else {
                 return UICollectionViewCell()
         }

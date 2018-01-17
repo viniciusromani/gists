@@ -10,8 +10,10 @@ import Foundation
 
 protocol PublicGistsRouterProtocol: class {
     weak var view: PubicGistsViewProtocol! { get set }
+    
 }
 
 class PublicGistsRouter: PublicGistsRouterProtocol {
     weak var view: PubicGistsViewProtocol!
+    
 }

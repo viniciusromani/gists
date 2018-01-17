@@ -9,27 +9,56 @@
 import Foundation
 import UIKit
 
+// MARK: - View Protocol
+
 protocol PubicGistsViewProtocol: class {
     var presenter: PublicGistsPresenterProtocol! { get set }
     var router: PublicGistsRouterProtocol! { get set }
     
-    func display(_ viewModel: [GistViewModel])
+    func display(_ viewModel: PublicGistsViewModel)
 }
 
+// MARK: - ViewController
+
 class PublicGistsViewController: UIViewController {
+    
     var presenter: PublicGistsPresenterProtocol!
     var router: PublicGistsRouterProtocol!
     
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var publicGistsCollectionView: PublicGistsCollectionView!
+    
+    // MARK: - ViewController life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureCollectionView()
         
         presenter.retrievePublicGists()
     }
 }
 
-// MARK:- Display logic
+// MARK: - Display logic
+
 extension PublicGistsViewController: PubicGistsViewProtocol {
-    func display(_ viewModel: [GistViewModel]) {
-        
+    func display(_ viewModel: PublicGistsViewModel) {
+        publicGistsCollectionView.displayedGists = viewModel.gists
     }
 }
+
+// MARK: - Helper
+
+extension PublicGistsViewController {
+    
+    private func configureCollectionView() {
+        publicGistsCollectionView.delegate = publicGistsCollectionView
+        publicGistsCollectionView.dataSource = publicGistsCollectionView
+    }
+}
+
+
+
+
+

@@ -35,9 +35,9 @@ class PublicGistsPresenter: PublicGistsPresenterProtocol {
         retrievePublicGistsUseCase.retrievePublicGists().subscribe(onNext: { [weak self] gists in
             
             guard let weakSelf = self else { return }
-            print("success")
             let gistsViewModel = GistViewModel.array(mapping: gists)
-            weakSelf.view.display(gistsViewModel)
+            let publicGists = PublicGistsViewModel(gists: gistsViewModel)
+            weakSelf.view.display(publicGists)
             
         }, onError: { error in
             
