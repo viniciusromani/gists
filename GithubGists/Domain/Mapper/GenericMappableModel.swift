@@ -41,3 +41,7 @@ extension ObservableType where E: Decodable {
         return mappedModel
     }
 }
+
+
+
+

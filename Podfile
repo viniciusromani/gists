@@ -2,7 +2,12 @@
 # platform :ios, '9.0'
 
 def ui_pods
-	pod 'SnapKit', '~> 4.0.0'
+    pod 'SnapKit', '~> 4.0.0'
+end
+
+def helper_pods
+    pod 'Swinject', '~> 2.1.0'
+    pod 'SwinjectStoryboard', '1.1.2'
 end
 
 def net_pods
@@ -18,6 +23,7 @@ target 'GithubGists' do
 	# Pods for GithubGists
 	ui_pods
 	net_pods
+    helper_pods
 end
 
 target 'GithubGistsTests' do

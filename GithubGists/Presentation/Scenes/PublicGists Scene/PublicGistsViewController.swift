@@ -10,12 +10,21 @@ import Foundation
 import UIKit
 
 protocol PubicGistsViewProtocol: class {
+    var presenter: PublicGistsPresenterProtocol! { get set }
+    var router: PublicGistsRouterProtocol! { get set }
     
     func display(_ viewModel: [GistViewModel])
 }
 
 class PublicGistsViewController: UIViewController {
+    var presenter: PublicGistsPresenterProtocol!
+    var router: PublicGistsRouterProtocol!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        presenter.retrievePublicGists()
+    }
 }
 
 // MARK:- Display logic

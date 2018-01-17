@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Test View Controller-->
+        <!--Public Gists View Controller-->
         <scene sceneID="rSh-TI-Y6I">
             <objects>
-                <viewController id="jv0-Ep-KvR" customClass="TestViewController" customModule="GithubGists" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jv0-Ep-KvR" customClass="PublicGistsViewController" customModule="GithubGists" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hgy-52-thI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,7 +11,6 @@ import RxSwift
 
 protocol PublicGistsPresenterProtocol: class {
     weak var view: PubicGistsViewProtocol! { get set }
-    
     var retrievePublicGistsUseCase: RetrievePublicGistsUseCase! { get set }
     
     func retrievePublicGists()
