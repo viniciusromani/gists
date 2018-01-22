@@ -69,6 +69,7 @@
 		A1ECF8CE200F7FFD003F8AA3 /* PublicGistsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ECF8CD200F7FFD003F8AA3 /* PublicGistsConfigurator.swift */; };
 		A1ECF8D0200F80A7003F8AA3 /* PublicGistsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ECF8CF200F80A7003F8AA3 /* PublicGistsRouter.swift */; };
 		A1ECF8D3200F897F003F8AA3 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ECF8D2200F897F003F8AA3 /* R.generated.swift */; };
+		A1ECF8D6200FE06A003F8AA3 /* UIView+IBDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1ECF8D5200FE06A003F8AA3 /* UIView+IBDesignables.swift */; };
 		A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
 		A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE54581FE99A2D000C87B1 /* Gist.swift */; };
 		A1EE545C1FE99A36000C87B1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545B1FE99A36000C87B1 /* File.swift */; };
@@ -177,6 +178,7 @@
 		A1ECF8CD200F7FFD003F8AA3 /* PublicGistsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicGistsConfigurator.swift; sourceTree = "<group>"; };
 		A1ECF8CF200F80A7003F8AA3 /* PublicGistsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicGistsRouter.swift; sourceTree = "<group>"; };
 		A1ECF8D2200F897F003F8AA3 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = GithubGists/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		A1ECF8D5200FE06A003F8AA3 /* UIView+IBDesignables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBDesignables.swift"; sourceTree = "<group>"; };
 		A1EE54581FE99A2D000C87B1 /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
 		A1EE545B1FE99A36000C87B1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A1EE545E1FE99A44000C87B1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -406,6 +408,14 @@
 			path = "Dependency Injection";
 			sourceTree = "<group>";
 		};
+		A1ECF8D4200FDFFF003F8AA3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A1ECF8D5200FE06A003F8AA3 /* UIView+IBDesignables.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A1EE54511FE9949E000C87B1 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +623,7 @@
 				A1F6D5CC1FE2DA1300D3E6C5 /* Store */,
 				A1F6D5CB1FE2DA0F00D3E6C5 /* Domain */,
 				A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */,
+				A1ECF8D4200FDFFF003F8AA3 /* Helpers */,
 				A1FC434C1FD187BA004E9AF0 /* Support Files */,
 			);
 			path = GithubGists;
@@ -975,6 +986,7 @@
 				A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1ECF8C4200F7998003F8AA3 /* DataSourceDependencyInjection.swift in Sources */,
+				A1ECF8D6200FE06A003F8AA3 /* UIView+IBDesignables.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
 				A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931731FF4328B00FCDDAB /* GistRespository.swift in Sources */,

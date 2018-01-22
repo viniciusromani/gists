@@ -20,7 +20,12 @@ class PublicGistsCollectionView: UICollectionView {
     }
 }
 
-extension PublicGistsCollectionView: UICollectionViewDelegate { }
+extension PublicGistsCollectionView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selectionou")
+    }
+}
 
 extension PublicGistsCollectionView: UICollectionViewDataSource {
     
@@ -34,9 +39,8 @@ extension PublicGistsCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let gistCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-            as? GistCollectionViewCell else {
-                return UICollectionViewCell()
+        guard let gistCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) else {
+            return UICollectionViewCell()
         }
         
         let gistViewModel = displayedGists[indexPath.row]
@@ -47,13 +51,14 @@ extension PublicGistsCollectionView: UICollectionViewDataSource {
 }
 
 extension PublicGistsCollectionView: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let cellHeight = Constants.CellSize.GistCollectionCellHeight
-//        let halfOfWidth = collectionView.bounds.width / 2
-//        let cellSpacing = (collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing ?? 5.0
-//        let size = CGSize(width: halfOfWidth - cellSpacing, height: cellHeight)
-//        return size
-//    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellHeight = CGFloat(165.0)
+        let cellSpacing = (collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing ?? 5.0
+        let halfOfWidth = (collectionView.bounds.width - (cellSpacing * 2)) / 2
+        let size = CGSize(width: halfOfWidth - cellSpacing, height: cellHeight)
+        return size
+    }
 }
 
 

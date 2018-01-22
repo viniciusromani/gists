@@ -55,6 +55,8 @@ extension PublicGistsViewController {
     private func configureCollectionView() {
         publicGistsCollectionView.delegate = publicGistsCollectionView
         publicGistsCollectionView.dataSource = publicGistsCollectionView
+        
+        publicGistsCollectionView.register(R.nib.gistCollectionViewCell)
     }
 }
 

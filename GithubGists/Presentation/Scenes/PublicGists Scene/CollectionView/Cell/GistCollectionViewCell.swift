@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class GistCollectionViewCell: UICollectionViewCell {
-    static let nibName = "GistCollectionViewCell"
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
@@ -18,7 +18,7 @@ class GistCollectionViewCell: UICollectionViewCell {
     
     func configure(with viewModel: GistViewModel) {
         nameLabel.text = viewModel.name
-//        userImageView
-        userLabel.text = viewModel.userName
+        userImageView.kf.setImage(with: viewModel.userImageURL, placeholder: R.image.ic_person())
+        userLabel.text = viewModel.userName ?? "-"
     }
 }
