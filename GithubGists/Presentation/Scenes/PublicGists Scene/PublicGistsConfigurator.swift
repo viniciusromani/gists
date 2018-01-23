@@ -18,7 +18,7 @@ struct PublicGistsConfigurator {
             presenter.view = controller
             presenter.retrievePublicGistsUseCase = resolver.resolve(RetrievePublicGistsUseCase.self)!
             
-            router.view = controller
+            router.viewController = controller
             
             controller.presenter = presenter
             controller.router = router

@@ -14,5 +14,9 @@ struct UseCaseDependencyInjection {
         container.register(RetrievePublicGistsUseCase.self) { resolver -> RetrievePublicGistsUseCase in
             return RetrievePublicGistsUseCase(controller: resolver.resolve(GistRespository.self)!)
         }
+        
+        container.register(RetrieveGistWithIdUseCase.self) { resolver -> RetrieveGistWithIdUseCase in
+            return RetrieveGistWithIdUseCase(controller: resolver.resolve(GistRespository.self)!)
+        }
     }
 }

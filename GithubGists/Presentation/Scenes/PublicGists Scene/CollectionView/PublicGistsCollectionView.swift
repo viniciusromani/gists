@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
+protocol PublicGistsAdapterViewProtocol {
+    func didSelect(gist gistViewModel: GistViewModel)
+}
+
 final class PublicGistsAdapter: NSObject {
     var dataSet: [GistViewModel] = []
     var collectionView: UICollectionView
+    var viewDelegate: PublicGistsAdapterViewProtocol?
     
-    init(collectionView: UICollectionView) {
+    init(collectionView: UICollectionView, viewDelegate: PublicGistsAdapterViewProtocol?) {
         self.collectionView = collectionView
+        self.viewDelegate = viewDelegate
         super.init()
         
         setup(collectionView: collectionView)
@@ -38,6 +44,10 @@ extension PublicGistsAdapter: CollectionViewProtocol {
         
         cell.configure(with: model(for: indexPath))
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewDelegate?.didSelect(gist: model(for: indexPath))
     }
 }
 

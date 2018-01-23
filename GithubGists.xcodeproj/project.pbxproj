@@ -36,12 +36,15 @@
 		A1D063851FEA9F7500B9835F /* user_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D063841FEA9F7500B9835F /* user_entity.json */; };
 		A1D84C9D201766B300190D0E /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84C9C201766B300190D0E /* TableViewAdapter.swift */; };
 		A1D84C9F201766C100190D0E /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */; };
-		A1D975DC1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */; };
-		A1D975DD1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */; };
-		A1D975DF1FFFBBDE00CD2A57 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */; };
-		A1D975E01FFFBBDE00CD2A57 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */; };
-		A1D975E21FFFBBFB00CD2A57 /* GistDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975E11FFFBBFB00CD2A57 /* GistDetailConfigurator.swift */; };
-		A1D975E31FFFBBFB00CD2A57 /* GistDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975E11FFFBBFB00CD2A57 /* GistDetailConfigurator.swift */; };
+		A1D84CA12017BCD600190D0E /* GistDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */; };
+		A1D84CA52017CE7A00190D0E /* GistDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */; };
+		A1D84CA72017CEE600190D0E /* GistDetails+GistDetailsViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CA62017CEE600190D0E /* GistDetails+GistDetailsViewModelMapper.swift */; };
+		A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */; };
+		A1D975DD1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */; };
+		A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */; };
+		A1D975E01FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */; };
+		A1D975E21FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */; };
+		A1D975E31FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */; };
 		A1DC83062005295000C746CF /* RetrievePublicGistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */; };
 		A1DC830920052E5200C746CF /* GistRestDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC830820052E5200C746CF /* GistRestDataSourceTest.swift */; };
 		A1DC830D20053A3E00C746CF /* specific.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830B20053A3D00C746CF /* specific.json */; };
@@ -153,9 +156,12 @@
 		A1D063841FEA9F7500B9835F /* user_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_entity.json; sourceTree = "<group>"; };
 		A1D84C9C201766B300190D0E /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
 		A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
-		A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
-		A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPresenter.swift; sourceTree = "<group>"; };
-		A1D975E11FFFBBFB00CD2A57 /* GistDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailConfigurator.swift; sourceTree = "<group>"; };
+		A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsRouter.swift; sourceTree = "<group>"; };
+		A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewModel.swift; sourceTree = "<group>"; };
+		A1D84CA62017CEE600190D0E /* GistDetails+GistDetailsViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistDetails+GistDetailsViewModelMapper.swift"; sourceTree = "<group>"; };
+		A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewController.swift; sourceTree = "<group>"; };
+		A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsPresenter.swift; sourceTree = "<group>"; };
+		A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsConfigurator.swift; sourceTree = "<group>"; };
 		A1DC830820052E5200C746CF /* GistRestDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRestDataSourceTest.swift; sourceTree = "<group>"; };
 		A1DC830B20053A3D00C746CF /* specific.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = specific.json; sourceTree = "<group>"; };
 		A1DC830C20053A3D00C746CF /* public.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = public.json; sourceTree = "<group>"; };
@@ -317,6 +323,22 @@
 			path = AdapterProtocol;
 			sourceTree = "<group>";
 		};
+		A1D84CA22017CE5700190D0E /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				A1D84CA62017CEE600190D0E /* GistDetails+GistDetailsViewModelMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		A1D84CA32017CE5D00190D0E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A1D975D91FFFBB8400CD2A57 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,9 +351,12 @@
 		A1D975DA1FFFBB9800CD2A57 /* GistDetail */ = {
 			isa = PBXGroup;
 			children = (
-				A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */,
-				A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */,
-				A1D975E11FFFBBFB00CD2A57 /* GistDetailConfigurator.swift */,
+				A1D84CA22017CE5700190D0E /* Mapper */,
+				A1D84CA32017CE5D00190D0E /* ViewModel */,
+				A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */,
+				A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */,
+				A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */,
+				A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */,
 			);
 			path = GistDetail;
 			sourceTree = "<group>";
@@ -953,7 +978,7 @@
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
 				A1EEA0311FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */,
-				A1D975E01FFFBBDE00CD2A57 /* GistDetailPresenter.swift in Sources */,
+				A1D975E01FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */,
 				A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
 				A1F9316C1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
 				A1EEA0441FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
@@ -965,9 +990,9 @@
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */,
-				A1D975E31FFFBBFB00CD2A57 /* GistDetailConfigurator.swift in Sources */,
+				A1D975E31FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */,
 				A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */,
-				A1D975DD1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */,
+				A1D975DD1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */,
 				A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */,
 				A1E1137D1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */,
@@ -989,11 +1014,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D84CA12017BCD600190D0E /* GistDetailsRouter.swift in Sources */,
 				A1EEA02D1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift in Sources */,
 				A1EEA0301FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */,
 				A1E41D67200E9B3E00E6B230 /* PublicGistsPresenter.swift in Sources */,
 				A1E41D60200E967500E6B230 /* PublicGistsCollectionView.swift in Sources */,
 				A1ECF8C8200F7B23003F8AA3 /* UseCaseDependencyInjection.swift in Sources */,
+				A1D84CA52017CE7A00190D0E /* GistDetailsViewModel.swift in Sources */,
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
 				A1D84C9F201766C100190D0E /* CollectionViewAdapter.swift in Sources */,
 				A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */,
@@ -1008,12 +1035,12 @@
 				A1E41D65200E9B2C00E6B230 /* PublicGistsViewController.swift in Sources */,
 				A1EEA0401FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
 				A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */,
-				A1D975DF1FFFBBDE00CD2A57 /* GistDetailPresenter.swift in Sources */,
+				A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
 				A1E41D6A200E9E2500E6B230 /* Gist+GistViewModelMapper.swift in Sources */,
 				A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
 				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
-				A1D975E21FFFBBFB00CD2A57 /* GistDetailConfigurator.swift in Sources */,
+				A1D975E21FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */,
 				A1ECF8D0200F80A7003F8AA3 /* PublicGistsRouter.swift in Sources */,
 				A1ECF8CA200F7B45003F8AA3 /* SceneDependencyInjection.swift in Sources */,
 				A1ECF8CE200F7FFD003F8AA3 /* PublicGistsConfigurator.swift in Sources */,
@@ -1028,8 +1055,9 @@
 				A1F931701FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
 				A1F9316B1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
-				A1D975DC1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */,
+				A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */,
 				A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */,
+				A1D84CA72017CEE600190D0E /* GistDetails+GistDetailsViewModelMapper.swift in Sources */,
 				A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */,
 				A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */,
 				A1EEA03A1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,

@@ -9,6 +9,7 @@
 import Foundation
 
 struct GistViewModel {
+    let id: String
     let name: String
     let userImageURL: URL?
     let userName: String?

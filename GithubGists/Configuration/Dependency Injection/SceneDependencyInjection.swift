@@ -12,5 +12,6 @@ import Swinject
 struct SceneDependencyInjection {
     static func registerScenes(with container: Container) {
         PublicGistsConfigurator.configurePublicGistsScene(with: container)
+        GistDetailsConfigurator.configureGistDetailsScene(with: container)
     }
 }

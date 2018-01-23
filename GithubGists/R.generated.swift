@@ -98,16 +98,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
-    /// This struct is generated for `UIViewController`, and contains static references to 1 segues.
-    struct uiKitUIViewController {
-      /// Segue identifier `showGistDetailIdentifier`.
-      static let showGistDetailIdentifier: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, UIKit.UIViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showGistDetailIdentifier")
+    /// This struct is generated for `PublicGistsViewController`, and contains static references to 1 segues.
+    struct publicGistsViewController {
+      /// Segue identifier `showGistDetail`.
+      static let showGistDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PublicGistsViewController, GistDetailsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "showGistDetail")
       
-      /// Optionally returns a typed version of segue `showGistDetailIdentifier`.
+      /// Optionally returns a typed version of segue `showGistDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showGistDetailIdentifier(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, UIKit.UIViewController, UIKit.UIViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.uiKitUIViewController.showGistDetailIdentifier, segue: segue)
+      static func showGistDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PublicGistsViewController, GistDetailsViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.publicGistsViewController.showGistDetail, segue: segue)
       }
       
       fileprivate init() {}
@@ -179,7 +179,6 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try main.validate()
       try launchScreen.validate()
     }
     
@@ -196,15 +195,11 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+    struct main: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UINavigationController
       
       let bundle = R.hostingBundle
       let name = "Main"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "ic_reload") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ic_reload' is used in storyboard 'Main', but couldn't be loaded.") }
-      }
       
       fileprivate init() {}
     }

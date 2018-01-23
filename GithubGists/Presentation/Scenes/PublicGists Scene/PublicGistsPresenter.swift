@@ -9,6 +9,8 @@
 import Foundation
 import RxSwift
 
+// MARK: - Presenter Protocol
+
 protocol PublicGistsPresenterProtocol: class {
     weak var view: PubicGistsViewProtocol! { get set }
     var retrievePublicGistsUseCase: RetrievePublicGistsUseCase! { get set }
@@ -16,12 +18,16 @@ protocol PublicGistsPresenterProtocol: class {
     func retrievePublicGists()
 }
 
+// MARK: - Presenter Implementation
+
 class PublicGistsPresenter: PublicGistsPresenterProtocol {
     
     // MARK: - View
+    
     var view: PubicGistsViewProtocol!
     
     // MARK: - Use Case
+    
     var retrievePublicGistsUseCase: RetrievePublicGistsUseCase!
     
     // MARK: - Variables

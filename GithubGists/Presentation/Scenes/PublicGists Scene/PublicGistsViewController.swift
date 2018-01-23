@@ -25,7 +25,7 @@ class PublicGistsViewController: UIViewController {
     var presenter: PublicGistsPresenterProtocol!
     var router: PublicGistsRouterProtocol!
     
-    lazy var adapter = PublicGistsAdapter(collectionView: publicGistsCollectionView)
+    lazy var adapter = PublicGistsAdapter(collectionView: publicGistsCollectionView, viewDelegate: self)
     
     // MARK: - IBOutlets
     
@@ -47,6 +47,16 @@ extension PublicGistsViewController: PubicGistsViewProtocol {
         adapter.setDataSet(viewModel.gists)
     }
 }
+
+// MARK: - CollectionAdapterView Protocol
+
+extension PublicGistsViewController: PublicGistsAdapterViewProtocol {
+    func didSelect(gist gistViewModel: GistViewModel) {
+        let gistId = gistViewModel.id
+        router.navigateToDetails(withId: gistId)
+    }
+}
+
 
 
 
