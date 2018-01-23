@@ -1,14 +1,16 @@
 //
-//  Gist+GistViewModelMapper.swift
+//  GistViewModel+ViewModelling.swift
 //  GithubGists
 //
-//  Created by Vinicius Romani on 16/01/18.
+//  Created by Vinicius Romani on 23/01/18.
 //  Copyright © 2018 Vinicius Romani. All rights reserved.
 //
 
 import Foundation
 
-extension GistViewModel {
+extension GistViewModel: ViewModellingProtocol {
+    
+    typealias T = Gist
     
     init(mapping model: Gist) {
         id = model.id
@@ -16,8 +18,5 @@ extension GistViewModel {
         userImageURL = model.owner?.avatarURL
         userName = model.owner?.userName
     }
-    
-    static func array(mapping models: [Gist]) -> [GistViewModel] {
-        return models.map { return GistViewModel(mapping: $0) }
-    }
 }
+

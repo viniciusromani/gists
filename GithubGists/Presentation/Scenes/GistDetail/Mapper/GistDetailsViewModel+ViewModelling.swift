@@ -1,5 +1,5 @@
 //
-//  GistDetails+GistDetailsViewModelMapper.swift
+//  GistDetailsViewModel+ViewModelling.swift
 //  GithubGists
 //
 //  Created by Vinicius Romani on 23/01/18.
@@ -9,6 +9,8 @@
 import Foundation
 
 extension GistDetailsViewModel {
+    
+    typealias T = Gist
     
     init(mapping model: Gist) {
         name = model.files.first?.name ?? ""
