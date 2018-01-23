@@ -25,16 +25,16 @@ class PublicGistsViewController: UIViewController {
     var presenter: PublicGistsPresenterProtocol!
     var router: PublicGistsRouterProtocol!
     
+    lazy var adapter = PublicGistsAdapter(collectionView: publicGistsCollectionView)
+    
     // MARK: - IBOutlets
     
-    @IBOutlet weak var publicGistsCollectionView: PublicGistsCollectionView!
+    @IBOutlet weak var publicGistsCollectionView: UICollectionView!
     
     // MARK: - ViewController life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureCollectionView()
         
         presenter.retrievePublicGists()
     }
@@ -44,19 +44,7 @@ class PublicGistsViewController: UIViewController {
 
 extension PublicGistsViewController: PubicGistsViewProtocol {
     func display(_ viewModel: PublicGistsViewModel) {
-        publicGistsCollectionView.displayedGists = viewModel.gists
-    }
-}
-
-// MARK: - Helper
-
-extension PublicGistsViewController {
-    
-    private func configureCollectionView() {
-        publicGistsCollectionView.delegate = publicGistsCollectionView
-        publicGistsCollectionView.dataSource = publicGistsCollectionView
-        
-        publicGistsCollectionView.register(R.nib.gistCollectionViewCell)
+        adapter.setDataSet(viewModel.gists)
     }
 }
 

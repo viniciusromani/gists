@@ -9,49 +9,39 @@
 import Foundation
 import UIKit
 
-class PublicGistsCollectionView: UICollectionView {
+final class PublicGistsAdapter: NSObject {
+    var dataSet: [GistViewModel] = []
+    var collectionView: UICollectionView
     
-    let cellIdentifier = R.reuseIdentifier.gistCollectionViewCellIdentifier
-    
-    var displayedGists: [GistViewModel] = [] {
-        didSet {
-            reloadData()
-        }
+    init(collectionView: UICollectionView) {
+        self.collectionView = collectionView
+        super.init()
+        
+        setup(collectionView: collectionView)
     }
 }
 
-extension PublicGistsCollectionView: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selectionou")
-    }
-}
-
-extension PublicGistsCollectionView: UICollectionViewDataSource {
-    
-    override var numberOfSections: Int {
-        return 1
+extension PublicGistsAdapter: CollectionViewProtocol {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.numberOfSections
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return displayedGists.count
+        return self.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let gistCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) else {
+        let cellIdentifier = R.reuseIdentifier.gistCollectionViewCellIdentifier
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) else {
             return UICollectionViewCell()
         }
         
-        let gistViewModel = displayedGists[indexPath.row]
-        gistCell.configure(with: gistViewModel)
-        
-        return gistCell
+        cell.configure(with: model(for: indexPath))
+        return cell
     }
 }
 
-extension PublicGistsCollectionView: UICollectionViewDelegateFlowLayout {
-    
+extension PublicGistsAdapter: CollectionViewLayoutProtocol {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = CGFloat(165.0)
         let cellSpacing = (collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing ?? 5.0
@@ -61,4 +51,11 @@ extension PublicGistsCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension PublicGistsAdapter: CollectionViewAdapter {
+    typealias ModelType = GistViewModel
+    
+    func registerCell() {
+        collectionView.register(R.nib.gistCollectionViewCell)
+    }
+}
 

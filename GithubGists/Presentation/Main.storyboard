@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Public Gists View Controller-->
+        <!--Public Gists-->
         <scene sceneID="rSh-TI-Y6I">
             <objects>
                 <viewController id="jv0-Ep-KvR" customClass="PublicGistsViewController" customModule="GithubGists" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Ot-oB-I2I" userLabel="Collection View Container">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ugk-31-v4G" customClass="PublicGistsCollectionView" customModule="GithubGists" customModuleProvider="target">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ugk-31-v4G">
                                         <rect key="frame" x="0.0" y="10" width="375" height="593"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="nGt-pv-2UZ">
@@ -59,9 +59,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jlK-8k-Q4Z"/>
                     </view>
-                    <navigationItem key="navigationItem" id="811-wm-iEh"/>
+                    <navigationItem key="navigationItem" title="Public Gists" id="811-wm-iEh"/>
                     <connections>
-                        <outlet property="publicGistsCollectionView" destination="Ugk-31-v4G" id="rxU-2X-xpM"/>
+                        <outlet property="publicGistsCollectionView" destination="Ugk-31-v4G" id="bUg-Qv-P0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wX-mF-0RJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

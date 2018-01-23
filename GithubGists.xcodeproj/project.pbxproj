@@ -34,6 +34,8 @@
 		A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
 		A1D063851FEA9F7500B9835F /* user_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1D063841FEA9F7500B9835F /* user_entity.json */; };
+		A1D84C9D201766B300190D0E /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84C9C201766B300190D0E /* TableViewAdapter.swift */; };
+		A1D84C9F201766C100190D0E /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */; };
 		A1D975DC1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */; };
 		A1D975DD1FFFBBC600CD2A57 /* GistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */; };
 		A1D975DF1FFFBBDE00CD2A57 /* GistDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */; };
@@ -149,6 +151,8 @@
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A18481CD1FD46B4A009308E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1D063841FEA9F7500B9835F /* user_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_entity.json; sourceTree = "<group>"; };
+		A1D84C9C201766B300190D0E /* TableViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
+		A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
 		A1D975DB1FFFBBC600CD2A57 /* GistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailViewController.swift; sourceTree = "<group>"; };
 		A1D975DE1FFFBBDE00CD2A57 /* GistDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailPresenter.swift; sourceTree = "<group>"; };
 		A1D975E11FFFBBFB00CD2A57 /* GistDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailConfigurator.swift; sourceTree = "<group>"; };
@@ -302,6 +306,15 @@
 				A1370FD21FEC1D8700F7CCDC /* GistEntity */,
 			);
 			path = JSONs;
+			sourceTree = "<group>";
+		};
+		A1D84C9B2017669600190D0E /* AdapterProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				A1D84C9C201766B300190D0E /* TableViewAdapter.swift */,
+				A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */,
+			);
+			path = AdapterProtocol;
 			sourceTree = "<group>";
 		};
 		A1D975D91FFFBB8400CD2A57 /* Scenes */ = {
@@ -477,6 +490,7 @@
 		A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				A1D84C9B2017669600190D0E /* AdapterProtocol */,
 				A1D975D91FFFBB8400CD2A57 /* Scenes */,
 				A10CEFD81FE8108700D65E57 /* Main.storyboard */,
 			);
@@ -981,6 +995,7 @@
 				A1E41D60200E967500E6B230 /* PublicGistsCollectionView.swift in Sources */,
 				A1ECF8C8200F7B23003F8AA3 /* UseCaseDependencyInjection.swift in Sources */,
 				A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */,
+				A1D84C9F201766C100190D0E /* CollectionViewAdapter.swift in Sources */,
 				A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */,
 				A1F931571FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 				A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
@@ -1008,6 +1023,7 @@
 				A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */,
 				A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */,
 				A1ECF8D3200F897F003F8AA3 /* R.generated.swift in Sources */,
+				A1D84C9D201766B300190D0E /* TableViewAdapter.swift in Sources */,
 				A1E41D5C200E81FD00E6B230 /* GistCollectionViewCell.swift in Sources */,
 				A1F931701FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
