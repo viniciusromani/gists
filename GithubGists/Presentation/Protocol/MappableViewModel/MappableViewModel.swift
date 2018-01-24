@@ -9,14 +9,14 @@
 import Foundation
 
 protocol MappableViewModel {
-    associatedtype T: MappableModelProtocol
+    associatedtype Model: MappableModel
     
-    init(mapping model: T)
-    static func array(mapping models: [T]) -> [Self]
+    init(mapping model: Model)
+    static func array(mapping models: [Model]) -> [Self]
 }
 
 extension MappableViewModel {
-    static func array(mapping models: [T]) -> [Self] {
+    static func array(mapping models: [Model]) -> [Self] {
         return models.map { return self.init(mapping: $0) }
     }
 }

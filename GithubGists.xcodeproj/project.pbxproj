@@ -17,7 +17,12 @@
 		A114A2A62018AAF400EFCAFE /* MappableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A52018AAF400EFCAFE /* MappableViewModel.swift */; };
 		A114A2A82018AB2E00EFCAFE /* GistViewModel+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A72018AB2E00EFCAFE /* GistViewModel+Mappable.swift */; };
 		A114A2AA2018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A92018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift */; };
-		A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mapper.swift */; };
+		A114A2AE2018B04B00EFCAFE /* MappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2AD2018B04B00EFCAFE /* MappableModel.swift */; };
+		A114A2B12018EE3400EFCAFE /* MappableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B02018EE3400EFCAFE /* MappableEntity.swift */; };
+		A114A2B32018F16300EFCAFE /* UserEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B22018F16300EFCAFE /* UserEntity+Mappable.swift */; };
+		A114A2B52018F18300EFCAFE /* FileEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B42018F18300EFCAFE /* FileEntity+Mappable.swift */; };
+		A114A2B72018F1A200EFCAFE /* GistEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B62018F1A200EFCAFE /* GistEntity+Mappable.swift */; };
+		A119BB821FF2A513001A8C10 /* File+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mappable.swift */; };
 		A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */; };
 		A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */; };
 		A1370FD71FEC1DA600F7CCDC /* withid_withoutatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */; };
@@ -27,8 +32,8 @@
 		A1370FDF1FEC244600F7CCDC /* withwrongfilename_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FDB1FEC244500F7CCDC /* withwrongfilename_withatt.json */; };
 		A1370FE01FEC244600F7CCDC /* withoutfilename_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FDC1FEC244500F7CCDC /* withoutfilename_withatt.json */; };
 		A1370FE21FEC3BBC00F7CCDC /* gist_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */; };
-		A1370FE41FEC3E7600F7CCDC /* User+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */; };
-		A1370FE51FEC3E7600F7CCDC /* User+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */; };
+		A1370FE41FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
+		A1370FE51FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
 		A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */; };
 		A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */; };
@@ -51,11 +56,9 @@
 		A1DC830920052E5200C746CF /* GistRestDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DC830820052E5200C746CF /* GistRestDataSourceTest.swift */; };
 		A1DC830D20053A3E00C746CF /* specific.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830B20053A3D00C746CF /* specific.json */; };
 		A1DC830E20053A3E00C746CF /* public.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830C20053A3D00C746CF /* public.json */; };
-		A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mapper.swift */; };
-		A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mapper.swift */; };
-		A1E113771FED712500F47740 /* Gist+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mapper.swift */; };
-		A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */; };
-		A1E1137D1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */; };
+		A1E1136F1FED708B00F47740 /* File+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mappable.swift */; };
+		A1E113761FED712500F47740 /* Gist+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mappable.swift */; };
+		A1E113771FED712500F47740 /* Gist+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E113751FED712500F47740 /* Gist+Mappable.swift */; };
 		A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */; };
 		A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */; };
 		A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */; };
@@ -83,7 +86,6 @@
 		A1EE545F1FE99A44000C87B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545E1FE99A44000C87B1 /* User.swift */; };
 		A1EE54601FE99A44000C87B1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE545E1FE99A44000C87B1 /* User.swift */; };
 		A1EEA02D1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */; };
-		A1EEA02E1FFE51B00084F6EF /* GenericMappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */; };
 		A1EEA0301FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */; };
 		A1EEA0311FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02F1FFE53260084F6EF /* RetrievePublicGistsError.swift */; };
 		A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0321FFE535D0084F6EF /* RetrieveGistWithIdError.swift */; };
@@ -94,7 +96,6 @@
 		A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */; };
 		A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
 		A1EEA0441FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */; };
-		A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */; };
 		A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */; };
 		A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */; };
 		A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D61FE2E1BB00D3E6C5 /* UserEntity.swift */; };
@@ -140,6 +141,11 @@
 		A114A2A52018AAF400EFCAFE /* MappableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableViewModel.swift; sourceTree = "<group>"; };
 		A114A2A72018AB2E00EFCAFE /* GistViewModel+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistViewModel+Mappable.swift"; sourceTree = "<group>"; };
 		A114A2A92018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistDetailsViewModel+Mappable.swift"; sourceTree = "<group>"; };
+		A114A2AD2018B04B00EFCAFE /* MappableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableModel.swift; sourceTree = "<group>"; };
+		A114A2B02018EE3400EFCAFE /* MappableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableEntity.swift; sourceTree = "<group>"; };
+		A114A2B22018F16300EFCAFE /* UserEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mappable.swift"; sourceTree = "<group>"; };
+		A114A2B42018F18300EFCAFE /* FileEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEntity+Mappable.swift"; sourceTree = "<group>"; };
+		A114A2B62018F1A200EFCAFE /* GistEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistEntity+Mappable.swift"; sourceTree = "<group>"; };
 		A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperTest.swift; sourceTree = "<group>"; };
 		A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutatt.json; sourceTree = "<group>"; };
@@ -149,7 +155,7 @@
 		A1370FDB1FEC244500F7CCDC /* withwrongfilename_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withwrongfilename_withatt.json; sourceTree = "<group>"; };
 		A1370FDC1FEC244500F7CCDC /* withoutfilename_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutfilename_withatt.json; sourceTree = "<group>"; };
 		A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
-		A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Mapper.swift"; sourceTree = "<group>"; };
+		A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Mappable.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
 		A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapperTest.swift; sourceTree = "<group>"; };
 		A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistMapperTest.swift; sourceTree = "<group>"; };
@@ -168,9 +174,8 @@
 		A1DC830820052E5200C746CF /* GistRestDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRestDataSourceTest.swift; sourceTree = "<group>"; };
 		A1DC830B20053A3D00C746CF /* specific.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = specific.json; sourceTree = "<group>"; };
 		A1DC830C20053A3D00C746CF /* public.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = public.json; sourceTree = "<group>"; };
-		A1E1136E1FED708B00F47740 /* File+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Mapper.swift"; sourceTree = "<group>"; };
-		A1E113751FED712500F47740 /* Gist+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gist+Mapper.swift"; sourceTree = "<group>"; };
-		A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableModelProtocol.swift; sourceTree = "<group>"; };
+		A1E1136E1FED708B00F47740 /* File+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Mappable.swift"; sourceTree = "<group>"; };
+		A1E113751FED712500F47740 /* Gist+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Gist+Mappable.swift"; sourceTree = "<group>"; };
 		A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withoutowner.json; sourceTree = "<group>"; };
 		A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutfile_withowner.json; sourceTree = "<group>"; };
@@ -200,7 +205,6 @@
 		A1EEA0391FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+PublicGistsErrorCatcher.swift"; sourceTree = "<group>"; };
 		A1EEA03F1FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+GistWithIdErrorCatcher.swift"; sourceTree = "<group>"; };
 		A1EEA0421FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveGistWithIdUseCase.swift; sourceTree = "<group>"; };
-		A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMappableModel.swift; sourceTree = "<group>"; };
 		A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntity.swift; sourceTree = "<group>"; };
 		A1F6D5D31FE2E1AD00D3E6C5 /* FileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntity.swift; sourceTree = "<group>"; };
 		A1F6D5D61FE2E1BB00D3E6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
@@ -265,6 +269,15 @@
 				A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		A114A2AF2018EE2000EFCAFE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A114A2B02018EE3400EFCAFE /* MappableEntity.swift */,
+			);
+			name = Protocol;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A119BB841FF2B4C6001A8C10 /* Mapper */ = {
@@ -362,12 +375,12 @@
 			isa = PBXGroup;
 			children = (
 				A1E11ACF2003E6AD0033A520 /* PublicGists Scene */,
-				A1D975DA1FFFBB9800CD2A57 /* GistDetail */,
+				A1D975DA1FFFBB9800CD2A57 /* GistDetail Scene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		A1D975DA1FFFBB9800CD2A57 /* GistDetail */ = {
+		A1D975DA1FFFBB9800CD2A57 /* GistDetail Scene */ = {
 			isa = PBXGroup;
 			children = (
 				A1D84CA22017CE5700190D0E /* Mapper */,
@@ -377,7 +390,7 @@
 				A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */,
 				A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */,
 			);
-			path = GistDetail;
+			path = "GistDetail Scene";
 			sourceTree = "<group>";
 		};
 		A1DC830720052E2F00C746CF /* DataSource */ = {
@@ -507,7 +520,11 @@
 		A1EE54541FE99917000C87B1 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				A114A2AF2018EE2000EFCAFE /* Protocol */,
 				A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */,
+				A114A2B22018F16300EFCAFE /* UserEntity+Mappable.swift */,
+				A114A2B42018F18300EFCAFE /* FileEntity+Mappable.swift */,
+				A114A2B62018F1A200EFCAFE /* GistEntity+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -595,7 +612,7 @@
 		A1F9314B1FF3DB3500FCDDAB /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				A1E1137B1FED7B1700F47740 /* MappableModelProtocol.swift */,
+				A114A2AD2018B04B00EFCAFE /* MappableModel.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -629,10 +646,9 @@
 			isa = PBXGroup;
 			children = (
 				A1F9314B1FF3DB3500FCDDAB /* Protocol */,
-				A1F02B3A1FFD45FD00DC474E /* GenericMappableModel.swift */,
-				A1370FE31FEC3E7600F7CCDC /* User+Mapper.swift */,
-				A1E1136E1FED708B00F47740 /* File+Mapper.swift */,
-				A1E113751FED712500F47740 /* Gist+Mapper.swift */,
+				A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */,
+				A1E1136E1FED708B00F47740 /* File+Mappable.swift */,
+				A1E113751FED712500F47740 /* Gist+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -1004,7 +1020,6 @@
 				A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */,
 				A1F931711FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
-				A1EEA02E1FFE51B00084F6EF /* GenericMappableModel.swift in Sources */,
 				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
@@ -1013,17 +1028,16 @@
 				A1EE545A1FE99A2D000C87B1 /* Gist.swift in Sources */,
 				A1D975DD1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */,
 				A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */,
-				A1E1137D1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */,
 				A1F6D5DC1FE31B2A00D3E6C5 /* UserEntity.swift in Sources */,
 				A1F931621FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
 				A1DC830920052E5200C746CF /* GistRestDataSourceTest.swift in Sources */,
-				A1E113771FED712500F47740 /* Gist+Mapper.swift in Sources */,
+				A1E113771FED712500F47740 /* Gist+Mappable.swift in Sources */,
 				A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */,
 				A1EE545D1FE99A36000C87B1 /* File.swift in Sources */,
 				A1EE54601FE99A44000C87B1 /* User.swift in Sources */,
-				A1370FE51FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
-				A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */,
+				A1370FE51FEC3E7600F7CCDC /* User+Mappable.swift in Sources */,
+				A119BB821FF2A513001A8C10 /* File+Mappable.swift in Sources */,
 				A1EEA0341FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931581FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 			);
@@ -1048,23 +1062,26 @@
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1ECF8C4200F7998003F8AA3 /* DataSourceDependencyInjection.swift in Sources */,
 				A1ECF8D6200FE06A003F8AA3 /* UIView+IBDesignables.swift in Sources */,
+				A114A2B12018EE3400EFCAFE /* MappableEntity.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
 				A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
+				A114A2AE2018B04B00EFCAFE /* MappableModel.swift in Sources */,
 				A1F931731FF4328B00FCDDAB /* GistRespository.swift in Sources */,
 				A1E41D65200E9B2C00E6B230 /* PublicGistsViewController.swift in Sources */,
+				A114A2B72018F1A200EFCAFE /* GistEntity+Mappable.swift in Sources */,
 				A1EEA0401FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
-				A1E113761FED712500F47740 /* Gist+Mapper.swift in Sources */,
+				A1E113761FED712500F47740 /* Gist+Mappable.swift in Sources */,
 				A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
 				A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
 				A114A2AA2018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift in Sources */,
-				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A1D975E21FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */,
 				A1ECF8D0200F80A7003F8AA3 /* PublicGistsRouter.swift in Sources */,
 				A1ECF8CA200F7B45003F8AA3 /* SceneDependencyInjection.swift in Sources */,
 				A1ECF8CE200F7FFD003F8AA3 /* PublicGistsConfigurator.swift in Sources */,
 				A1ECF8CC200F7B7D003F8AA3 /* SwinjectStoryboard+Setup.swift in Sources */,
 				A1E41D63200E97F900E6B230 /* GistViewModel.swift in Sources */,
+				A114A2B32018F16300EFCAFE /* UserEntity+Mappable.swift in Sources */,
 				A1EE545C1FE99A36000C87B1 /* File.swift in Sources */,
 				A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */,
 				A1F6D5D21FE2E19C00D3E6C5 /* GistEntity.swift in Sources */,
@@ -1074,14 +1091,14 @@
 				A114A2A82018AB2E00EFCAFE /* GistViewModel+Mappable.swift in Sources */,
 				A1F931701FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A114A2A62018AAF400EFCAFE /* MappableViewModel.swift in Sources */,
+				A114A2B52018F18300EFCAFE /* FileEntity+Mappable.swift in Sources */,
 				A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
 				A1F9316B1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
 				A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */,
-				A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */,
 				A1EE54591FE99A2D000C87B1 /* Gist.swift in Sources */,
-				A1E1136F1FED708B00F47740 /* File+Mapper.swift in Sources */,
+				A1E1136F1FED708B00F47740 /* File+Mappable.swift in Sources */,
 				A1EEA03A1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
-				A1370FE41FEC3E7600F7CCDC /* User+Mapper.swift in Sources */,
+				A1370FE41FEC3E7600F7CCDC /* User+Mappable.swift in Sources */,
 				A1F931521FF405E100FCDDAB /* GithubGist.swift in Sources */,
 				A1ECF8C6200F7AFB003F8AA3 /* ControllerDependencyInjection.swift in Sources */,
 			);

@@ -27,9 +27,9 @@ import RxSwift
  */
 extension ObservableType where E == Response {
     
-    public func mapEntity<T: Decodable>(_ type: T.Type) -> Observable<T> {
-        let mappedEntity = flatMap { response -> Observable<T> in
-            guard let entity = try? JSONDecoder().decode(T.self, from: response.data) else {
+    func mapEntity<Entity: MappableEntity>(_ type: Entity.Type) -> Observable<Entity> {
+        let mappedEntity = flatMap { response -> Observable<Entity> in
+            guard let entity = try? JSONDecoder().decode(Entity.self, from: response.data) else {
                 return Observable.error(JSONError.cannotMapToEntity)
             }
             return Observable.just(entity)
@@ -43,9 +43,9 @@ extension ObservableType where E == Response {
  */
 extension ObservableType where E == Response {
     
-    public func mapEntities<T: Decodable>(_ type: T.Type) -> Observable<[T]> {
-        let mappedEntities = flatMap { response -> Observable<[T]> in
-            guard let entities = try? JSONDecoder().decode([T].self, from: response.data) else {
+    func mapEntities<Entity: MappableEntity>(_ type: Entity.Type) -> Observable<[Entity]> {
+        let mappedEntities = flatMap { response -> Observable<[Entity]> in
+            guard let entities = try? JSONDecoder().decode([Entity].self, from: response.data) else {
                 return Observable.error(JSONError.cannotMapToEntity)
             }
             return Observable.just(entities)

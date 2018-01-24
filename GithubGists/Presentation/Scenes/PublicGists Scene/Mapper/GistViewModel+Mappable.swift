@@ -10,9 +10,9 @@ import Foundation
 
 extension GistViewModel: MappableViewModel {
     
-    typealias T = Gist
+    typealias Model = Gist
     
-    init(mapping model: Gist) {
+    init(mapping model: Model) {
         id = model.id
         name = model.files.first?.name ?? ""
         userImageURL = model.owner?.avatarURL
