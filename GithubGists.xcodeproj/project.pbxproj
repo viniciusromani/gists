@@ -14,6 +14,9 @@
 		A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6D5D11FE2E19C00D3E6C5 /* GistEntity.swift */; };
 		A10CEFD91FE8108700D65E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A10CEFD81FE8108700D65E57 /* Main.storyboard */; };
 		A10CEFDB1FE81F5400D65E57 /* GistEntityTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */; };
+		A114A2A62018AAF400EFCAFE /* MappableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A52018AAF400EFCAFE /* MappableViewModel.swift */; };
+		A114A2A82018AB2E00EFCAFE /* GistViewModel+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A72018AB2E00EFCAFE /* GistViewModel+Mappable.swift */; };
+		A114A2AA2018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2A92018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift */; };
 		A119BB821FF2A513001A8C10 /* File+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mapper.swift */; };
 		A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */; };
 		A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */; };
@@ -38,9 +41,6 @@
 		A1D84C9F201766C100190D0E /* CollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */; };
 		A1D84CA12017BCD600190D0E /* GistDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */; };
 		A1D84CA52017CE7A00190D0E /* GistDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */; };
-		A1D84CAD2017D6C500190D0E /* ViewModellingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CAC2017D6C500190D0E /* ViewModellingProtocol.swift */; };
-		A1D84CAF2017D7D300190D0E /* GistViewModel+ViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CAE2017D7D300190D0E /* GistViewModel+ViewModelling.swift */; };
-		A1D84CB12017DA9400190D0E /* GistDetailsViewModel+ViewModelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D84CB02017DA9400190D0E /* GistDetailsViewModel+ViewModelling.swift */; };
 		A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */; };
 		A1D975DD1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */; };
 		A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */; };
@@ -137,6 +137,9 @@
 		A10CEFD41FE7F33B00D65E57 /* FileEntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEntityTest.swift; sourceTree = "<group>"; };
 		A10CEFD81FE8108700D65E57 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistEntityTest.swift; sourceTree = "<group>"; };
+		A114A2A52018AAF400EFCAFE /* MappableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappableViewModel.swift; sourceTree = "<group>"; };
+		A114A2A72018AB2E00EFCAFE /* GistViewModel+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistViewModel+Mappable.swift"; sourceTree = "<group>"; };
+		A114A2A92018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistDetailsViewModel+Mappable.swift"; sourceTree = "<group>"; };
 		A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperTest.swift; sourceTree = "<group>"; };
 		A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutatt.json; sourceTree = "<group>"; };
@@ -159,9 +162,6 @@
 		A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewAdapter.swift; sourceTree = "<group>"; };
 		A1D84CA02017BCD600190D0E /* GistDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsRouter.swift; sourceTree = "<group>"; };
 		A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewModel.swift; sourceTree = "<group>"; };
-		A1D84CAC2017D6C500190D0E /* ViewModellingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModellingProtocol.swift; sourceTree = "<group>"; };
-		A1D84CAE2017D7D300190D0E /* GistViewModel+ViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistViewModel+ViewModelling.swift"; sourceTree = "<group>"; };
-		A1D84CB02017DA9400190D0E /* GistDetailsViewModel+ViewModelling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistDetailsViewModel+ViewModelling.swift"; sourceTree = "<group>"; };
 		A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewController.swift; sourceTree = "<group>"; };
 		A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsPresenter.swift; sourceTree = "<group>"; };
 		A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsConfigurator.swift; sourceTree = "<group>"; };
@@ -241,6 +241,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A114A2A42018AAD800EFCAFE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A114A2AB2018AB9200EFCAFE /* MappableViewModel */,
+				A114A2AC2018ABA000EFCAFE /* Adapters */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A114A2AB2018AB9200EFCAFE /* MappableViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A114A2A52018AAF400EFCAFE /* MappableViewModel.swift */,
+			);
+			path = MappableViewModel;
+			sourceTree = "<group>";
+		};
+		A114A2AC2018ABA000EFCAFE /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				A1D84C9C201766B300190D0E /* TableViewAdapter.swift */,
+				A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
 		A119BB841FF2B4C6001A8C10 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,19 +342,10 @@
 			path = JSONs;
 			sourceTree = "<group>";
 		};
-		A1D84C9B2017669600190D0E /* AdapterProtocol */ = {
-			isa = PBXGroup;
-			children = (
-				A1D84C9C201766B300190D0E /* TableViewAdapter.swift */,
-				A1D84C9E201766C100190D0E /* CollectionViewAdapter.swift */,
-			);
-			path = AdapterProtocol;
-			sourceTree = "<group>";
-		};
 		A1D84CA22017CE5700190D0E /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				A1D84CB02017DA9400190D0E /* GistDetailsViewModel+ViewModelling.swift */,
+				A114A2A92018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -339,14 +356,6 @@
 				A1D84CA42017CE7A00190D0E /* GistDetailsViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		A1D84CAB2017D6B800190D0E /* ViewModelling Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				A1D84CAC2017D6C500190D0E /* ViewModellingProtocol.swift */,
-			);
-			path = "ViewModelling Protocol";
 			sourceTree = "<group>";
 		};
 		A1D975D91FFFBB8400CD2A57 /* Scenes */ = {
@@ -431,7 +440,7 @@
 		A1E41D68200E9DFE00E6B230 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				A1D84CAE2017D7D300190D0E /* GistViewModel+ViewModelling.swift */,
+				A114A2A72018AB2E00EFCAFE /* GistViewModel+Mappable.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -525,8 +534,7 @@
 		A1F6D5CA1FE2D9E600D3E6C5 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				A1D84CAB2017D6B800190D0E /* ViewModelling Protocol */,
-				A1D84C9B2017669600190D0E /* AdapterProtocol */,
+				A114A2A42018AAD800EFCAFE /* Protocol */,
 				A1D975D91FFFBB8400CD2A57 /* Scenes */,
 				A10CEFD81FE8108700D65E57 /* Main.storyboard */,
 			);
@@ -1037,11 +1045,9 @@
 				A1F6D5D71FE2E1BB00D3E6C5 /* UserEntity.swift in Sources */,
 				A1F931571FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 				A1F9315D1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
-				A1D84CAF2017D7D300190D0E /* GistViewModel+ViewModelling.swift in Sources */,
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1ECF8C4200F7998003F8AA3 /* DataSourceDependencyInjection.swift in Sources */,
 				A1ECF8D6200FE06A003F8AA3 /* UIView+IBDesignables.swift in Sources */,
-				A1D84CAD2017D6C500190D0E /* ViewModellingProtocol.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
 				A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931731FF4328B00FCDDAB /* GistRespository.swift in Sources */,
@@ -1051,6 +1057,7 @@
 				A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */,
 				A1EE545F1FE99A44000C87B1 /* User.swift in Sources */,
 				A1EEA0431FFE568A0084F6EF /* RetrieveGistWithIdUseCase.swift in Sources */,
+				A114A2AA2018AB5800EFCAFE /* GistDetailsViewModel+Mappable.swift in Sources */,
 				A1E1137C1FED7B1700F47740 /* MappableModelProtocol.swift in Sources */,
 				A1D975E21FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */,
 				A1ECF8D0200F80A7003F8AA3 /* PublicGistsRouter.swift in Sources */,
@@ -1064,9 +1071,10 @@
 				A1ECF8D3200F897F003F8AA3 /* R.generated.swift in Sources */,
 				A1D84C9D201766B300190D0E /* TableViewAdapter.swift in Sources */,
 				A1E41D5C200E81FD00E6B230 /* GistCollectionViewCell.swift in Sources */,
+				A114A2A82018AB2E00EFCAFE /* GistViewModel+Mappable.swift in Sources */,
 				A1F931701FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
+				A114A2A62018AAF400EFCAFE /* MappableViewModel.swift in Sources */,
 				A1F931611FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
-				A1D84CB12017DA9400190D0E /* GistDetailsViewModel+ViewModelling.swift in Sources */,
 				A1F9316B1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,
 				A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */,
 				A1F02B3B1FFD45FD00DC474E /* GenericMappableModel.swift in Sources */,
