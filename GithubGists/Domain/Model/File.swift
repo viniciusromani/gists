@@ -8,12 +8,6 @@
 
 import Foundation
 
-/*
- * Domain Business rule:
- * It will be considered invalid if size attribute is 0 or less.
- * PS. The rule will be applied when mapping an entity to a model.
- */
-
 struct File {
     let name: String
     let size: Double

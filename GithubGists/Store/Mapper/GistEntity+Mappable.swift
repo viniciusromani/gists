@@ -22,24 +22,19 @@ extension GistEntity: MappableEntity {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        guard values.contains(.id) else { throw JSONError.keyNotFound }
+        guard values.contains(.id) else { throw JSONError.cannotMapToEntity }
         
-        // Id treatment
-        guard let parsedId = try? values.decode(String.self, forKey: .id) else { throw JSONError.typeMismatch }
-        guard parsedId.count > 0 else { throw JSONError.cannotMapToEntity }
-        id = parsedId
-        
-        // Other parameters
+        id = try values.decode(String.self, forKey: .id)
         description = try? values.decode(String.self, forKey: .description)
-        apiURL = try? values.decode(URL.self, forKey: .apiURL)
-        htmlURL = try? values.decode(URL.self, forKey: .htmlURL)
+        apiURL = try? values.decode(String.self, forKey: .apiURL)
+        htmlURL = try? values.decode(String.self, forKey: .htmlURL)
         files = []
         let filesDictionary = try values.decode([String: FileEntity].self, forKey: .files)
         for (_, fileEntity) in filesDictionary.enumerated() {
             files.append(fileEntity.value)
         }
         owner = try? values.decode(UserEntity.self, forKey: .owner)
-        isPublic = try? values.decode(Bool.self, forKey: .isPublic)
+        isPublic = try values.decode(Int.self, forKey: .isPublic)
         createdAt = try? values.decode(Date.self, forKey: .createdAt)
     }
 }

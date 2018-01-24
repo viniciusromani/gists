@@ -9,9 +9,6 @@
 import Foundation
 
 /*
- * Model Business rule:
- * It will be considered invalid if it does not have an id.
- * ID will be retrieved from incoming json through the key "id"
  * JSON example:
  * "owner": {
  *     "login": "delaguardiap",
@@ -35,9 +32,9 @@ import Foundation
  */
 
 struct UserEntity {
-    let id: String
+    let id: Int
     let userName: String?
-    let userGithubURL: URL?
-    let avatarURL: URL?
+    let userGithubURL: String?
+    let avatarURL: String?
 }
 

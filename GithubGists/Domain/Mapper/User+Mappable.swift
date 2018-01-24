@@ -9,19 +9,24 @@
 import Foundation
 import RxSwift
 
+/*
+ * Domain Business rule:
+ * It will be considered invalid if
+ * the id is lower than 0.
+ */
+
 extension User: MappableModel {
     
     typealias Entity = UserEntity
     
     init?(mapping entity: Entity?) throws {
-        guard let userEntity = entity else {
-            return nil
-        }
+        guard let userEntity = entity else { return nil }
+        guard userEntity.id > 0 else { throw JSONError.cannotMapToModel }
         
-        id = userEntity.id
+        id = "\(userEntity.id)"
         userName = userEntity.userName
-        userGithubURL = userEntity.userGithubURL
-        avatarURL = userEntity.avatarURL
+        userGithubURL = URL(string: userEntity.userGithubURL ?? "")
+        avatarURL = URL(string: userEntity.avatarURL ?? "")
     }
 }
 

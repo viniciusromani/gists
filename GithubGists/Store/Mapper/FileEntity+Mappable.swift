@@ -18,16 +18,11 @@ extension FileEntity: MappableEntity {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        guard values.contains(.name), values.contains(.size) else { throw JSONError.keyNotFound }
+        guard values.contains(.name), values.contains(.size) else { throw JSONError.cannotMapToEntity }
         
-        // Name treatment
-        guard let parsedName = try? values.decode(String.self, forKey: .name) else { throw JSONError.typeMismatch }
-        guard parsedName.count > 0 else { throw JSONError.cannotMapToEntity }
-        name = parsedName
-        
-        // Other parameters
+        name = try values.decode(String.self, forKey: .name)
         size = try values.decodeIfPresent(Double.self, forKey: .size) ?? 0.0
         language = try? values.decode(String.self, forKey: .language)
-        url = try? values.decode(URL.self, forKey: .url)
+        url = try? values.decode(String.self, forKey: .url)
     }
 }

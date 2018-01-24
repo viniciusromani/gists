@@ -10,8 +10,11 @@ import Foundation
 import RxSwift
 
 /*
- * Domain business rule (described on Model folder)
- * is being applied while mapping an entity to a model.
+ * Model Business rule:
+ * It will be considered invalid if it
+ * does not have a valid id.
+ * It will be considered invalid if it
+ * does not have any files related.
  */
 
 extension Gist: MappableModel {
@@ -19,17 +22,17 @@ extension Gist: MappableModel {
     typealias Entity = GistEntity
     
     init(mapping entity: Entity) throws {
-        guard entity.files.count > 0 else {
+        guard entity.id.count > 0, entity.files.count > 0 else {
             throw JSONError.cannotMapToModel
         }
         
         id = entity.id
         description = entity.description
-        apiURL = entity.apiURL
-        htmlURL = entity.htmlURL
+        apiURL = URL(string: entity.apiURL ?? "")
+        htmlURL = URL(string: entity.htmlURL ?? "")
         files = try File.array(mapping: entity.files)
         owner = try User.init(mapping: entity.owner)
-        isPublic = entity.isPublic
+        isPublic = Bool(truncating: entity.isPublic as NSNumber)
         createdAt = entity.createdAt
     }
 }

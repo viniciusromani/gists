@@ -10,8 +10,9 @@ import Foundation
 import RxSwift
 
 /*
- * Domain business rule (described on Model folder)
- * is being applied while mapping an entity to a model.
+ * Domain Business rule:
+ * It will be considered invalid if either does
+ * not have a valid name or its size is less than 0.
  */
 
 extension File: MappableModel {
@@ -19,14 +20,14 @@ extension File: MappableModel {
     typealias Entity = FileEntity
     
     init(mapping entity: Entity) throws {
-        guard entity.size > 0 else {
+        guard entity.name.count > 0, entity.size > 0 else {
             throw JSONError.cannotMapToModel
         }
         
         name = entity.name
         size = entity.size
         language = entity.language
-        url = entity.url
+        url = URL(string: entity.url ?? "")
     }
 }
 

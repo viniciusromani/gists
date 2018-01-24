@@ -8,10 +8,6 @@
 
 import Foundation
 
-/*
- * No Domain Business rule:
- */
-
 struct User {
     let id: String
     let userName: String?

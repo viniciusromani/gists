@@ -9,9 +9,6 @@
 import Foundation
 
 /*
- * Model Business rule:
- * It will be considered invalid if either does
- * not have a name or its size is less than 0.
  * JSON example:
  * "ring.erl": {
  *     "size": 932,
@@ -27,6 +24,6 @@ struct FileEntity {
     let name: String
     let size: Double
     let language: String?
-    let url: URL?
+    let url: String?
 }
 
