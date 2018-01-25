@@ -13,5 +13,3 @@ protocol GistRespositoryController {
     func retrievePublicGists() -> Observable<[Gist]>
     func retrieveGist(withId id: String) -> Observable<Gist>
 }
-
-

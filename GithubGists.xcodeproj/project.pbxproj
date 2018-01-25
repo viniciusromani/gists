@@ -28,7 +28,6 @@
 		A114A2BB2018F43F00EFCAFE /* FileEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B42018F18300EFCAFE /* FileEntity+Mappable.swift */; };
 		A114A2BC2018F44200EFCAFE /* GistEntity+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114A2B62018F1A200EFCAFE /* GistEntity+Mappable.swift */; };
 		A119BB821FF2A513001A8C10 /* File+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E1136E1FED708B00F47740 /* File+Mappable.swift */; };
-		A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */; };
 		A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */; };
 		A1370FD71FEC1DA600F7CCDC /* withid_withoutatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */; };
 		A1370FD81FEC1DA600F7CCDC /* withwrongid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1370FD51FEC1DA500F7CCDC /* withwrongid_withatt.json */; };
@@ -40,7 +39,6 @@
 		A1370FE41FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
 		A1370FE51FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
-		A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */; };
 		A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */; };
 		A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
@@ -117,6 +115,10 @@
 		A1F931711FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F9316F1FF431EE00FCDDAB /* GistRepositoryProtocol.swift */; };
 		A1F931731FF4328B00FCDDAB /* GistRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931721FF4328B00FCDDAB /* GistRespository.swift */; };
 		A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F931721FF4328B00FCDDAB /* GistRespository.swift */; };
+		A1FC35A6201A3A6C00DCCB83 /* TestableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC35A5201A3A6C00DCCB83 /* TestableModel.swift */; };
+		A1FC35AA201A3BCA00DCCB83 /* UserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC35A9201A3BCA00DCCB83 /* UserTest.swift */; };
+		A1FC35AC201A493700DCCB83 /* FileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC35AB201A493700DCCB83 /* FileTest.swift */; };
+		A1FC35B0201A58BB00DCCB83 /* GistTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC35AF201A58BB00DCCB83 /* GistTest.swift */; };
 		A1FC433B1FD18660004E9AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */; };
 		A1FC43421FD18660004E9AF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43411FD18660004E9AF0 /* Assets.xcassets */; };
 		A1FC43451FD18660004E9AF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1FC43431FD18660004E9AF0 /* LaunchScreen.storyboard */; };
@@ -148,7 +150,6 @@
 		A114A2B22018F16300EFCAFE /* UserEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserEntity+Mappable.swift"; sourceTree = "<group>"; };
 		A114A2B42018F18300EFCAFE /* FileEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileEntity+Mappable.swift"; sourceTree = "<group>"; };
 		A114A2B62018F1A200EFCAFE /* GistEntity+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GistEntity+Mappable.swift"; sourceTree = "<group>"; };
-		A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapperTest.swift; sourceTree = "<group>"; };
 		A1370FD31FEC1DA500F7CCDC /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1370FD41FEC1DA500F7CCDC /* withid_withoutatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutatt.json; sourceTree = "<group>"; };
 		A1370FD51FEC1DA500F7CCDC /* withwrongid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withwrongid_withatt.json; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
 		A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Mappable.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
-		A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMapperTest.swift; sourceTree = "<group>"; };
 		A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistMapperTest.swift; sourceTree = "<group>"; };
 		A16A06391FEADB4E0083A55A /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		A16A063B1FEADBF10083A55A /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
@@ -218,6 +218,10 @@
 		A1F9316A1FF42D1D00FCDDAB /* GenericMappableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMappableEntity.swift; sourceTree = "<group>"; };
 		A1F9316F1FF431EE00FCDDAB /* GistRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A1F931721FF4328B00FCDDAB /* GistRespository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistRespository.swift; sourceTree = "<group>"; };
+		A1FC35A5201A3A6C00DCCB83 /* TestableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableModel.swift; sourceTree = "<group>"; };
+		A1FC35A9201A3BCA00DCCB83 /* UserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTest.swift; sourceTree = "<group>"; };
+		A1FC35AB201A493700DCCB83 /* FileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTest.swift; sourceTree = "<group>"; };
+		A1FC35AF201A58BB00DCCB83 /* GistTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistTest.swift; sourceTree = "<group>"; };
 		A1FC43371FD18660004E9AF0 /* GithubGists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithubGists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FC433A1FD18660004E9AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1FC43411FD18660004E9AF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,8 +289,6 @@
 		A119BB841FF2B4C6001A8C10 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				A119BB851FF2B55F001A8C10 /* UserMapperTest.swift */,
-				A1628D0C1FF2BF4B00656B5A /* FileMapperTest.swift */,
 				A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */,
 			);
 			path = Mapper;
@@ -340,7 +342,7 @@
 		A18481CA1FD46B4A009308E9 /* GithubGistsTests */ = {
 			isa = PBXGroup;
 			children = (
-				A1D063831FEA9F0B00B9835F /* JSONs */,
+				A1FC35A0201A372400DCCB83 /* Unit Tests */,
 				A1EE54511FE9949E000C87B1 /* Store */,
 				A18481CD1FD46B4A009308E9 /* Info.plist */,
 			);
@@ -492,8 +494,8 @@
 			isa = PBXGroup;
 			children = (
 				A1EE54521FE994A6000C87B1 /* Entity */,
-				A1DC830720052E2F00C746CF /* DataSource */,
 				A119BB841FF2B4C6001A8C10 /* Mapper */,
+				A1DC830720052E2F00C746CF /* DataSource */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -501,10 +503,6 @@
 		A1EE54521FE994A6000C87B1 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6D5DA1FE3192300D3E6C5 /* UserEntityTest.swift */,
-				A10CEFD41FE7F33B00D65E57 /* FileEntityTest.swift */,
-				A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */,
-				A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -670,6 +668,54 @@
 				A1F9316F1FF431EE00FCDDAB /* GistRepositoryProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A1FC35A0201A372400DCCB83 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A1FC35A1201A373500DCCB83 /* Store */,
+				A1FC35A3201A3A2900DCCB83 /* Domain */,
+			);
+			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		A1FC35A1201A373500DCCB83 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				A1D063831FEA9F0B00B9835F /* JSONs */,
+				A1FC35A2201A373C00DCCB83 /* Entity */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		A1FC35A2201A373C00DCCB83 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6D5DA1FE3192300D3E6C5 /* UserEntityTest.swift */,
+				A10CEFD41FE7F33B00D65E57 /* FileEntityTest.swift */,
+				A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */,
+				A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		A1FC35A3201A3A2900DCCB83 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A1FC35A4201A3A3900DCCB83 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1FC35A4201A3A3900DCCB83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1FC35A9201A3BCA00DCCB83 /* UserTest.swift */,
+				A1FC35AB201A493700DCCB83 /* FileTest.swift */,
+				A1FC35AF201A58BB00DCCB83 /* GistTest.swift */,
+				A1FC35A5201A3A6C00DCCB83 /* TestableModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A1FC432E1FD18660004E9AF0 = {
@@ -1007,13 +1053,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A119BB861FF2B55F001A8C10 /* UserMapperTest.swift in Sources */,
 				A1F931531FF405E100FCDDAB /* GithubGist.swift in Sources */,
+				A1FC35B0201A58BB00DCCB83 /* GistTest.swift in Sources */,
 				A1DC83062005295000C746CF /* RetrievePublicGistsUseCase.swift in Sources */,
 				A114A2BA2018F43D00EFCAFE /* UserEntity+Mappable.swift in Sources */,
 				A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */,
-				A1628D0D1FF2BF4B00656B5A /* FileMapperTest.swift in Sources */,
 				A114A2BB2018F43F00EFCAFE /* FileEntity+Mappable.swift in Sources */,
+				A1FC35A6201A3A6C00DCCB83 /* TestableModel.swift in Sources */,
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
 				A114A2BC2018F44200EFCAFE /* GistEntity+Mappable.swift in Sources */,
@@ -1025,6 +1071,7 @@
 				A1F931711FF431EE00FCDDAB /* GistRepositoryProtocol.swift in Sources */,
 				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
+				A1FC35AA201A3BCA00DCCB83 /* UserTest.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */,
@@ -1042,6 +1089,7 @@
 				A1370FE51FEC3E7600F7CCDC /* User+Mappable.swift in Sources */,
 				A114A2B82018F3E100EFCAFE /* MappableModel.swift in Sources */,
 				A119BB821FF2A513001A8C10 /* File+Mappable.swift in Sources */,
+				A1FC35AC201A493700DCCB83 /* FileTest.swift in Sources */,
 				A1EEA0341FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,
 				A1F931581FF4077700FCDDAB /* GistDataSource.swift in Sources */,
 			);

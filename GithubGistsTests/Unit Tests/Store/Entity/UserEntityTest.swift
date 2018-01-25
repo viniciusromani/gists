@@ -8,6 +8,11 @@
 
 import XCTest
 
+/*
+ * This class is going to test UserEntity and
+ * its respective mapper described in UserEntity+Mappable.
+ */
+
 class UserEntityTest: XCTestCase {
     
     // MARK: Variables
@@ -37,7 +42,6 @@ class UserEntityTest: XCTestCase {
         let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNotNil(userEntity)
         XCTAssertNotNil(userEntity?.id)
-        XCTAssertTrue(!userEntity!.id.isEmpty)
         
         // Parameters should be all null
         XCTAssertNil(userEntity?.userName)
@@ -64,15 +68,15 @@ class UserEntityTest: XCTestCase {
         localJSON = "withwrongid_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try jsonDecoder.decode(UserEntity.self, from: jsonData))
+        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
         let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
-        XCTAssertNil(userEntity)
-        XCTAssertNil(userEntity?.id)
+        XCTAssertNotNil(userEntity)
+        XCTAssertNotNil(userEntity?.id)
         
         // Parameters should be all null
-        XCTAssertNil(userEntity?.userName)
-        XCTAssertNil(userEntity?.userGithubURL)
-        XCTAssertNil(userEntity?.avatarURL)
+        XCTAssertNotNil(userEntity?.userName)
+        XCTAssertNotNil(userEntity?.userGithubURL)
+        XCTAssertNotNil(userEntity?.avatarURL)
     }
 }
 
@@ -95,7 +99,6 @@ extension UserEntityTest: TestableEntity {
         let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
         XCTAssertNotNil(userEntity)
         XCTAssertNotNil(userEntity?.id)
-        XCTAssertTrue(!userEntity!.id.isEmpty)
         
         // Testing if it has all parameters set
         XCTAssertNotNil(userEntity?.userName)

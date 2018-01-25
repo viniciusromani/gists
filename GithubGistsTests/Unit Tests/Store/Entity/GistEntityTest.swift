@@ -8,6 +8,11 @@
 
 import XCTest
 
+/*
+ * This class is going to test GistEntity and
+ * its respective mapper described in GistEntity+Mappable.
+ */
+
 class GistEntityTest: XCTestCase {
     
     // MARK: - Variables
@@ -68,10 +73,8 @@ class GistEntityTest: XCTestCase {
         XCTAssertNil(gistEntity?.description)
         XCTAssertNil(gistEntity?.apiURL)
         XCTAssertNil(gistEntity?.htmlURL)
-        
         XCTAssertNotNil(gistEntity?.files)
         XCTAssertTrue(gistEntity!.files.count == 0)
-        
         XCTAssertNotNil(gistEntity?.owner)
     }
     
@@ -92,11 +95,8 @@ class GistEntityTest: XCTestCase {
         // Testing parameters
         XCTAssertNotNil(gistEntity?.files)
         XCTAssertTrue(gistEntity!.files.count == 1)
-        
         XCTAssertNil(gistEntity?.owner)
-        
         XCTAssertNotNil(gistEntity?.isPublic)
-        XCTAssertTrue(gistEntity!.isPublic!)
     }
     
     /*
@@ -117,12 +117,8 @@ class GistEntityTest: XCTestCase {
         // Testing parameters
         XCTAssertNotNil(gistEntity?.files)
         XCTAssertTrue(gistEntity!.files.count == 2)
-        
         XCTAssertNotNil(gistEntity?.owner)
-        
         XCTAssertNotNil(gistEntity?.isPublic)
-        XCTAssertFalse(gistEntity!.isPublic!)
-        
         XCTAssertNotNil(gistEntity?.createdAt)
     }
     
@@ -143,11 +139,8 @@ class GistEntityTest: XCTestCase {
         
         // Testing parameters
         XCTAssertNotNil(gistEntity?.description)
-        
         XCTAssertNotNil(gistEntity?.apiURL)
-        
         XCTAssertNotNil(gistEntity?.htmlURL)
-        
         XCTAssertNil(gistEntity?.createdAt)
     }
     

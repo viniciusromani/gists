@@ -22,7 +22,7 @@ extension Gist: MappableModel {
     typealias Entity = GistEntity
     
     init(mapping entity: Entity) throws {
-        guard entity.id.count > 0, entity.files.count > 0 else {
+        guard entity.id.trimmingCharacters(in: .whitespaces).count > 0, entity.files.count > 0 else {
             throw JSONError.cannotMapToModel
         }
         
@@ -31,7 +31,7 @@ extension Gist: MappableModel {
         apiURL = URL(string: entity.apiURL ?? "")
         htmlURL = URL(string: entity.htmlURL ?? "")
         files = try File.array(mapping: entity.files)
-        owner = try User.init(mapping: entity.owner)
+        owner = try User(mapping: entity.owner)
         isPublic = Bool(truncating: entity.isPublic as NSNumber)
         createdAt = entity.createdAt
     }

@@ -8,6 +8,11 @@
 
 import XCTest
 
+/*
+ * This class is going to test FileEntity and
+ * its respective mapper described in FileEntity+Mappable.
+ */
+
 class FileEntityTest: XCTestCase {
     
     // MARK: - Variables
@@ -64,15 +69,15 @@ class FileEntityTest: XCTestCase {
         localJSON = "withwrongfilename_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertThrowsError(try jsonDecoder.decode(FileEntity.self, from: jsonData))
+        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
         let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
-        XCTAssertNil(fileEntity)
-        XCTAssertNil(fileEntity?.name)
+        XCTAssertNotNil(fileEntity)
+        XCTAssertNotNil(fileEntity?.name)
         
         // Parameters should be all null
-        XCTAssertNil(fileEntity?.size)
-        XCTAssertNil(fileEntity?.language)
-        XCTAssertNil(fileEntity?.url)
+        XCTAssertNotNil(fileEntity?.size)
+        XCTAssertNotNil(fileEntity?.language)
+        XCTAssertNotNil(fileEntity?.url)
     }
 }
 
