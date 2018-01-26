@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 /*
  * This class is going to test UserEntity and
@@ -34,49 +35,55 @@ class UserEntityTest: XCTestCase {
     
     // MARK: - Tests
     
-    func testNoAttributesValidJSON() {
+    /*
+     *  It should parse because it has an id.
+     *  This is also testing a json with no
+     *  attributes being sent.
+     */
+    func testNoValidAttributesJSON() {
         localJSON = "withid_withoutatt"
         
         // It is a valid JSON because it has id
-        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
-        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
-        XCTAssertNotNil(userEntity)
-        XCTAssertNotNil(userEntity?.id)
+        expect { try self.jsonDecoder.decode(UserEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Parameters should be all null
-        XCTAssertNil(userEntity?.userName)
-        XCTAssertNil(userEntity?.userGithubURL)
-        XCTAssertNil(userEntity?.avatarURL)
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
+        expect(userEntity).toNot(beNil())
+        expect(userEntity?.id).toNot(beNil())
+        expect(userEntity?.userName).to(beNil())
+        expect(userEntity?.userGithubURL).to(beNil())
+        expect(userEntity?.avatarURL).to(beNil())
     }
     
+    /*
+     *  It should not parse because it does not have and id.
+     */
     func testNoIdAttribute() {
         localJSON = "withoutid_withatt"
         
-        // It is a valid JSON because it has id
-        XCTAssertThrowsError(try jsonDecoder.decode(UserEntity.self, from: jsonData))
-        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
-        XCTAssertNil(userEntity)
-        XCTAssertNil(userEntity?.id)
+        // It is an invalid JSON because it does not have id
+        expect { try self.jsonDecoder.decode(UserEntity.self, from: self.jsonData) }.to(throwError())
         
-        // Parameters should be all null
-        XCTAssertNil(userEntity?.userName)
-        XCTAssertNil(userEntity?.userGithubURL)
-        XCTAssertNil(userEntity?.avatarURL)
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
+        expect(userEntity).to(beNil())
     }
     
+    /*
+     *  It should parse because the id is being sent.
+     *  All other parameters exist in json but their
+     *  values are null.
+     */
     func testInvalidIdValueJSON() {
         localJSON = "withwrongid_withatt"
         
         // It is a valid JSON because it has id
-        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
-        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
-        XCTAssertNotNil(userEntity)
-        XCTAssertNotNil(userEntity?.id)
+        expect { try self.jsonDecoder.decode(UserEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Parameters should be all null
-        XCTAssertNotNil(userEntity?.userName)
-        XCTAssertNotNil(userEntity?.userGithubURL)
-        XCTAssertNotNil(userEntity?.avatarURL)
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
+        expect(userEntity).toNot(beNil())
+        expect(userEntity?.id).toNot(beNil())
+        expect(userEntity?.userName).to(beNil())
+        expect(userEntity?.userGithubURL).to(beNil())
+        expect(userEntity?.avatarURL).to(beNil())
     }
 }
 
@@ -95,14 +102,14 @@ extension UserEntityTest: TestableEntity {
     
     func testSuccessFulInit() {
         localJSON = "user_entity"
-        XCTAssertNoThrow(try jsonDecoder.decode(UserEntity.self, from: jsonData))
-        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
-        XCTAssertNotNil(userEntity)
-        XCTAssertNotNil(userEntity?.id)
         
-        // Testing if it has all parameters set
-        XCTAssertNotNil(userEntity?.userName)
-        XCTAssertNotNil(userEntity?.userGithubURL)
-        XCTAssertNotNil(userEntity?.avatarURL)
+        expect { try self.jsonDecoder.decode(UserEntity.self, from: self.jsonData) }.toNot(throwError())
+        
+        let userEntity = try? jsonDecoder.decode(UserEntity.self, from: jsonData)
+        expect(userEntity).toNot(beNil())
+        expect(userEntity?.id).toNot(beNil())
+        expect(userEntity?.userName).toNot(beNil())
+        expect(userEntity?.userGithubURL).toNot(beNil())
+        expect(userEntity?.avatarURL).toNot(beNil())
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 /*
  * This class is going to test FileEntity and
@@ -34,50 +35,50 @@ class FileEntityTest: XCTestCase {
     
     // MARK: - Tests
     
+    /*
+     *  It should parse because it has a filename and size.
+     *  This is also testing a json with no attributes being sent.
+     */
     func testOnlyInvalidSizeAttributeValidJSON() {
         localJSON = "withfilename_withoutatt"
         
-        // It is a valid JSON because it has id
-        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
-        XCTAssertNotNil(fileEntity)
-        XCTAssertNotNil(fileEntity?.name)
-        XCTAssertTrue(!fileEntity!.name.isEmpty)
+        expect { try self.jsonDecoder.decode(FileEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Parameters should be all null
-        XCTAssertNotNil(fileEntity?.size)
-        XCTAssertNil(fileEntity?.language)
-        XCTAssertNil(fileEntity?.url)
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
+        expect(fileEntity).toNot(beNil())
+        expect(fileEntity?.name).toNot(beNil())
+        expect(fileEntity?.size).toNot(beNil())
+        expect(fileEntity?.language).to(beNil())
+        expect(fileEntity?.url).to(beNil())
     }
     
+    /*
+     *  It should not parse because it does not have a filename.
+     */
     func testNoFilenameAttribute() {
         localJSON = "withoutfilename_withatt"
         
-        // It is a valid JSON because it has id
-        XCTAssertThrowsError(try jsonDecoder.decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
-        XCTAssertNil(fileEntity)
-        XCTAssertNil(fileEntity?.name)
+        expect { try self.jsonDecoder.decode(FileEntity.self, from: self.jsonData) }.to(throwError())
         
-        // Parameters should be all null
-        XCTAssertNil(fileEntity?.size)
-        XCTAssertNil(fileEntity?.language)
-        XCTAssertNil(fileEntity?.url)
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
+        expect(fileEntity).to(beNil())
     }
     
+    /*
+     *  It should parse because filename and size are being sent.
+     *  All other parameters exist in json but their values are null.
+     */
     func testInvalidFilenameValueJSON() {
         localJSON = "withwrongfilename_withatt"
         
-        // It is a valid JSON because it has id
-        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
-        XCTAssertNotNil(fileEntity)
-        XCTAssertNotNil(fileEntity?.name)
+        expect { try self.jsonDecoder.decode(FileEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Parameters should be all null
-        XCTAssertNotNil(fileEntity?.size)
-        XCTAssertNotNil(fileEntity?.language)
-        XCTAssertNotNil(fileEntity?.url)
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
+        expect(fileEntity).toNot(beNil())
+        expect(fileEntity?.name).toNot(beNil())
+        expect(fileEntity?.size).toNot(beNil())
+        expect(fileEntity?.language).to(beNil())
+        expect(fileEntity?.url).to(beNil())
     }
 }
 
@@ -96,15 +97,14 @@ extension FileEntityTest: TestableEntity {
     
     func testSuccessFulInit() {
         localJSON = "file_entity"
-        XCTAssertNoThrow(try jsonDecoder.decode(FileEntity.self, from: jsonData))
-        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
-        XCTAssertNotNil(fileEntity)
-        XCTAssertNotNil(fileEntity?.name)
-        XCTAssertTrue(!fileEntity!.name.isEmpty)
         
-        // Testing if it has all parameters set
-        XCTAssertNotNil(fileEntity?.size)
-        XCTAssertNotNil(fileEntity?.language)
-        XCTAssertNotNil(fileEntity?.url)
+        expect { try self.jsonDecoder.decode(FileEntity.self, from: self.jsonData) }.toNot(throwError())
+        
+        let fileEntity = try? jsonDecoder.decode(FileEntity.self, from: jsonData)
+        expect(fileEntity).toNot(beNil())
+        expect(fileEntity?.name).toNot(beNil())
+        expect(fileEntity?.size).toNot(beNil())
+        expect(fileEntity?.language).toNot(beNil())
+        expect(fileEntity?.url).toNot(beNil())
     }
 }

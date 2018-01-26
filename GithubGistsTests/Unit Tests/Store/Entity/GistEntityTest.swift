@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 /*
  * This class is going to test GistEntity and
@@ -25,7 +26,6 @@ class GistEntityTest: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        jsonDecoder.dateDecodingStrategy = .iso8601
     }
     
     override func tearDown() {
@@ -35,68 +35,68 @@ class GistEntityTest: XCTestCase {
     
     // MARK: - Tests
     
+    /*
+     *  It should not parse and throw an error.
+     */
     func testNoIdAttribute() {
         localJSON = "withoutid_withatt"
         
-        XCTAssertThrowsError(try jsonDecoder.decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNil(gistEntity)
-        XCTAssertNil(gistEntity?.id)
+        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.to(throwError())
         
-        // Parameters should be all null
-        XCTAssertNil(gistEntity?.description)
-        XCTAssertNil(gistEntity?.apiURL)
-        XCTAssertNil(gistEntity?.htmlURL)
-        XCTAssertNil(gistEntity?.files)
-        XCTAssertNil(gistEntity?.owner)
-        XCTAssertNil(gistEntity?.isPublic)
-        XCTAssertNil(gistEntity?.createdAt)
+        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
+        expect(gistEntity).to(beNil())
     }
     
     /*
      *  Parameters we want to cover in this test:
-     *  - description should be null
-     *  - apiURL should be null
-     *  - htmlURL should be null
+     *  - description should be null (because the value is null)
+     *  - apiURL should be null (because the value is null)
+     *  - htmlURL should be null (because the value is null)
      *  - files should not have objects in it
      *  - owner should exist
      */
     func testZeroFilesOneOwnerJSON() {
         localJSON = "withid_withoutfile_withowner"
         
-        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNotNil(gistEntity)
-        XCTAssertNotNil(gistEntity?.id)
+        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Testing parameters
-        XCTAssertNil(gistEntity?.description)
-        XCTAssertNil(gistEntity?.apiURL)
-        XCTAssertNil(gistEntity?.htmlURL)
-        XCTAssertNotNil(gistEntity?.files)
-        XCTAssertTrue(gistEntity!.files.count == 0)
-        XCTAssertNotNil(gistEntity?.owner)
+        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
+        expect(gistEntity).toNot(beNil())
+        expect(gistEntity?.id).toNot(beNil())
+        expect(gistEntity?.description).to(beNil())
+        expect(gistEntity?.apiURL).to(beNil())
+        expect(gistEntity?.htmlURL).to(beNil())
+        expect(gistEntity?.files).toNot(beNil())
+        expect(gistEntity?.files.count).to(equal(0))
+        expect(gistEntity?.owner).toNot(beNil())
     }
     
     /*
      *  Parameters we want to cover in this test:
+     *  - description should be null (because it is not being sent)
+     *  - apiURL should be null (because it is not being sent)
+     *  - htmlURL should be null (because it is not being sent)
      *  - files should have only one object
      *  - owner should be null
      *  - isPublic should be true
+     *  - createAt should be nil
      */
     func testOneFileZeroOnwersJSON() {
         localJSON = "withid_withfile_withoutowner"
         
-        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNotNil(gistEntity)
-        XCTAssertNotNil(gistEntity?.id)
+        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Testing parameters
-        XCTAssertNotNil(gistEntity?.files)
-        XCTAssertTrue(gistEntity!.files.count == 1)
-        XCTAssertNil(gistEntity?.owner)
-        XCTAssertNotNil(gistEntity?.isPublic)
+        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
+        expect(gistEntity).toNot(beNil())
+        expect(gistEntity?.id).toNot(beNil())
+        expect(gistEntity?.description).to(beNil())
+        expect(gistEntity?.apiURL).to(beNil())
+        expect(gistEntity?.htmlURL).to(beNil())
+        expect(gistEntity?.files).toNot(beNil())
+        expect(gistEntity?.files.count).to(equal(1))
+        expect(gistEntity?.owner).to(beNil())
+        expect(gistEntity?.isPublic).to(equal(1))
+        expect(gistEntity?.createdAt).to(beNil())
     }
     
     /*
@@ -106,44 +106,21 @@ class GistEntityTest: XCTestCase {
      *  - isPublic should be false
      *  - createdAt should exist
      */
-    func testTwoFilesZeroOnwersAndValidDateJSON() {
+    func testTwoFilesZeroOnwersJSON() {
         localJSON = "withid_withfiles_withowner"
         
-        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
+        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
+        
         let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNotNil(gistEntity)
-        XCTAssertNotNil(gistEntity?.id)
-        
-        // Testing parameters
-        XCTAssertNotNil(gistEntity?.files)
-        XCTAssertTrue(gistEntity!.files.count == 2)
-        XCTAssertNotNil(gistEntity?.owner)
-        XCTAssertNotNil(gistEntity?.isPublic)
-        XCTAssertNotNil(gistEntity?.createdAt)
+        expect(gistEntity).toNot(beNil())
+        expect(gistEntity?.id).toNot(beNil())
+        expect(gistEntity?.files).toNot(beNil())
+        expect(gistEntity?.files.count).to(equal(2))
+        expect(gistEntity?.owner).toNot(beNil())
+        expect(gistEntity?.isPublic).toNot(beNil())
+        expect(gistEntity?.isPublic).to(equal(0))
+        expect(gistEntity?.createdAt).toNot(beNil())
     }
-    
-    /*
-     *  Parameters we want to cover in this test:
-     *  - description should exist
-     *  - apiURL should exist
-     *  - htmlURL should exist
-     *  - createdAt should not exist
-     */
-    func testInvalidDateJSON() {
-        localJSON = "withid_withfile_withinvaliddate"
-        
-        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNotNil(gistEntity)
-        XCTAssertNotNil(gistEntity?.id)
-        
-        // Testing parameters
-        XCTAssertNotNil(gistEntity?.description)
-        XCTAssertNotNil(gistEntity?.apiURL)
-        XCTAssertNotNil(gistEntity?.htmlURL)
-        XCTAssertNil(gistEntity?.createdAt)
-    }
-    
 }
 
 // MARK: - Testable Entity Protocol
@@ -162,20 +139,18 @@ extension GistEntityTest: TestableEntity {
     func testSuccessFulInit() {
         localJSON = "gist_entity"
         
-        XCTAssertNoThrow(try jsonDecoder.decode(GistEntity.self, from: jsonData))
-        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        XCTAssertNotNil(gistEntity)
-        XCTAssertNotNil(gistEntity?.id)
-        XCTAssertTrue(gistEntity!.id.count > 0)
+        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
         
-        // Testing if it has all parameters set
-        XCTAssertNotNil(gistEntity?.description)
-        XCTAssertNotNil(gistEntity?.apiURL)
-        XCTAssertNotNil(gistEntity?.htmlURL)
-        XCTAssertNotNil(gistEntity?.files)
-        XCTAssertNotNil(gistEntity?.owner)
-        XCTAssertNotNil(gistEntity?.isPublic)
-        XCTAssertNotNil(gistEntity?.createdAt)
+        let gistEntity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
+        expect(gistEntity).toNot(beNil())
+        expect(gistEntity?.id).toNot(beNil())
+        expect(gistEntity?.description).toNot(beNil())
+        expect(gistEntity?.apiURL).toNot(beNil())
+        expect(gistEntity?.htmlURL).toNot(beNil())
+        expect(gistEntity?.files).toNot(beNil())
+        expect(gistEntity?.owner).toNot(beNil())
+        expect(gistEntity?.isPublic).toNot(beNil())
+        expect(gistEntity?.createdAt).toNot(beNil())
     }
 }
 

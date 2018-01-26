@@ -35,6 +35,6 @@ extension GistEntity: MappableEntity {
         }
         owner = try? values.decode(UserEntity.self, forKey: .owner)
         isPublic = try values.decode(Int.self, forKey: .isPublic)
-        createdAt = try? values.decode(Date.self, forKey: .createdAt)
+        createdAt = try? values.decode(String.self, forKey: .createdAt)
     }
 }

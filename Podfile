@@ -17,6 +17,10 @@ def net_pods
 	pod 'Kingfisher', '~> 4.0'
 end
 
+def test_pods
+    pod 'Nimble', '~> 7.0.0'
+end
+
 target 'GithubGists' do
 	# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 	use_frameworks!
@@ -33,4 +37,11 @@ target 'GithubGistsTests' do
     
     # Pods for GithubGists
     net_pods
+    test_pods
 end
+
+
+
+
+
+

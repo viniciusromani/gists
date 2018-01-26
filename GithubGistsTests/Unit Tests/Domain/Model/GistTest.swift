@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 /*
  * This class is going to test Gist and
@@ -20,6 +21,7 @@ class GistTest: XCTestCase {
     var entity: GistEntity?
     private var userEntity: UserEntity?
     private var fileEntity: FileEntity!
+    private var dateCaseTest: DateUtilsTest?
     
     // MARK: - XCTestCase Cycle
     
@@ -36,11 +38,17 @@ class GistTest: XCTestCase {
                                 size: 932.0,
                                 language: "Erlang",
                                 url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
+        
+        dateCaseTest = DateUtilsTest()
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        entity = nil
+        userEntity = nil
+        dateCaseTest = nil
     }
     
     // MARK: - Tests
@@ -56,9 +64,8 @@ class GistTest: XCTestCase {
                             files: [fileEntity],
                             owner: userEntity,
                             isPublic: 1,
-                            createdAt: Date())
-        
-        XCTAssertThrowsError(try Gist(mapping: entity!))
+                            createdAt: "2010-04-14T02:15:15Z")
+        expect { try Gist(mapping: entity!) }.to(throwError())
         
         entity = GistEntity(id: "  ",
                             description: "Description",
@@ -67,9 +74,8 @@ class GistTest: XCTestCase {
                             files: [fileEntity],
                             owner: userEntity,
                             isPublic: 1,
-                            createdAt: Date())
-        
-        XCTAssertThrowsError(try Gist(mapping: entity!))
+                            createdAt: "2010-04-14T02:15:15Z")
+        expect { try Gist(mapping: entity!) }.to(throwError())
     }
     
     /*
@@ -83,95 +89,92 @@ class GistTest: XCTestCase {
                             files: [],
                             owner: userEntity,
                             isPublic: 1,
-                            createdAt: Date())
-        
-        XCTAssertThrowsError(try Gist(mapping: entity!))
+                            createdAt: "2010-04-14T02:15:15Z")
+        expect { try Gist(mapping: entity!) }.to(throwError())
     }
     
     /*
-     * Testing a Gist with one file and no onwer.
-     * It should parse, this is also testing url nil parsing
-     * in apiURL attribute and true value for boolean.
+     *  Testing a Gist with one file and no onwer.
+     *  Parameters we want to cover as well:
+     *  - apiURL should be nil (because the value is invalid)
+     *  - htmlURL should be nil (because the value is invalid)
+     *  - owner should not exist
+     *  - isPublic should be true
      */
     func testOneFileAndNoOwnerMapper() {
         entity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                             description: "Description",
-                            apiURL: nil,
-                            htmlURL: "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+                            apiURL: "  ",
+                            htmlURL: "https: //gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
                             files: [fileEntity],
                             owner: nil,
                             isPublic: 1,
-                            createdAt: Date())
+                            createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
+        expect { try Gist(mapping: entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
             
-            XCTAssert(gist.id == entity?.id)
-            XCTAssertNotNil(gist.description)
-            XCTAssert(gist.description == entity?.description)
-            XCTAssertNil(gist.apiURL)
-            XCTAssertNotNil(gist.htmlURL)
-            let entityHTMLURL = URL(string: entity?.htmlURL ?? "")
-            XCTAssert(gist.htmlURL == entityHTMLURL)
-            XCTAssert(gist.files.count == entity?.files.count)
-            XCTAssertNil(gist.owner)
-            XCTAssertNotNil(gist.isPublic)
+            expect(gist.id).to(equal(entity?.id))
+            expect(gist.description).toNot(beNil())
+            expect(gist.apiURL).to(beNil())
+            expect(gist.htmlURL).to(beNil())
+            expect(gist.files.count).to(equal(entity?.files.count))
+            expect(gist.owner).to(beNil())
+            expect(gist.isPublic).toNot(beNil())
             let entityIsPublic = Bool(truncating: (entity?.isPublic ?? 0) as NSNumber)
-            XCTAssert(gist.isPublic == entityIsPublic)
-            XCTAssertNotNil(gist.createdAt)
-            XCTAssert(gist.createdAt == entity?.createdAt)
+            expect(gist.isPublic).to(equal(entityIsPublic))
         } catch {
             XCTFail()
         }
     }
     
     /*
-     * Testing a Gist with two files and a onwer.
-     * It should parse, this is also testing url nil parsing
-     * in htmlURL attribute and false value for boolean.
+     *  Testing a Gist with two files and a onwer.
+     *  Parameters we want to cover as well:
+     *  - apiURL should be nil (because the value is an empty string)
+     *  - htmlURL should be nil (because the value is null)
+     *  - owner should exist
+     *  - isPublic should be false
      */
     func testTwoFilesAndAOnwerMapper() {
         entity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
                             description: "Description",
-                            apiURL: "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d",
+                            apiURL: "",
                             htmlURL: nil,
                             files: [fileEntity, fileEntity],
                             owner: userEntity,
                             isPublic: 0,
-                            createdAt: Date())
+                            createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
+        expect { try Gist(mapping: entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
             
-            XCTAssert(gist.id == entity?.id)
-            XCTAssertNotNil(gist.description)
-            XCTAssert(gist.description == entity?.description)
-            XCTAssertNotNil(gist.apiURL)
-            let entityAPIURL = URL(string: entity?.apiURL ?? "")
-            XCTAssert(gist.apiURL == entityAPIURL)
-            XCTAssertNil(gist.htmlURL)
-            XCTAssert(gist.files.count == entity?.files.count)
-            XCTAssertNotNil(gist.owner)
-            let entityOwnerId = entity?.owner?.id != nil ? "\(entity!.owner!.id)": "0"
-            XCTAssert(gist.owner?.id == entityOwnerId)
-            XCTAssert(gist.owner?.userName == entity?.owner?.userName)
-            XCTAssertNotNil(gist.isPublic)
+            expect(gist.id).to(equal(entity?.id))
+            expect(gist.description).toNot(beNil())
+            expect(gist.apiURL).to(beNil())
+            expect(gist.htmlURL).to(beNil())
+            expect(gist.files.count).to(equal(entity?.files.count))
+            expect(gist.isPublic).toNot(beNil())
             let entityIsPublic = Bool(truncating: (entity?.isPublic ?? 0) as NSNumber)
-            XCTAssert(gist.isPublic == entityIsPublic)
-            XCTAssertNotNil(gist.createdAt)
-            XCTAssert(gist.createdAt == entity?.createdAt)
+            expect(gist.isPublic).to(equal(entityIsPublic))
         } catch {
-            XCTFail()
+            fail("Could not create gist model from entity")
         }
     }
     
     /*
-     * Testing a Gist with a invalid date.
-     * It should parse, this is also testing url nil parsing
-     * in htmlURL and avatarURL attributes and nil value
-     * for description.
+     *  Testing a Gist with a invalid date.
+     *  Parameters we want to cover as well:
+     *  - description should be nil (because the value is null)
+     *  - apiURL should be nil (because the value is null)
+     *  - htmlURL should be nil (because the value is null)
+     *  - owner should be nil (because the value is null)
+     *  - isPublic should be false
+     *  - createAt should be nil (because the value is null)
      */
     func testNoDateMapper() {
         entity = GistEntity(id: "3aacd6b893f35c2decdd8bbae9a37a3d",
@@ -179,29 +182,22 @@ class GistTest: XCTestCase {
                             apiURL: nil,
                             htmlURL: nil,
                             files: [fileEntity],
-                            owner: userEntity,
-                            isPublic: 1,
+                            owner: nil,
+                            isPublic: 0,
                             createdAt: nil)
         var gist: Gist
+        expect { try Gist(mapping: entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
             
-            XCTAssert(gist.id == entity?.id)
-            XCTAssertNil(gist.description)
-            XCTAssertNil(gist.apiURL)
-            XCTAssertNil(gist.htmlURL)
-            XCTAssert(gist.files.count == entity?.files.count)
-            XCTAssertNotNil(gist.owner)
-            let entityOwnerId = entity?.owner?.id != nil ? "\(entity!.owner!.id)": "0"
-            XCTAssert(gist.owner?.id == entityOwnerId)
-            XCTAssert(gist.owner?.userName == entity?.owner?.userName)
-            XCTAssertNotNil(gist.isPublic)
-            let entityIsPublic = Bool(truncating: (entity?.isPublic ?? 0) as NSNumber)
-            XCTAssert(gist.isPublic == entityIsPublic)
-            XCTAssertNil(gist.createdAt)
+            expect(gist.id).to(equal(entity?.id))
+            expect(gist.description).to(beNil())
+            expect(gist.apiURL).to(beNil())
+            expect(gist.htmlURL).to(beNil())
+            expect(gist.createdAt).to(beNil())
         } catch {
-            XCTFail()
+            fail("Could not create gist model from entity")
         }
     }
 }
@@ -228,33 +224,35 @@ extension GistTest: TestableModel {
                             files: [fileEntity],
                             owner: userEntity,
                             isPublic: 1,
-                            createdAt: Date())
+                            createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
+        expect { try Gist(mapping: entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
             
-            XCTAssert(gist.id == entity?.id)
-            XCTAssertNotNil(gist.description)
-            XCTAssert(gist.description == entity?.description)
-            XCTAssertNotNil(gist.apiURL)
+            expect(gist.id).to(equal(entity?.id))
+            expect(gist.description).toNot(beNil())
+            expect(gist.description).to(equal(entity?.description))
+            expect(gist.apiURL).toNot(beNil())
             let entityAPIURL = URL(string: entity?.apiURL ?? "")
-            XCTAssert(gist.apiURL == entityAPIURL)
-            XCTAssertNotNil(gist.htmlURL)
+            expect(gist.apiURL).to(equal(entityAPIURL))
+            expect(gist.htmlURL).toNot(beNil())
             let entityHTMLURL = URL(string: entity?.htmlURL ?? "")
-            XCTAssert(gist.htmlURL == entityHTMLURL)
-            XCTAssert(gist.files.count == entity?.files.count)
-            XCTAssertNotNil(gist.owner)
+            expect(gist.htmlURL).to(equal(entityHTMLURL))
+            expect(gist.files.count).to(equal(entity?.files.count))
+            expect(gist.owner).toNot(beNil())
             let entityOwnerId = entity?.owner?.id != nil ? "\(entity!.owner!.id)": "0"
-            XCTAssert(gist.owner?.id == entityOwnerId)
-            XCTAssert(gist.owner?.userName == entity?.owner?.userName)
-            XCTAssertNotNil(gist.isPublic)
+            expect(gist.owner?.id).to(equal(entityOwnerId))
+            expect(gist.owner?.userName).to(equal(entity?.owner?.userName))
+            expect(gist.isPublic).toNot(beNil())
             let entityIsPublic = Bool(truncating: (entity?.isPublic ?? 0) as NSNumber)
-            XCTAssert(gist.isPublic == entityIsPublic)
-            XCTAssertNotNil(gist.createdAt)
-            XCTAssert(gist.createdAt == entity?.createdAt)
+            expect(gist.isPublic).to(equal(entityIsPublic))
+            dateCaseTest?.validate(dateString: entity?.createdAt)
+            let date = dateCaseTest?.isoDate
+            expect(gist.createdAt).to(equal(date))
         } catch {
-            XCTFail()
+            fail("Could not create gist model from entity")
         }
     }
 }

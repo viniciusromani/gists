@@ -39,7 +39,6 @@
 		A1370FE41FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
 		A1370FE51FEC3E7600F7CCDC /* User+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */; };
 		A15C8C1B1FEAC97100B5C719 /* TestableEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */; };
-		A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */; };
 		A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
 		A16A063C1FEADBF10083A55A /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A063B1FEADBF10083A55A /* JSONError.swift */; };
 		A16A063D1FEAE4960083A55A /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16A06391FEADB4E0083A55A /* HTTPError.swift */; };
@@ -62,9 +61,11 @@
 		A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */; };
 		A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */; };
 		A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */; };
-		A1E113861FED7FF300F47740 /* withid_withfile_withinvaliddate.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */; };
 		A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */; };
 		A1E11AD22003E6FE0033A520 /* GistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E11AD12003E6FE0033A520 /* GistCollectionViewCell.xib */; };
+		A1E18131201B60CE00C4FAC1 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E18130201B60CE00C4FAC1 /* Date+Utils.swift */; };
+		A1E18132201B60CE00C4FAC1 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E18130201B60CE00C4FAC1 /* Date+Utils.swift */; };
+		A1E18134201B65F900C4FAC1 /* DateUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E18133201B65F900C4FAC1 /* DateUtilsTest.swift */; };
 		A1E41D5C200E81FD00E6B230 /* GistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E41D5B200E81FD00E6B230 /* GistCollectionViewCell.swift */; };
 		A1E41D60200E967500E6B230 /* PublicGistsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E41D5F200E967500E6B230 /* PublicGistsCollectionView.swift */; };
 		A1E41D63200E97F900E6B230 /* GistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E41D62200E97F900E6B230 /* GistViewModel.swift */; };
@@ -160,7 +161,6 @@
 		A1370FE11FEC3BBC00F7CCDC /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
 		A1370FE31FEC3E7600F7CCDC /* User+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Mappable.swift"; sourceTree = "<group>"; };
 		A15C8C1A1FEAC97100B5C719 /* TestableEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableEntity.swift; sourceTree = "<group>"; };
-		A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistMapperTest.swift; sourceTree = "<group>"; };
 		A16A06391FEADB4E0083A55A /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		A16A063B1FEADBF10083A55A /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
 		A18481C91FD46B4A009308E9 /* GithubGistsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubGistsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,9 +181,10 @@
 		A1E1137E1FED7FF200F47740 /* withoutid_withatt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutid_withatt.json; sourceTree = "<group>"; };
 		A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withoutowner.json; sourceTree = "<group>"; };
 		A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withoutfile_withowner.json; sourceTree = "<group>"; };
-		A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfile_withinvaliddate.json; sourceTree = "<group>"; };
 		A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withid_withfiles_withowner.json; sourceTree = "<group>"; };
 		A1E11AD12003E6FE0033A520 /* GistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GistCollectionViewCell.xib; sourceTree = "<group>"; };
+		A1E18130201B60CE00C4FAC1 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		A1E18133201B65F900C4FAC1 /* DateUtilsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTest.swift; sourceTree = "<group>"; };
 		A1E41D5B200E81FD00E6B230 /* GistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistCollectionViewCell.swift; sourceTree = "<group>"; };
 		A1E41D5F200E967500E6B230 /* PublicGistsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicGistsCollectionView.swift; sourceTree = "<group>"; };
 		A1E41D62200E97F900E6B230 /* GistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistViewModel.swift; sourceTree = "<group>"; };
@@ -286,14 +287,6 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		A119BB841FF2B4C6001A8C10 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				A1628D0E1FF2CAF000656B5A /* GistMapperTest.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
 		A1370FD11FEC1D7D00F7CCDC /* FileEntity */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +306,6 @@
 				A1E113801FED7FF300F47740 /* withid_withoutfile_withowner.json */,
 				A1E1137F1FED7FF200F47740 /* withid_withfile_withoutowner.json */,
 				A1E113821FED7FF300F47740 /* withid_withfiles_withowner.json */,
-				A1E113811FED7FF300F47740 /* withid_withfile_withinvaliddate.json */,
 			);
 			path = GistEntity;
 			sourceTree = "<group>";
@@ -342,8 +334,8 @@
 		A18481CA1FD46B4A009308E9 /* GithubGistsTests */ = {
 			isa = PBXGroup;
 			children = (
+				A1DC830720052E2F00C746CF /* DataSource */,
 				A1FC35A0201A372400DCCB83 /* Unit Tests */,
-				A1EE54511FE9949E000C87B1 /* Store */,
 				A18481CD1FD46B4A009308E9 /* Info.plist */,
 			);
 			path = GithubGistsTests;
@@ -437,6 +429,14 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		A1E1812F201B608B00C4FAC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A1E18133201B65F900C4FAC1 /* DateUtilsTest.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A1E41D5D200E820500E6B230 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,25 +486,9 @@
 			isa = PBXGroup;
 			children = (
 				A1ECF8D5200FE06A003F8AA3 /* UIView+IBDesignables.swift */,
+				A1E18130201B60CE00C4FAC1 /* Date+Utils.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		A1EE54511FE9949E000C87B1 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-				A1EE54521FE994A6000C87B1 /* Entity */,
-				A119BB841FF2B4C6001A8C10 /* Mapper */,
-				A1DC830720052E2F00C746CF /* DataSource */,
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		A1EE54521FE994A6000C87B1 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		A1EE54531FE99909000C87B1 /* Model */ = {
@@ -675,6 +659,7 @@
 			children = (
 				A1FC35A1201A373500DCCB83 /* Store */,
 				A1FC35A3201A3A2900DCCB83 /* Domain */,
+				A1E1812F201B608B00C4FAC1 /* Helpers */,
 			);
 			path = "Unit Tests";
 			sourceTree = "<group>";
@@ -812,8 +797,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1FC43491FD18660004E9AF0 /* Build configuration list for PBXNativeTarget "GithubGists" */;
 			buildPhases = (
-				A1ECF8D1200F88AF003F8AA3 /* ShellScript */,
 				27086670A2F144411A78D21A /* [CP] Check Pods Manifest.lock */,
+				A1ECF8D1200F88AF003F8AA3 /* ShellScript */,
 				A1FC43331FD18660004E9AF0 /* Sources */,
 				A1FC43341FD18660004E9AF0 /* Frameworks */,
 				A1FC43351FD18660004E9AF0 /* Resources */,
@@ -883,7 +868,6 @@
 				A1370FE01FEC244600F7CCDC /* withoutfilename_withatt.json in Resources */,
 				A1370FE21FEC3BBC00F7CCDC /* gist_entity.json in Resources */,
 				A1370FD81FEC1DA600F7CCDC /* withwrongid_withatt.json in Resources */,
-				A1E113861FED7FF300F47740 /* withid_withfile_withinvaliddate.json in Resources */,
 				A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */,
 				A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */,
 				A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */,
@@ -998,6 +982,7 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1006,6 +991,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1072,6 +1058,7 @@
 				A1F9315E1FF4082500FCDDAB /* GistRestDataSource.swift in Sources */,
 				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A1FC35AA201A3BCA00DCCB83 /* UserTest.swift in Sources */,
+				A1E18132201B60CE00C4FAC1 /* Date+Utils.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */,
@@ -1081,8 +1068,8 @@
 				A1F6D5DC1FE31B2A00D3E6C5 /* UserEntity.swift in Sources */,
 				A1F931621FF40B3A00FCDDAB /* ObservableType+Error.swift in Sources */,
 				A1DC830920052E5200C746CF /* GistRestDataSourceTest.swift in Sources */,
+				A1E18134201B65F900C4FAC1 /* DateUtilsTest.swift in Sources */,
 				A1E113771FED712500F47740 /* Gist+Mappable.swift in Sources */,
-				A1628D0F1FF2CAF000656B5A /* GistMapperTest.swift in Sources */,
 				A1EE545D1FE99A36000C87B1 /* File.swift in Sources */,
 				A1EE54601FE99A44000C87B1 /* User.swift in Sources */,
 				A114A2B92018F3E500EFCAFE /* MappableEntity.swift in Sources */,
@@ -1114,6 +1101,7 @@
 				A16A063A1FEADB4E0083A55A /* HTTPError.swift in Sources */,
 				A1ECF8C4200F7998003F8AA3 /* DataSourceDependencyInjection.swift in Sources */,
 				A1ECF8D6200FE06A003F8AA3 /* UIView+IBDesignables.swift in Sources */,
+				A1E18131201B60CE00C4FAC1 /* Date+Utils.swift in Sources */,
 				A114A2B12018EE3400EFCAFE /* MappableEntity.swift in Sources */,
 				A1F6D5D41FE2E1AD00D3E6C5 /* FileEntity.swift in Sources */,
 				A1EEA0331FFE535D0084F6EF /* RetrieveGistWithIdError.swift in Sources */,

@@ -28,12 +28,13 @@ extension Gist: MappableModel {
         
         id = entity.id
         description = entity.description
-        apiURL = URL(string: entity.apiURL ?? "")
-        htmlURL = URL(string: entity.htmlURL ?? "")
+        apiURL = URL(string: entity.apiURL?.trimmingCharacters(in: .whitespaces))
+        htmlURL = URL(string: entity.htmlURL?.trimmingCharacters(in: .whitespaces))
         files = try File.array(mapping: entity.files)
         owner = try User(mapping: entity.owner)
         isPublic = Bool(truncating: entity.isPublic as NSNumber)
-        createdAt = entity.createdAt
+        let date = Date(usingIsoFormatterFor: entity.createdAt)
+        createdAt = date
     }
 }
 

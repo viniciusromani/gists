@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Nimble
 
 /*
  * This class is going to test File and
@@ -41,13 +42,13 @@ class FileTest: XCTestCase {
                             size: 932.0,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
         
         entity = FileEntity(name: "  ",
                             size: 932.0,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
     }
     
     /*
@@ -58,13 +59,13 @@ class FileTest: XCTestCase {
                             size: 0.0,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
         
         entity = FileEntity(name: "ring.erlang",
                             size: -120.3,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
     }
     
     /*
@@ -75,13 +76,13 @@ class FileTest: XCTestCase {
                             size: -1.0,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
         
         entity = FileEntity(name: "  ",
                             size: -0.0,
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
-        XCTAssertThrowsError(try File(mapping: entity!))
+        expect { try File(mapping: self.entity!) }.to(throwError())
     }
     
     /*
@@ -93,16 +94,17 @@ class FileTest: XCTestCase {
                             language: nil,
                             url: nil)
         var file: File
+        expect { try File(mapping: self.entity!) }.toNot(throwError())
         
         do {
             file = try File(mapping: entity!)
             
-            XCTAssert(file.name == entity?.name)
-            XCTAssert(file.size == entity?.size)
-            XCTAssertNil(file.language)
-            XCTAssertNil(file.url)
+            expect(file.name).to(equal(entity?.name))
+            expect(file.size).to(equal(entity?.size))
+            expect(file.language).to(beNil())
+            expect(file.url).to(beNil())
         } catch {
-            XCTFail()
+            fail("Could not create file model from entity")
         }
     }
 }
@@ -127,19 +129,20 @@ extension FileTest: TestableModel {
                             language: "Erlang",
                             url: "https://gist.githubusercontent.com/raw/365370/8c4d2d43d178df44f4c03a7f2ac0ff512853564e/ring.erl")
         var file: File
+        expect { try File(mapping: self.entity!) }.toNot(throwError())
         
         do {
             file = try File(mapping: entity!)
             
-            XCTAssert(file.name == entity?.name)
-            XCTAssert(file.size == entity?.size)
-            XCTAssertNotNil(file.language)
-            XCTAssert(file.language == entity?.language)
-            XCTAssertNotNil(file.url)
+            expect(file.name).to(equal(entity?.name))
+            expect(file.size).to(equal(entity?.size))
+            expect(file.language).toNot(beNil())
+            expect(file.language).to(equal(entity?.language))
+            expect(file.url).toNot(beNil())
             let entityURL = URL(string: entity?.url ?? "")
-            XCTAssert(file.url == entityURL)
+            expect(file.url).to(equal(entityURL))
         } catch {
-            XCTFail()
+            fail("Could not create file model from entity")
         }
     }
 }

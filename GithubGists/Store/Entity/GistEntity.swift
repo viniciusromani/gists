@@ -46,6 +46,6 @@ struct GistEntity {
     var files: [FileEntity]
     let owner: UserEntity?
     let isPublic: Int
-    let createdAt: Date?
+    let createdAt: String?
 }
 
