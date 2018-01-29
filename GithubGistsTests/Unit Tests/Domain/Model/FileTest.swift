@@ -86,7 +86,10 @@ class FileTest: XCTestCase {
     }
     
     /*
-     * Invalid attributes testing, it should not parse and throw an error.
+     *  Testing a File with nil attributes.
+     *  Parameters we want to cover:
+     *  - language should be nil (because the value is nil)
+     *  - url should be nil (because the value is nil)
      */
     func testInvalidAttributes() {
         entity = FileEntity(name: "ring.erlang",

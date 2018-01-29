@@ -19,7 +19,7 @@ extension User: MappableModel {
     
     typealias Entity = UserEntity
     
-    init?(mapping entity: Entity?) throws {
+    init?(mapping entity: UserEntity?) throws {
         guard let userEntity = entity else { return nil }
         guard userEntity.id > 0 else { throw JSONError.cannotMapToModel }
         

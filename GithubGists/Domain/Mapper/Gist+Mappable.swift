@@ -21,15 +21,15 @@ extension Gist: MappableModel {
     
     typealias Entity = GistEntity
     
-    init(mapping entity: Entity) throws {
+    init(mapping entity: GistEntity) throws {
         guard entity.id.trimmingCharacters(in: .whitespaces).count > 0, entity.files.count > 0 else {
             throw JSONError.cannotMapToModel
         }
         
         id = entity.id
         description = entity.description
-        apiURL = URL(string: entity.apiURL?.trimmingCharacters(in: .whitespaces))
-        htmlURL = URL(string: entity.htmlURL?.trimmingCharacters(in: .whitespaces))
+        apiURL = URL(string: entity.apiURL?.trimmingCharacters(in: .whitespaces) ?? "")
+        htmlURL = URL(string: entity.htmlURL?.trimmingCharacters(in: .whitespaces) ?? "")
         files = try File.array(mapping: entity.files)
         owner = try User(mapping: entity.owner)
         isPublic = Bool(truncating: entity.isPublic as NSNumber)

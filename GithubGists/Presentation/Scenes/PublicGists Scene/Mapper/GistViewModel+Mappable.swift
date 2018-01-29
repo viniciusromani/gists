@@ -12,10 +12,10 @@ extension GistViewModel: MappableViewModel {
     
     typealias Model = Gist
     
-    init(mapping model: Model) {
+    init(mapping model: Gist) {
         id = model.id
         name = model.files.first?.name ?? ""
         userImageURL = model.owner?.avatarURL
-        userName = model.owner?.userName
+        userName = model.owner?.userName  ?? "-"
     }
 }

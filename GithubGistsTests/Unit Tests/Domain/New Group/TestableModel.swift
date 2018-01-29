@@ -9,7 +9,7 @@
 import XCTest
 
 protocol TestableModel where Self: XCTestCase  {
-    associatedtype Entity: Decodable
+    associatedtype Entity: MappableEntity
     var entity: Entity? { get set }
     func testSuccessFullMapping()
 }

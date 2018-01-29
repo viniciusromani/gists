@@ -19,7 +19,7 @@ extension File: MappableModel {
     
     typealias Entity = FileEntity
     
-    init(mapping entity: Entity) throws {
+    init(mapping entity: FileEntity) throws {
         guard entity.name.trimmingCharacters(in: .whitespaces).count > 0, entity.size > 0 else {
             throw JSONError.cannotMapToModel
         }

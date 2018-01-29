@@ -65,7 +65,7 @@ class GistTest: XCTestCase {
                             owner: userEntity,
                             isPublic: 1,
                             createdAt: "2010-04-14T02:15:15Z")
-        expect { try Gist(mapping: entity!) }.to(throwError())
+        expect { try Gist(mapping: self.entity!) }.to(throwError())
         
         entity = GistEntity(id: "  ",
                             description: "Description",
@@ -75,7 +75,7 @@ class GistTest: XCTestCase {
                             owner: userEntity,
                             isPublic: 1,
                             createdAt: "2010-04-14T02:15:15Z")
-        expect { try Gist(mapping: entity!) }.to(throwError())
+        expect { try Gist(mapping: self.entity!) }.to(throwError())
     }
     
     /*
@@ -90,7 +90,7 @@ class GistTest: XCTestCase {
                             owner: userEntity,
                             isPublic: 1,
                             createdAt: "2010-04-14T02:15:15Z")
-        expect { try Gist(mapping: entity!) }.to(throwError())
+        expect { try Gist(mapping: self.entity!) }.to(throwError())
     }
     
     /*
@@ -111,7 +111,7 @@ class GistTest: XCTestCase {
                             isPublic: 1,
                             createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
-        expect { try Gist(mapping: entity!) }.toNot(throwError())
+        expect { try Gist(mapping: self.entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
@@ -126,7 +126,7 @@ class GistTest: XCTestCase {
             let entityIsPublic = Bool(truncating: (entity?.isPublic ?? 0) as NSNumber)
             expect(gist.isPublic).to(equal(entityIsPublic))
         } catch {
-            XCTFail()
+            fail("Could not create gist model from entity")
         }
     }
     
@@ -148,7 +148,7 @@ class GistTest: XCTestCase {
                             isPublic: 0,
                             createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
-        expect { try Gist(mapping: entity!) }.toNot(throwError())
+        expect { try Gist(mapping: self.entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
@@ -186,7 +186,7 @@ class GistTest: XCTestCase {
                             isPublic: 0,
                             createdAt: nil)
         var gist: Gist
-        expect { try Gist(mapping: entity!) }.toNot(throwError())
+        expect { try Gist(mapping: self.entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)
@@ -226,7 +226,7 @@ extension GistTest: TestableModel {
                             isPublic: 1,
                             createdAt: "2010-04-14T02:15:15Z")
         var gist: Gist
-        expect { try Gist(mapping: entity!) }.toNot(throwError())
+        expect { try Gist(mapping: self.entity!) }.toNot(throwError())
         
         do {
             gist = try Gist(mapping: entity!)

@@ -12,7 +12,7 @@ extension GistDetailsViewModel: MappableViewModel {
     
     typealias Model = Gist
     
-    init(mapping model: Model) {
+    init(mapping model: Gist) {
         name = model.files.first?.name ?? ""
         description = model.description ?? "-"
         url = model.htmlURL?.absoluteString ?? "-"
