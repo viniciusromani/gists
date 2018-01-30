@@ -53,6 +53,13 @@
 		A1D975DC1FFFBBC600CD2A57 /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */; };
 		A1D975DF1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */; };
 		A1D975E21FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */; };
+		A1DA66222020943000336C72 /* GistViewModelMappingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA66212020943000336C72 /* GistViewModelMappingTest.swift */; };
+		A1DA66252020A23300336C72 /* TestableMappingIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA66242020A23300336C72 /* TestableMappingIntegration.swift */; };
+		A1DA662C2020D46700336C72 /* nofiles.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA66272020D46600336C72 /* nofiles.json */; };
+		A1DA662D2020D46700336C72 /* nullattributes.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA66282020D46600336C72 /* nullattributes.json */; };
+		A1DA662E2020D46700336C72 /* withinvalidid.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA66292020D46700336C72 /* withinvalidid.json */; };
+		A1DA662F2020D46700336C72 /* gist_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA662A2020D46700336C72 /* gist_entity.json */; };
+		A1DA66302020D46700336C72 /* withoutidkey.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA662B2020D46700336C72 /* withoutidkey.json */; };
 		A1DC83062005295000C746CF /* RetrievePublicGistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */; };
 		A1DC830D20053A3E00C746CF /* specific.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830B20053A3D00C746CF /* specific.json */; };
 		A1DC830E20053A3E00C746CF /* public.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830C20053A3D00C746CF /* public.json */; };
@@ -181,6 +188,13 @@
 		A1D975DB1FFFBBC600CD2A57 /* GistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewController.swift; sourceTree = "<group>"; };
 		A1D975DE1FFFBBDE00CD2A57 /* GistDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsPresenter.swift; sourceTree = "<group>"; };
 		A1D975E11FFFBBFB00CD2A57 /* GistDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsConfigurator.swift; sourceTree = "<group>"; };
+		A1DA66212020943000336C72 /* GistViewModelMappingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistViewModelMappingTest.swift; sourceTree = "<group>"; };
+		A1DA66242020A23300336C72 /* TestableMappingIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestableMappingIntegration.swift; sourceTree = "<group>"; };
+		A1DA66272020D46600336C72 /* nofiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nofiles.json; sourceTree = "<group>"; };
+		A1DA66282020D46600336C72 /* nullattributes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nullattributes.json; sourceTree = "<group>"; };
+		A1DA66292020D46700336C72 /* withinvalidid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withinvalidid.json; sourceTree = "<group>"; };
+		A1DA662A2020D46700336C72 /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
+		A1DA662B2020D46700336C72 /* withoutidkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutidkey.json; sourceTree = "<group>"; };
 		A1DC830B20053A3D00C746CF /* specific.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = specific.json; sourceTree = "<group>"; };
 		A1DC830C20053A3D00C746CF /* public.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = public.json; sourceTree = "<group>"; };
 		A1E1136E1FED708B00F47740 /* File+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Mappable.swift"; sourceTree = "<group>"; };
@@ -354,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				A1FC35A0201A372400DCCB83 /* Unit Tests */,
+				A1DA661E202093D800336C72 /* Integration Tests */,
 				A18481CD1FD46B4A009308E9 /* Info.plist */,
 			);
 			path = GithubGistsTests;
@@ -416,6 +431,44 @@
 			path = "GistDetail Scene";
 			sourceTree = "<group>";
 		};
+		A1DA661E202093D800336C72 /* Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A1DA66262020D23100336C72 /* JSONs */,
+				A1DA6620202093FB00336C72 /* Parsing (Mapping) */,
+			);
+			path = "Integration Tests";
+			sourceTree = "<group>";
+		};
+		A1DA6620202093FB00336C72 /* Parsing (Mapping) */ = {
+			isa = PBXGroup;
+			children = (
+				A1DA66232020A21500336C72 /* Protocol */,
+				A1DA66212020943000336C72 /* GistViewModelMappingTest.swift */,
+			);
+			path = "Parsing (Mapping)";
+			sourceTree = "<group>";
+		};
+		A1DA66232020A21500336C72 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				A1DA66242020A23300336C72 /* TestableMappingIntegration.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		A1DA66262020D23100336C72 /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				A1DA662A2020D46700336C72 /* gist_entity.json */,
+				A1DA662B2020D46700336C72 /* withoutidkey.json */,
+				A1DA66292020D46700336C72 /* withinvalidid.json */,
+				A1DA66272020D46600336C72 /* nofiles.json */,
+				A1DA66282020D46600336C72 /* nullattributes.json */,
+			);
+			path = JSONs;
+			sourceTree = "<group>";
+		};
 		A1DC830A2005398A00C746CF /* API JSONs */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,33 +528,33 @@
 		A1E31C65201FAB2900775DFB /* PublicGists Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A1E31C66201FAB3400775DFB /* ViewModel */,
+				A1E31C66201FAB3400775DFB /* ViewModelTests */,
 			);
 			path = "PublicGists Scene";
 			sourceTree = "<group>";
 		};
-		A1E31C66201FAB3400775DFB /* ViewModel */ = {
+		A1E31C66201FAB3400775DFB /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
 				A1E31C69201FAB8700775DFB /* GistViewModelTest.swift */,
 			);
-			path = ViewModel;
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		A1E31C67201FAB6700775DFB /* GistDetails Scene */ = {
 			isa = PBXGroup;
 			children = (
-				A1E31C68201FAB7200775DFB /* ViewModel */,
+				A1E31C68201FAB7200775DFB /* ViewModelTests */,
 			);
 			path = "GistDetails Scene";
 			sourceTree = "<group>";
 		};
-		A1E31C68201FAB7200775DFB /* ViewModel */ = {
+		A1E31C68201FAB7200775DFB /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
 				A1E31C6F201FB40600775DFB /* GistDetailsViewModelTest.swift */,
 			);
-			path = ViewModel;
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		A1E41D5D200E820500E6B230 /* Cell */ = {
@@ -737,38 +790,38 @@
 			children = (
 				A1D063831FEA9F0B00B9835F /* JSONs */,
 				A1E31C63201FAB1000775DFB /* Protocol */,
-				A1FC35A2201A373C00DCCB83 /* Entity */,
+				A1FC35A2201A373C00DCCB83 /* EntityTests */,
 			);
 			path = Store;
 			sourceTree = "<group>";
 		};
-		A1FC35A2201A373C00DCCB83 /* Entity */ = {
+		A1FC35A2201A373C00DCCB83 /* EntityTests */ = {
 			isa = PBXGroup;
 			children = (
 				A1F6D5DA1FE3192300D3E6C5 /* UserEntityTest.swift */,
 				A10CEFD41FE7F33B00D65E57 /* FileEntityTest.swift */,
 				A10CEFDA1FE81F5400D65E57 /* GistEntityTest.swift */,
 			);
-			path = Entity;
+			path = EntityTests;
 			sourceTree = "<group>";
 		};
 		A1FC35A3201A3A2900DCCB83 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				A1A08B63201FA9B7004F34B8 /* Protocol */,
-				A1FC35A4201A3A3900DCCB83 /* Model */,
+				A1FC35A4201A3A3900DCCB83 /* ModelTests */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		A1FC35A4201A3A3900DCCB83 /* Model */ = {
+		A1FC35A4201A3A3900DCCB83 /* ModelTests */ = {
 			isa = PBXGroup;
 			children = (
 				A1FC35A9201A3BCA00DCCB83 /* UserTest.swift */,
 				A1FC35AB201A493700DCCB83 /* FileTest.swift */,
 				A1FC35AF201A58BB00DCCB83 /* GistTest.swift */,
 			);
-			path = Model;
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		A1FC432E1FD18660004E9AF0 = {
@@ -930,15 +983,20 @@
 				A1370FD71FEC1DA600F7CCDC /* withid_withoutatt.json in Resources */,
 				A1370FDF1FEC244600F7CCDC /* withwrongfilename_withatt.json in Resources */,
 				A1D063851FEA9F7500B9835F /* user_entity.json in Resources */,
+				A1DA662F2020D46700336C72 /* gist_entity.json in Resources */,
 				A1370FDE1FEC244600F7CCDC /* withfilename_withoutatt.json in Resources */,
 				A1370FDD1FEC244600F7CCDC /* file_entity.json in Resources */,
 				A1E113841FED7FF300F47740 /* withid_withfile_withoutowner.json in Resources */,
 				A1370FE01FEC244600F7CCDC /* withoutfilename_withatt.json in Resources */,
 				A1370FE21FEC3BBC00F7CCDC /* gist_entity.json in Resources */,
+				A1DA66302020D46700336C72 /* withoutidkey.json in Resources */,
 				A1370FD81FEC1DA600F7CCDC /* withwrongid_withatt.json in Resources */,
 				A1E113851FED7FF300F47740 /* withid_withoutfile_withowner.json in Resources */,
+				A1DA662E2020D46700336C72 /* withinvalidid.json in Resources */,
 				A1370FD61FEC1DA600F7CCDC /* withoutid_withatt.json in Resources */,
 				A1E113871FED7FF300F47740 /* withid_withfiles_withowner.json in Resources */,
+				A1DA662D2020D46700336C72 /* nullattributes.json in Resources */,
+				A1DA662C2020D46700336C72 /* nofiles.json in Resources */,
 				A1E113831FED7FF300F47740 /* withoutid_withatt.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,12 +1173,14 @@
 				A114A2BA2018F43D00EFCAFE /* UserEntity+Mappable.swift in Sources */,
 				A16A063E1FEAE4990083A55A /* JSONError.swift in Sources */,
 				A1E31C6D201FACA500775DFB /* GistViewModel.swift in Sources */,
+				A1DA66222020943000336C72 /* GistViewModelMappingTest.swift in Sources */,
 				A114A2BB2018F43F00EFCAFE /* FileEntity+Mappable.swift in Sources */,
 				A1FC35A6201A3A6C00DCCB83 /* TestableModel.swift in Sources */,
 				A10CEFD71FE7F96B00D65E57 /* GistEntity.swift in Sources */,
 				A10CEFD51FE7F33B00D65E57 /* FileEntityTest.swift in Sources */,
 				A114A2BC2018F44200EFCAFE /* GistEntity+Mappable.swift in Sources */,
 				A1EEA0311FFE53260084F6EF /* RetrievePublicGistsError.swift in Sources */,
+				A1DA66252020A23300336C72 /* TestableMappingIntegration.swift in Sources */,
 				A1A08B61201F8186004F34B8 /* TestableViewModel.swift in Sources */,
 				A1EEA0411FFE55580084F6EF /* ObservableType+GistWithIdErrorCatcher.swift in Sources */,
 				A1F9316C1FF42D1D00FCDDAB /* GenericMappableEntity.swift in Sources */,

@@ -19,6 +19,6 @@ class GistCollectionViewCell: UICollectionViewCell {
     func configure(with viewModel: GistViewModel) {
         nameLabel.text = viewModel.name
         userImageView.kf.setImage(with: viewModel.userImageURL, placeholder: R.image.ic_person())
-        userLabel.text = viewModel.userName ?? "-"
+        userLabel.text = viewModel.userName
     }
 }
