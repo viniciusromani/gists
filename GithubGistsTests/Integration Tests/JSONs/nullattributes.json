@@ -5,12 +5,12 @@
     "id": "3aacd6b893f35c2decdd8bbae9a37a3d",
     "git_pull_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d.git",
     "git_push_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d.git",
-    "html_url": "https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d",
+    "html_url": null,
     "files": {
         "sample-html.md": {
             "filename": "sample-html.md",
             "type": "text/plain",
-            "language": "Markdown",
+            "language": null,
             "raw_url": "https://gist.githubusercontent.com/dondempsey/3aacd6b893f35c2decdd8bbae9a37a3d/raw/72aaa657cce3c411a6631fb72631a6300768428c/sample-html.md",
             "size": 2712
         }
@@ -18,7 +18,7 @@
     "public": true,
     "created_at": "2017-12-21T13:25:57Z",
     "updated_at": "2017-12-21T13:26:50Z",
-    "description": "Description",
+    "description": null,
     "comments": 0,
     "user": null,
     "comments_url": "https://api.github.com/gists/3aacd6b893f35c2decdd8bbae9a37a3d/comments",
@@ -27,8 +27,8 @@
         "id": 4392765,
         "avatar_url": null,
         "gravatar_id": "",
-        "url": "https://api.github.com/users/dondempsey",
-        "html_url": "https://github.com/dondempsey",
+        "url": null,
+        "html_url": null,
         "followers_url": "https://api.github.com/users/dondempsey/followers",
         "following_url": "https://api.github.com/users/dondempsey/following{/other_user}",
         "gists_url": "https://api.github.com/users/dondempsey/gists{/gist_id}",

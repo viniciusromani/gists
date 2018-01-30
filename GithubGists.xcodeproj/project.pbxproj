@@ -60,6 +60,7 @@
 		A1DA662E2020D46700336C72 /* withinvalidid.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA66292020D46700336C72 /* withinvalidid.json */; };
 		A1DA662F2020D46700336C72 /* gist_entity.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA662A2020D46700336C72 /* gist_entity.json */; };
 		A1DA66302020D46700336C72 /* withoutidkey.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DA662B2020D46700336C72 /* withoutidkey.json */; };
+		A1DA66322020E4E600336C72 /* GistDetailsViewModelMappingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DA66312020E4E600336C72 /* GistDetailsViewModelMappingTest.swift */; };
 		A1DC83062005295000C746CF /* RetrievePublicGistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEA02C1FFE51A70084F6EF /* RetrievePublicGistsUseCase.swift */; };
 		A1DC830D20053A3E00C746CF /* specific.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830B20053A3D00C746CF /* specific.json */; };
 		A1DC830E20053A3E00C746CF /* public.json in Resources */ = {isa = PBXBuildFile; fileRef = A1DC830C20053A3D00C746CF /* public.json */; };
@@ -195,6 +196,7 @@
 		A1DA66292020D46700336C72 /* withinvalidid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withinvalidid.json; sourceTree = "<group>"; };
 		A1DA662A2020D46700336C72 /* gist_entity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gist_entity.json; sourceTree = "<group>"; };
 		A1DA662B2020D46700336C72 /* withoutidkey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = withoutidkey.json; sourceTree = "<group>"; };
+		A1DA66312020E4E600336C72 /* GistDetailsViewModelMappingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewModelMappingTest.swift; sourceTree = "<group>"; };
 		A1DC830B20053A3D00C746CF /* specific.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = specific.json; sourceTree = "<group>"; };
 		A1DC830C20053A3D00C746CF /* public.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = public.json; sourceTree = "<group>"; };
 		A1E1136E1FED708B00F47740 /* File+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File+Mappable.swift"; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 			children = (
 				A1DA66232020A21500336C72 /* Protocol */,
 				A1DA66212020943000336C72 /* GistViewModelMappingTest.swift */,
+				A1DA66312020E4E600336C72 /* GistDetailsViewModelMappingTest.swift */,
 			);
 			path = "Parsing (Mapping)";
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				A1EEA03B1FFE53D50084F6EF /* ObservableType+PublicGistsErrorCatcher.swift in Sources */,
 				A1FC35AA201A3BCA00DCCB83 /* UserTest.swift in Sources */,
 				A1E18132201B60CE00C4FAC1 /* Date+Utils.swift in Sources */,
+				A1DA66322020E4E600336C72 /* GistDetailsViewModelMappingTest.swift in Sources */,
 				A10CEFD61FE7F96800D65E57 /* FileEntity.swift in Sources */,
 				A1F6D5DB1FE3192300D3E6C5 /* UserEntityTest.swift in Sources */,
 				A1F931741FF4328B00FCDDAB /* GistRespository.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  GistViewModelMappingTest.swift
+//  GistDetailsViewModelMappingTest.swift
 //  GithubGistsTests
 //
 //  Created by Vinicius Romani on 30/01/18.
@@ -24,21 +24,23 @@ import Nimble
  *  otherwise, it will not pass anymore.
  */
 
-class GistViewModelMappingTest: XCTestCase {
+class GistDetailsViewModelMappingTest: XCTestCase {
     
     // MARK: Variables
     
     var entity: GistEntity?
     var model: Gist?
-    var viewModel: GistViewModel?
+    var viewModel: GistDetailsViewModel?
     private var _localJSON: String = ""
     private var jsonDecoder = JSONDecoder()
+    private var gistViewModelMappingTest: GistViewModelMappingTest?
     
     // MARK: - XCTestCase Cycle
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        gistViewModelMappingTest = GistViewModelMappingTest()
     }
     
     override func tearDown() {
@@ -66,23 +68,25 @@ class GistViewModelMappingTest: XCTestCase {
         model = try? Gist(mapping: entity!)
         
         expect(self.model).toNot(beNil())
-        viewModel = GistViewModel(mapping: model!)
+        viewModel = GistDetailsViewModel(mapping: model!)
         
-        expect(self.viewModel).toNot(beNil())
-        expect(self.viewModel?.id).to(equal("3aacd6b893f35c2decdd8bbae9a37a3d"))
         expect(self.viewModel?.name).to(equal("sample-html.md"))
-        expect(self.viewModel?.userImageURL).to(beNil())
-        expect(self.viewModel?.userName).to(equal("-"))
+        expect(self.viewModel?.description).to(equal("-"))
+        expect(self.viewModel?.url).to(equal("-"))
+        expect(self.viewModel?.language).to(equal("-"))
+        expect(self.viewModel?.forks).to(equal("1"))
+        expect(self.viewModel?.ownerName).to(equal("-"))
+        expect(self.viewModel?.ownerGithubURL).to(equal("-"))
     }
 }
 
-extension GistViewModelMappingTest: TestableMappingIntegration {
+extension GistDetailsViewModelMappingTest: TestableMappingIntegration {
     
     // MARK: - Typealias
     
     typealias Entity = GistEntity
     typealias Model = Gist
-    typealias ViewModel = GistViewModel
+    typealias ViewModel = GistDetailsViewModel
     
     // MARK: - Protocol variable
     
@@ -108,53 +112,29 @@ extension GistViewModelMappingTest: TestableMappingIntegration {
         model = try? Gist(mapping: entity!)
         
         expect(self.model).toNot(beNil())
-        viewModel = GistViewModel(mapping: model!)
-        
-        expect(self.viewModel).toNot(beNil())
-        expect(self.viewModel?.id).to(equal("3aacd6b893f35c2decdd8bbae9a37a3d"))
+        viewModel = GistDetailsViewModel(mapping: model!)
+
         expect(self.viewModel?.name).to(equal("sample-html.md"))
-        expect(self.viewModel?.userImageURL).to(equal(URL(string: "https://avatars3.githubusercontent.com/u/4392765?v=4")!))
-        expect(self.viewModel?.userName).to(equal("dondempsey"))
+        expect(self.viewModel?.description).to(equal("Description"))
+        expect(self.viewModel?.url).to(equal("https://gist.github.com/3aacd6b893f35c2decdd8bbae9a37a3d"))
+        expect(self.viewModel?.language).to(equal("Markdown"))
+        expect(self.viewModel?.forks).to(equal("1"))
+        expect(self.viewModel?.ownerName).to(equal("dondempsey"))
+        expect(self.viewModel?.ownerGithubURL).to(equal("https://github.com/dondempsey"))
     }
     
     /*
-     *  This is testing an invalid json.
-     *  It should no parse and raise an error at the store layer
+     *  This is the same test as GistViewModelMappingTest
      */
     func testStoreError() {
-        localJSON = "withoutidkey"
-        
-        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.to(throwError())
-        entity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        expect(self.entity).to(beNil())
+        gistViewModelMappingTest?.testStoreError()
     }
     
     /*
-     *  This is testing a valid json with an invalid id value
-     *  and at the second time, no files related.
-     *  It should parse until the domain layer because of the
-     *  business rule (which is applied at this layer).
+     *  This is the same test as GistViewModelMappingTest
      */
     func testDomainError() {
-        localJSON = "withinvalidid"
-        
-        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
-        entity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        expect(self.entity).toNot(beNil())
-        
-        expect { try Gist(mapping: self.entity!) }.to(throwError())
-        model = try? Gist(mapping: self.entity!)
-        expect(self.model).to(beNil())
-        
-        localJSON = "nofiles"
-        
-        expect { try self.jsonDecoder.decode(GistEntity.self, from: self.jsonData) }.toNot(throwError())
-        entity = try? jsonDecoder.decode(GistEntity.self, from: jsonData)
-        expect(self.entity).toNot(beNil())
-        
-        expect { try Gist(mapping: self.entity!) }.to(throwError())
-        model = try? Gist(mapping: self.entity!)
-        expect(self.model).to(beNil())
+        gistViewModelMappingTest?.testDomainError()
     }
 }
 
