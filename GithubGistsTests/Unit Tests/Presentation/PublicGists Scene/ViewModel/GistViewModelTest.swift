@@ -49,7 +49,7 @@ class GistViewModelTest: XCTestCase {
             userModel = try User(mapping: userEntity)
             fileModel = try File(mapping: fileEntity)
             secondFileModel = try File(mapping: secondFileEntity)
-        } catch let _ {
+        } catch _ {
             fail("Could not create user or file model from entity")
         }
     }
